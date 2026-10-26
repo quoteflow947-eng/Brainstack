@@ -1,4 +1,4 @@
-/* BrainStack — Combined Course Content (Modules 1, 2, 3 & 4) */
+/* BrainStack — Combined Course Content (Modules 1, 2, 3, 4 & 5) */
 
 const CHAPTERS = [
   /* =========================================
@@ -641,6 +641,105 @@ const CHAPTERS = [
       { q: "What is the formula for target profit units", a: "(Fixed Costs + Target Profit) ÷ Contribution Margin per unit." },
       { q: "What is a period cost", a: "A cost that is not tied to the manufacturing process (e.g., advertising, admin salaries, sales commissions). It is expensed on the income statement." },
       { q: "What is a sunk cost", a: "A cost that has already been incurred and cannot be recovered. It should be ignored in future decision-making." }
+    ]
+  },
+
+  /* =========================================
+     MODULE 5: BUSINESS COMPUTER APPLICATIONS
+     ========================================= */
+  {
+    id: "bca01", module: "Business Computer Applications", number: "Topic 1", title: "File Management", summary: "Creating structured folders, moving files, and checking file properties for exam purposes.",
+    notes: `## Activity 1 & Class Activity 2 Walkthrough:\n1. **Create the Folder Structure:**\n   * Right-click on the Desktop -> **New** -> **Folder**.\n   * Name it: \`Surname_Student Number_Feb2026\` (e.g., \`Khumalo_12345678_Feb2026\`).\n   * Open this folder. Right-click -> **New** -> **Folder** and create three folders: \`Solutions\`, \`Backup Files\`, and \`Data Files\`.\n   * Open \`Solutions\`, create two folders inside: \`Ms Word\` and \`Ms PowerPoint\`.\n   * Open \`Data Files\`, create two folders inside: \`Image Files\` and \`Other Files\`.\n2. **Download & Extract:**\n   * Download the "Data Files" zip folder and save it inside the \`Backup Files\` folder.\n   * Right-click the zip file -> **Extract All** -> Choose the \`Data Files\` folder as the destination. (Keep the zip file in the Backup folder).\n3. **Move Files:**\n   * Go to the extracted files in \`Data Files\`. \n   * Drag and drop \`.docx\` and \`.pdf\` files into \`Other Files\`. \n   * Drag and drop \`.jpg\` / \`.png\` files into \`Image Files\`.\n4. **Check Folder Properties (Answering Exam Questions):**\n   * To find the size of a folder: Right-click the folder -> **Properties** -> Look at "Size" and "Contains".\n   * To find the largest/smallest file: Open the folder -> View tab -> Sort by -> **Size**. \n\n### Important Rules:\n* Never edit a file directly inside a ZIP folder. You must extract it first.\n* If asked how many files/folders are in a directory, use the Properties window.`,
+    quiz: [
+      { q: "Where should you save the original downloaded ZIP file?", options: ["Solutions folder", "Backup Files folder", "Data Files folder", "Image Files folder"], answer: 1, explain: "The ZIP stays in the Backup folder, while the extracted files go to Data Files." },
+      { q: "What is the correct way to edit a file from a ZIP folder?", options: ["Edit it directly inside the ZIP", "Extract/Unzip it first, then edit the extracted file", "Rename the ZIP file", "Copy and paste it without extracting"], answer: 1, explain: "You must extract it first to work on it properly." },
+      { q: "If you want to find the size of a folder, you should:", options: ["Open every file and check", "Right-click the folder and choose 'Properties'", "Rename the folder", "Move it to the Recycle Bin"], answer: 1, explain: "Properties shows the size." },
+      { q: "Where should a .pdf file be moved according to the activity instructions?", options: ["Image Files", "Other Files", "MS Word", "MS PowerPoint"], answer: 1, explain: "PDFs and DOCX files go to Other Files." },
+      { q: "Where should a .jpg file be moved?", options: ["Image Files", "Other Files", "Backup Files", "Solutions"], answer: 0, explain: "Images go to the Image Files folder." },
+      { q: "What does the 'Hint: Never use zipped files for editing' mean?", options: ["Zipped files are too large", "Zipped files cannot be opened", "You must extract them first to work on them properly", "Zipped files are only for images"], answer: 2, explain: "Zipped files must be extracted first." },
+      { q: "To see how many files are in a folder, look at the:", options: ["File name", "Folder properties", "Desktop background", "Recycle Bin"], answer: 1, explain: "Folder properties show the file count." },
+      { q: "The main purpose of this activity is to test:", options: ["Typing speed", "Understanding of file organization and directory structures", "Excel formulas", "Database queries"], answer: 1, explain: "It tests file organization and directory structures." }
+    ],
+    faq: [
+      { q: "How to create a folder", a: "Right-click on the desktop or inside a folder, choose New, then Folder." },
+      { q: "Why do we use subfolders", a: "To keep files organized based on their type (e.g., Images, Documents) or purpose (e.g., Solutions, Backup)." },
+      { q: "How to extract a zip file", a: "Right-click the zip file, choose Extract All, and select the destination folder." }
+    ]
+  },
+  {
+    id: "bca02", module: "Business Computer Applications", number: "Topic 2", title: "MS Word", summary: "Formatting documents, inserting headers/footers, working with tables, and applying specific styles.",
+    notes: `## Activity Walkthrough: The "Counselling" and "Covid-19" Papers\n1. **Page Setup:** Go to **Layout** tab -> Orientation (Portrait/Landscape) -> Size (A4) -> Margins (Normal).\n2. **Headers & Footers:** \n   * Go to **Insert** tab -> **Header** -> Blank. Type Surname/Name on the left. Tab to the right and type Student Number.\n   * Go to **Insert** -> **Footer** -> Blank. Insert Page Number on the left. On the right, go to **Insert** -> **Date & Time** -> Choose format (e.g., 14 April 2026) -> Ensure "Update automatically" is ticked.\n3. **Font & Spacing:**\n   * Press **Ctrl+A** to select all. Go to **Home** tab -> Change Font (e.g., Arial) -> Change Size (e.g., 12). \n   * Click the **Line and Paragraph Spacing** icon -> Choose 1.5 (or 1.15).\n4. **WordArt Title:**\n   * **Insert** tab -> **WordArt** -> Choose a style. Type "Student Counselling Centre".\n5. **Columns (Two Columns with a line):**\n   * Highlight the specific paragraph.\n   * Go to **Layout** tab -> **Columns** -> **More Columns**. \n   * Select "Two". Tick the box "Line between".\n6. **Inserting & Wrapping Images:**\n   * **Insert** tab -> **Pictures**. \n   * Click the image, go to the **Picture Format** tab -> **Wrap Text** -> Choose **Tight**.\n   * To resize to exactly 6cm: Right-click the image -> **Size and Position** -> Set Height to 6cm (Ensure "Lock aspect ratio" is ticked).\n7. **Tables:**\n   * **Insert** tab -> **Table** (choose rows/columns).\n   * To merge cells: Highlight the top row -> Right-click -> **Merge Cells**.\n   * To shade: Highlight -> **Table Design** tab -> **Shading** -> Choose White, Background 1, 25%.\n8. **Find & Replace with Formatting:**\n   * Press **Ctrl+H**. \n   * Find what: \`personal\` | Replace with: \`individual\`.\n   * Click **More >>** -> **Format** -> **Font** -> Change color to Red. Click **Replace All**.\n9. **Drop Cap:**\n   * Click at the start of the paragraph -> **Insert** tab -> **Drop Cap** -> Dropped.\n10. **Watermark:**\n    * **Design** tab -> **Watermark** -> **Custom Watermark** -> Text watermark -> Type surname -> Change color to Red.`,
+    quiz: [
+      { q: "Which tab do you use to insert a Header and Footer?", options: ["Home", "Insert", "Layout", "Design"], answer: 1, explain: "Headers and footers are under the Insert tab." },
+      { q: "How do you ensure the date in the footer updates automatically every time you open the document?", options: ["Type it manually", "Use the 'Date & Time' feature and tick 'Update automatically'", "Use Excel", "Change the font"], answer: 1, explain: "Use Date & Time and tick 'Update automatically'." },
+      { q: "What is the shortcut to select all text in the document?", options: ["Ctrl+C", "Ctrl+V", "Ctrl+A", "Ctrl+P"], answer: 2, explain: "Ctrl+A selects all." },
+      { q: "If a question asks for 'Two columns with a line between them', where do you go?", options: ["Insert > Table", "Layout > Columns > More Columns", "Home > Borders", "Design > Page Borders"], answer: 1, explain: "Layout > Columns > More Columns." },
+      { q: "To make an image sit nicely inside a paragraph with text wrapping around it, you change the:", options: ["Watermark", "Page Orientation", "Wrap Text setting to 'Tight'", "Font Size"], answer: 2, explain: "Wrap Text -> Tight." },
+      { q: "How do you replace a word and change its color at the same time?", options: ["Type it again", "Use Find & Replace, click 'More', and set the Format options", "Highlight and use the paintbrush", "Delete the whole paragraph"], answer: 1, explain: "Use Find & Replace with Format options." },
+      { q: "How do you merge the top row of a table?", options: ["Press Enter", "Highlight the cells, right-click, and choose Merge Cells", "Use the Delete key", "Change the font size"], answer: 1, explain: "Right-click -> Merge Cells." },
+      { q: "What is the feature called that makes the first letter of a paragraph large and drop down into the text?", options: ["WordArt", "Drop Cap", "Watermark", "Header"], answer: 1, explain: "Drop Cap." }
+    ],
+    faq: [
+      { q: "How to insert a page break", a: "Go to the Insert tab and click Page Break, or press Ctrl+Enter." },
+      { q: "How to change page orientation", a: "Go to Layout tab -> Orientation -> Choose Portrait or Landscape." },
+      { q: "How to add a watermark", a: "Go to Design tab -> Watermark -> Custom Watermark." }
+    ]
+  },
+  {
+    id: "bca03", module: "Business Computer Applications", number: "Topic 3", title: "MS Excel (Master Guide)", summary: "A highly detailed breakdown of all formulas, functions, and data tools required for the activities.",
+    notes: `## 1. Basic Math & Statistical Functions\n**1. SUM (Grand Total)**\n*   **Formula:** \`=SUM(Start_Cell:End_Cell)\`\n*   **Activity Example:** "In column H (Annual Total), use a function to calculate the annual total."\n*   **How to write it:** \`=SUM(D2:G2)\` or \`=SUM(G4:G52)\`\n\n**2. AVERAGE**\n*   **Formula:** \`=AVERAGE(Start_Cell:End_Cell)\`\n*   **Activity Example:** "In F53, use a function to find the average salary."\n*   **How to write it:** \`=AVERAGE(F4:F52)\`\n\n**3. MAX & MIN**\n*   **Formula:** \`=MAX(Range)\` or \`=MIN(Range)\`\n*   **Activity Example:** "In cell E60, use a function to determine the highest quantity ordered."\n*   **How to write it:** \`=MAX(E2:E58)\` or \`=MIN(F2:F58)\`\n\n**4. COUNTA & COUNTIF**\n*   **Formula:** \`=COUNTA(Range)\` or \`=COUNTIF(Range, "Condition")\`\n*   **Activity Example:** "Use a function to find the total number of employees in cell L6, by counting the surnames." or "Find the number of sales reps."\n*   **How to write it:** \`=COUNTA(C4:C52)\` or \`=COUNTIF($E$4:$E$52, "Sales Rep")\`\n\n## 2. Logical Functions\n**1. IF**\n*   **Formula:** \`=IF(Condition, "Result_if_True", "Result_if_False")\`\n*   **Activity Example:** "Profits above $1,300,000 are considered good, and below... are bad."\n*   **How to write it:** \`=IF(H2>1300000, "Good", "Bad")\`\n\n**2. IFERROR**\n*   **Formula:** \`=IFERROR(Your_Formula, "Message")\`\n*   **How to write it:** \`=IFERROR(VLOOKUP(A2, B2:C5, 2, FALSE), "Not Found")\`\n\n## 3. Lookup & Reference Functions\n**1. VLOOKUP**\n*   **Formula:** \`=VLOOKUP(Lookup_Value, Table_Range, Column_Number, FALSE)\`\n*   **Activity Example:** "Lookup for the CEOs (column C) for each country by making use of a function. (Hint: use Vlookup)"\n*   **How to write it:** \`=VLOOKUP(A2, CEO!$A$2:$C$4, 2, FALSE)\`\n\n## 4. Text Functions\n**1. CONCATENATE or the & symbol**\n*   **Formula:** \`=Cell1 & " " & Cell2\`\n*   **Activity Example:** "Use a function to combine the surname and name (starting with surname) in column D."\n*   **How to write it:** \`=C2 & " " & B2\`\n\n## 5. Absolute Referencing (`$`)\n*   **What it is:** The `$` sign locks a cell so it doesn't move when you autofill.\n*   **Activity Example:** "The Total (incl VAT) is given by adding 15% of the subtotal to the subtotal (Given in K3). Use a formula, making use of both **absolute and relative** references."\n*   **How to write it:** \`=G2 + (G2 * $K$3)\`\n\n## 6. Data Tools & Formatting (Non-Formula)\n**1. Conditional Formatting**\n*   **Activity Example:** "Indicate totals that are between $1,000,000 and $1,300,000. Use a red font colour with a yellow fill."\n*   **How to do it:** Select column -> Home tab -> Conditional Formatting -> Highlight Cells Rules -> Between -> Custom Format.\n\n**2. Freezing Panes**\n*   **Activity Example:** "Freeze rows 1-3."\n*   **How to do it:** Click row below the ones to freeze -> View tab -> Freeze Panes.\n\n**3. Sorting**\n*   **Activity Example:** "Sort all data in Alphabetical order of Region."\n*   **How to do it:** Click any cell -> Data tab -> Sort -> Choose column -> A to Z.\n\n**4. Formatting**\n*   **Currency/Date:** Right-click -> Format Cells -> Currency/Date.\n*   **Sheet Tab Color:** Right-click the sheet name -> Tab Color.\n*   **Merge & Center:** Highlight cells -> Home tab -> Merge & Center.`,
+    quiz: [
+      { q: "Which formula would you use to calculate the total of column G?", options: ["=ADD(G2:G58)", "=SUM(G2:G58)", "=TOTAL(G2:G58)", "=AVERAGE(G2:G58)"], answer: 1, explain: "SUM adds up a range of numbers." },
+      { q: "What is the correct formula to calculate Revenue if Price is in D2 and Units are in E2?", options: ["=D2+E2", "=D2-E2", "=D2*E2", "=D2/E2"], answer: 2, explain: "Multiplication (*) is used for revenue." },
+      { q: "How do you write an IF function to return 'Yes' if A1 is greater than 10?", options: ["=IF(A1>10, 'Yes', 'No')", "=IF(A1<10, 'Yes', 'No')", "=IF(A1=10, 'Yes', 'No')", "=IF(A1, 10, 'Yes')"], answer: 0, explain: "=IF(Condition, True, False)." },
+      { q: "What does the '$' symbol do in a formula like $K$3?", options: ["It makes the text bold", "It locks the cell reference (Absolute Reference)", "It adds currency", "It calculates percentages"], answer: 1, explain: "It locks the cell reference." },
+      { q: "Which function counts how many cells are not empty?", options: ["COUNT", "COUNTA", "COUNTIF", "SUM"], answer: 1, explain: "COUNTA counts non-empty cells." },
+      { q: "What is the correct VLOOKUP formula syntax?", options: ["=VLOOKUP(column, table, row)", "=VLOOKUP(lookup_value, table_array, col_index_num, FALSE)", "=VLOOKUP(search, range, 2, TRUE)", "=VLOOKUP(table, value, col)"], answer: 1, explain: "VLOOKUP requires value, table, column index, and FALSE for exact match." },
+      { q: "How do you apply a red font with a yellow background to specific numbers?", options: ["Change the font manually", "Use Conditional Formatting", "Use VLOOKUP", "Use the Sort tool"], answer: 1, explain: "Conditional Formatting highlights rules automatically." },
+      { q: "Where do you go to freeze the top row so it stays visible while scrolling?", options: ["Insert tab", "View tab", "Data tab", "Home tab"], answer: 1, explain: "Freeze Panes is on the View tab." }
+    ],
+    faq: [
+      { q: "How to calculate revenue", a: "Multiply the Price by the Units sold (e.g., =D2*E2)." },
+      { q: "How to combine names", a: "Use the & symbol or CONCAT function (e.g., =C2&' '&B2)." },
+      { q: "How to lock a cell reference", a: "Use the $ sign before the column and row (e.g., $K$3)." }
+    ]
+  },
+  {
+    id: "bca04", module: "Business Computer Applications", number: "Topic 4", title: "MS Access", summary: "Creating databases, importing data, and building queries and reports.",
+    notes: `## Activity Walkthrough: The "Tourists" and "Customer Vacations" Databases\n1. **Create Database:**\n   * Open Access -> **Blank Database** -> Name it (e.g., "Tourists") -> Create.\n2. **Import Excel Data:**\n   * Go to **External Data** tab -> **New Data Source** -> **From File** -> **Excel**.\n   * Browse for the file (e.g., \`Customer information.xlsx\`).\n   * Follow the wizard: Check "First Row Contains Column Headings" -> Choose "In a New Table" -> Let Access set the Primary Key or choose your own -> Finish.\n3. **Create a Query:**\n   * Go to **Create** tab -> **Query Design**.\n   * Add the table you imported.\n   * Double-click the fields you need to display (e.g., Customer No, Customer Name, Total Price, Arrival).\n   * Click **Run** (the red exclamation mark) to see the results.\n   * Click **Save** and name it (e.g., "Guests").\n4. **Create a Report:**\n   * Go to **Create** tab -> **Report Wizard**.\n   * Select the Query or Table you just made.\n   * Select the fields you want on the report.\n   * Follow the wizard to group/sort -> Choose layout -> Finish.\n   * Go to **Report Design** or **Format** tab to centre the title and bold the headings.`,
+    quiz: [
+      { q: "What is the first step when starting a new project in MS Access?", options: ["Open Excel", "Create a Blank Database", "Create a Table", "Import a file"], answer: 1, explain: "Start with a Blank Database." },
+      { q: "Where do you go to bring an Excel file into Access?", options: ["Home tab", "External Data tab", "Create tab", "Database Tools tab"], answer: 1, explain: "External Data tab -> Import." },
+      { q: "What is a Query used for?", options: ["Designing the look of a report", "Asking questions to extract specific data from tables", "Formatting text", "Creating a pie chart"], answer: 1, explain: "Queries extract specific data." },
+      { q: "What is a Report used for?", options: ["Storing raw data", "Printing or presenting data in a formatted, professional way", "Importing data", "Writing formulas"], answer: 1, explain: "Reports format data for printing/presentation." },
+      { q: "If you need to create a form to enter new data, which tab do you use?", options: ["Create", "Home", "External Data", "File"], answer: 0, explain: "The Create tab has the Form wizard." },
+      { q: "When importing from Excel, what must you tick to ensure the column names become the field names in Access?", options: ["First Row Contains Column Headings", "AutoNumber", "Data Type", "Primary Key"], answer: 0, explain: "This tells Access to use the first row as headers." },
+      { q: "To see the results of a query you have designed, you click:", options: ["Save", "Run (!)", "Print", "Close"], answer: 1, explain: "Click the Run (!) button." },
+      { q: "Which of these is a valid Data Type in an Access table?", options: ["Short Text", "Currency", "Date/Time", "All of the above"], answer: 3, explain: "All are valid data types." }
+    ],
+    faq: [
+      { q: "How to import excel to access", a: "Go to External Data -> New Data Source -> From File -> Excel." },
+      { q: "What is a primary key", a: "A unique identifier for each record in a table (e.g., Customer No)." },
+      { q: "What is the difference between a query and a report", a: "A query extracts data; a report formats that data for printing." }
+    ]
+  },
+  {
+    id: "bca05", module: "Business Computer Applications", number: "Topic 5", title: "MS PowerPoint", summary: "Designing slides, applying transitions, and adding animations (Based on standard BCA exam requirements).",
+    notes: `## 1. Slide Layouts\n* Go to **Home** tab -> **Layout** -> Choose "Title Slide", "Title and Content", or "Two Content".\n\n## 2. Design Themes\n* Go to **Design** tab -> Choose a Theme to make the presentation look professional. You can change the **Variants** (colors) right next to it.\n\n## 3. Inserting Media\n* **Insert** tab -> **Pictures**, **Shapes**, **Icons**, or **Charts**.\n\n## 4. Transitions (How slides enter)\n* Select a slide -> **Transitions** tab -> Choose a transition (e.g., Fade, Push). \n* Click **Apply to All** to make them all the same.\n\n## 5. Animations (How text/objects move)\n* Select the text box or image -> **Animations** tab -> Choose an animation (e.g., Appear, Fade, Fly In).\n\n## 6. Adding Notes\n* At the bottom of the screen, click "Notes" and type what you want to say (the examiner might ask for speaker notes).`,
+    quiz: [
+      { q: "Where do you go to add a transition between slides?", options: ["Home tab", "Insert tab", "Transitions tab", "Design tab"], answer: 2, explain: "Transitions tab." },
+      { q: "What is the difference between a Transition and an Animation?", options: ["Transition is for text, Animation is for slides", "Transition is how a slide enters, Animation is how objects move on the slide", "They are exactly the same", "Animation is only for videos"], answer: 1, explain: "Transitions are for slides, Animations are for objects." },
+      { q: "How do you make a picture appear on your slide?", options: ["Insert tab -> Pictures", "Home tab -> Font", "Design tab -> Themes", "Transitions tab"], answer: 0, explain: "Insert tab -> Pictures." },
+      { q: "To apply a professional color scheme to your whole presentation, you use:", options: ["Design Themes", "Slide Master", "Transitions", "Animations"], answer: 0, explain: "Design Themes." },
+      { q: "Where can you type extra information for the presenter to read while presenting?", options: ["The Slide itself", "The Notes pane at the bottom", "The Header", "The Footer"], answer: 1, explain: "The Notes pane." },
+      { q: "If a question asks you to change the layout so there is a title and a picture side-by-side, which layout do you choose?", options: ["Title Only", "Blank", "Title and Content", "Two Content"], answer: 3, explain: "Two Content." },
+      { q: "How do you apply the same transition to every slide at once?", options: ["Click 'Apply to All'", "Copy and Paste", "Redo the transition 10 times", "Save the file"], answer: 0, explain: "Click Apply to All." },
+      { q: "Which tab holds the 'Shapes' tool?", options: ["Home", "Insert", "Design", "Animations"], answer: 1, explain: "Insert tab." }
+    ],
+    faq: [
+      { q: "How to add a transition", a: "Go to Transitions tab, choose a style, and click Apply to All." },
+      { q: "How to add speaker notes", a: "Click the Notes pane at the bottom of the screen and type." },
+      { q: "How to change the theme", a: "Go to Design tab and select a theme." }
     ]
   }
 ];
