@@ -1,7 +1,7 @@
 /* BrainStack service worker — cache-first for everything.
    App works 100% offline after first load. */
 
-const CACHE = "brainstack-v6";
+const CACHE = "brainstack-v7";
 const ASSETS = [
   "./",
   "./index.html",
