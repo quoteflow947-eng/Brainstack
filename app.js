@@ -122,15 +122,27 @@ function mdToHtml(md) {
 function renderSidebar() {
   const list = $("#chapterList");
   const progress = getProgress();
-  list.innerHTML = CHAPTERS.map(ch => {
-    const p = progress[ch.id];
-    const done = p && p.best >= Math.ceil(p.total * 0.8);
-    const label = p ? `${p.best}/${p.total}` : "—";
-    return `<a href="#chapter/${ch.id}" class="nav-item chapter-link" data-chapter="${ch.id}">
-      <span>${ch.number}. ${escapeHtml(ch.title)}</span>
-      <span class="chapter-badge ${done ? 'done' : ''}">${label}</span>
-    </a>`;
-  }).join("");
+  
+  // Get unique module names in order
+  const modules = [...new Set(CHAPTERS.map(c => c.module))];
+
+  let html = "";
+  modules.forEach(mod => {
+    html += `<div class="nav-heading">${escapeHtml(mod)}</div>`;
+    const modChapters = CHAPTERS.filter(c => c.module === mod);
+    
+    html += modChapters.map(ch => {
+      const p = progress[ch.id];
+      const done = p && p.best >= Math.ceil(p.total * 0.8);
+      const label = p ? `${p.best}/${p.total}` : "—";
+      return `<a href="#chapter/${ch.id}" class="nav-item chapter-link" data-chapter="${ch.id}">
+        <span>${escapeHtml(ch.number)}. ${escapeHtml(ch.title)}</span>
+        <span class="chapter-badge ${done ? 'done' : ''}">${label}</span>
+      </a>`;
+    }).join("");
+  });
+  
+  list.innerHTML = html;
 }
 
 function renderHome() {
@@ -139,23 +151,31 @@ function renderHome() {
   $$(".nav-item").forEach(n => n.classList.remove("active"));
   $('[data-nav="home"]').classList.add("active");
 
-  const cards = CHAPTERS.map(ch => {
-    const p = progress[ch.id];
-    const pct = p ? Math.round((p.best / p.total) * 100) : 0;
-    return `<div class="card" data-chapter="${ch.id}">
-      <h3>${ch.number}. ${escapeHtml(ch.title)}</h3>
-      <p>${escapeHtml(ch.summary)}</p>
-      <div class="card-progress"><div class="card-progress-fill" style="width:${pct}%"></div></div>
-    </div>`;
-  }).join("");
+  const modules = [...new Set(CHAPTERS.map(c => c.module))];
 
-  $("#main").innerHTML = `
+  let html = `
     <div class="hero">
-      <h1>Study smarter, not longer.</h1>
+      <h1>BrainStack</h1>
       <p>Read the notes. Take the quiz. Ask the tutor. All offline-ready.</p>
     </div>
-    <div class="card-grid">${cards}</div>
   `;
+
+  modules.forEach(mod => {
+    html += `<h2 style="margin-top: 40px; margin-bottom: 16px; font-size: 24px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 8px;">${escapeHtml(mod)}</h2>`;
+    const modChapters = CHAPTERS.filter(c => c.module === mod);
+
+    html += `<div class="card-grid">` + modChapters.map(ch => {
+      const p = progress[ch.id];
+      const pct = p ? Math.round((p.best / p.total) * 100) : 0;
+      return `<div class="card" data-chapter="${ch.id}">
+        <h3>${escapeHtml(ch.number)}. ${escapeHtml(ch.title)}</h3>
+        <p>${escapeHtml(ch.summary)}</p>
+        <div class="card-progress"><div class="card-progress-fill" style="width:${pct}%"></div></div>
+      </div>`;
+    }).join("") + `</div>`;
+  });
+
+  $("#main").innerHTML = html;
 
   $$(".card").forEach(c => c.addEventListener("click", () => {
     location.hash = `#chapter/${c.dataset.chapter}`;
@@ -174,8 +194,8 @@ function renderChapter(id) {
 
   $("#main").innerHTML = `
     <div class="chapter-header">
-      <div class="eyebrow">Chapter ${ch.number}</div>
-      <h1>${escapeHtml(ch.title)}</h1>
+      <div class="eyebrow">${escapeHtml(ch.module)}</div>
+      <h1>${escapeHtml(ch.number)}. ${escapeHtml(ch.title)}</h1>
       <p>${escapeHtml(ch.summary)}</p>
     </div>
     <div class="tabs">
@@ -394,14 +414,14 @@ function localAnswer(question, ch) {
     }
   }
   if (globalBest && globalScore >= 2) {
-    return { text: globalBest.item.a + `\n\n> Found in Chapter ${globalBest.c.number}: ${globalBest.c.title}`, suggestions: [] };
+    return { text: globalBest.item.a + `\n\n> Found in ${globalBest.c.module} - ${globalBest.c.number}. ${globalBest.c.title}`, suggestions: [] };
   }
   const notesMatch = findInNotes(q, ch);
   if (notesMatch) {
     return { text: notesMatch, suggestions: ch.faq.slice(0, 3).map(f => f.q) };
   }
   return {
-    text: "I couldn't find an answer in this chapter's content. Try rephrasing, or browse the **Notes** tab.",
+    text: "I couldn't find an answer in this topic's content. Try rephrasing, or browse the **Notes** tab.",
     suggestions: ch.faq.slice(0, 3).map(f => f.q)
   };
 }
@@ -440,10 +460,10 @@ $("#searchInput").addEventListener("input", (e) => {
     ch.notes.toLowerCase().includes(q)
   );
   $("#main").innerHTML = `
-    <div class="hero"><h1>Search results</h1><p>${results.length} chapter(s) match "${escapeHtml(q)}"</p></div>
+    <div class="hero"><h1>Search results</h1><p>${results.length} topic(s) match "${escapeHtml(q)}"</p></div>
     <div class="card-grid">
       ${results.map(ch => `<div class="card" data-chapter="${ch.id}">
-        <h3>${ch.number}. ${escapeHtml(ch.title)}</h3>
+        <h3>${escapeHtml(ch.number)}. ${escapeHtml(ch.title)}</h3>
         <p>${escapeHtml(ch.summary)}</p>
       </div>`).join("") || `<div class="empty"><h2>No matches</h2><p>Try a different keyword.</p></div>`}
     </div>
@@ -470,10 +490,10 @@ function renderAskGlobal() {
   $$(".nav-item").forEach(n => n.classList.remove("active"));
   $('[data-nav="ask"]').classList.add("active");
   $("#main").innerHTML = `
-    <div class="hero"><h1>Ask a question</h1><p>Search across all chapters, or pick one below.</p></div>
+    <div class="hero"><h1>Ask a question</h1><p>Search across all topics, or pick one below.</p></div>
     <div class="card-grid">
       ${CHAPTERS.map(ch => `<div class="card" data-chapter="${ch.id}">
-        <h3>${ch.number}. ${escapeHtml(ch.title)}</h3>
+        <h3>${escapeHtml(ch.number)}. ${escapeHtml(ch.title)}</h3>
         <p>Ask about ${escapeHtml(ch.title.toLowerCase())}</p>
       </div>`).join("")}
     </div>
