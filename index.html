@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrainStack — Study smarter</title>
+<meta name="description" content="Read the notes. Take the quiz. Ask the tutor.">
+<meta name="theme-color" content="#4f46e5">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  <a href="#" class="brand" data-nav="home">
+    <span class="brand-mark">▦</span>
+    <span class="brand-text">BrainStack</span>
+  </a>
+  <div class="search-wrap">
+    <input type="search" id="searchInput" placeholder="Search chapters and notes…" autocomplete="off">
+  </div>
+  <div class="topbar-actions">
+    <span class="offline-pill" id="offlinePill" hidden>Offline</span>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</header>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <a href="#" class="nav-item" data-nav="home">
+        <span class="nav-icon">⌂</span><span>Home</span>
+      </a>
+      <a href="#" class="nav-item" data-nav="ask">
+        <span class="nav-icon">?</span><span>Ask a question</span>
+      </a>
+      <div class="nav-heading">Chapters</div>
+      <div id="chapterList"></div>
+      <div class="nav-heading">Progress</div>
+      <button class="nav-item reset-btn" id="resetBtn">
+        <span class="nav-icon">↺</span><span>Reset progress</span>
+      </button>
+    </nav>
+  </aside>
+
+  <main class="main" id="main">
+    <!-- Rendered by app.js -->
+  </main>
+
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
