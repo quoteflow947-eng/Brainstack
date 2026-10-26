@@ -1,54 +1,12 @@
-/* BrainStack — Combined Course Content (Module 1 & Module 2) */
+/* BrainStack — Combined Course Content (Module 1, 2 & 3) */
 
 const CHAPTERS = [
   /* =========================================
      MODULE 1: RETAIL OPERATIONS MANAGEMENT 1
      ========================================= */
   {
-    id: "ch06a",
-    module: "Retail Operations Management 1",
-    number: "6 (Part 1)",
-    title: "Entrepreneurship & Business Plan",
-    summary: "What entrepreneurship is, why it matters, SA's challenges, and the tools you need before writing a plan.",
-    notes: `## Overview
-This chapter introduces what entrepreneurship is, why it matters to a country's economy, what makes it difficult in South Africa specifically, and the first analytical tools you need before writing a business plan: feasibility, viability, market size, market share, and break-even analysis.
-
-## Why entrepreneurship matters
-1. **Create jobs** — small and medium businesses are the largest employers in most countries; startups absorb unemployed youth and lower unemployment.
-2. **Drive innovation** — entrepreneurs introduce new products, services and technologies that disrupt markets and improve productivity.
-3. **Grow the economy** — new businesses generate income, pay taxes, and stimulate demand for goods and services.
-4. **Solve social problems** — social entrepreneurs address gaps in healthcare, education, clean energy and more.
-5. **Encourage self-reliance** — entrepreneurship builds a culture of resilience and financial independence.
-
-## Challenges entrepreneurs face in South Africa
-1. **Limited access to funding** — banks require collateral and credit records that first-time entrepreneurs usually don't have.
-2. **High unemployment and low disposable income** — less money to spend shrinks the market and hurts profitability.
-3. **Bureaucracy and red tape** — lengthy registration, multiple regulations, high formalisation costs.
-4. **Crime and safety concerns** — theft, vandalism, violence; higher security costs and investor reluctance.
-5. **Skills gap and education** — many entrepreneurs lack financial, marketing and digital skills.
-6. **Market access and competition** — small businesses struggle against established chains and retail shelf access.
-7. **Lack of mentorship** — no experienced guides, so poor early decisions lead to failure.
-
-## What is an entrepreneur?
-> **Definition:** An entrepreneur is a person who sees an opportunity in the market, gathers resources, and creates and grows a business venture to satisfy that need. They take the risk of the venture and are rewarded with profit if it succeeds.
-
-**Twelve traits of successful entrepreneurs:**
-1. Innovative, 2. Risk-taker, 3. Self-confident, 4. Hardworking, 5. Goal-oriented, 6. Leadership skills, 7. Decision-making ability, 8. Persistent, 9. Adaptable, 10. Good problem-solver, 11. Creative, 12. Organised.
-
-## Feasibility vs viability
-| | **Feasibility** | **Viability** |
-|---|---|---|
-| **Question** | *Can it be done?* | *Will it make money?* |
-| **Focus** | Short-term: can we build this? | Long-term: can this survive and grow? |
-| **Key considerations** | Technical, financial, legal, operational | Demand, competitive advantage, profit |
-
-## Market size & Market share
-- **Market size:** Total potential sales/revenue for a product in a market over a period.
-- **Market share:** (Company sales ÷ Total market sales) × 100
-
-## Break-even analysis
-- **Break-even quantity** = Fixed costs ÷ (Selling price per unit − Variable cost per unit)
-- **Break-even rand value** = Break-even quantity × Selling price`,
+    id: "ch06a", module: "Retail Operations Management 1", number: "6 (Part 1)", title: "Entrepreneurship & Business Plan", summary: "What entrepreneurship is, why it matters, SA's challenges, and the tools you need before writing a plan.",
+    notes: `## Overview\nThis chapter introduces what entrepreneurship is, why it matters to a country's economy, what makes it difficult in South Africa specifically, and the first analytical tools you need before writing a business plan: feasibility, viability, market size, market share, and break-even analysis.\n\n## Why entrepreneurship matters\n1. **Create jobs** — small and medium businesses are the largest employers.\n2. **Drive innovation** — new products, services and technologies.\n3. **Grow the economy** — generate income, pay taxes, stimulate demand.\n4. **Solve social problems** — social entrepreneurs address gaps.\n5. **Encourage self-reliance** — builds a culture of resilience.\n\n## Challenges entrepreneurs face in South Africa\n1. **Limited access to funding** — banks require collateral.\n2. **High unemployment** — shrinks the market.\n3. **Bureaucracy and red tape** — lengthy registration.\n4. **Crime and safety concerns** — higher security costs.\n5. **Skills gap** — lack of financial/marketing skills.\n6. **Market access** — struggle against established chains.\n7. **Lack of mentorship** — poor early decisions.\n\n## What is an entrepreneur?\n> **Definition:** An entrepreneur is a person who sees an opportunity, gathers resources, and creates a business venture to satisfy that need. They take the risk and are rewarded with profit.\n\n**Twelve traits:** Innovative, Risk-taker, Self-confident, Hardworking, Goal-oriented, Leadership skills, Decision-making, Persistent, Adaptable, Problem-solver, Creative, Organised.\n\n## Feasibility vs viability\n| | **Feasibility** | **Viability** |\n|---|---|---|\n| **Question** | *Can it be done?* | *Will it make money?* |\n| **Focus** | Technical, financial, legal, operational | Demand, competitive advantage, profit |\n\n## Break-even analysis\n- **Break-even quantity** = Fixed costs ÷ (Selling price per unit − Variable cost per unit)\n- **Break-even rand value** = Break-even quantity × Selling price`,
     quiz: [
       { q: "What is the main difference between feasibility and viability?", options: ["Feasibility = can it be done; Viability = will it make money long-term", "Feasibility = will it make money; Viability = can it be done", "They mean the same thing", "Feasibility is for products; Viability is for services"], answer: 0, explain: "Feasibility checks technical/financial/legal/operational ability. Viability checks demand, competitive advantage and profit." },
       { q: "Fixed costs are R100,000, selling price is R12, variable cost is R2. What is the break-even quantity?", options: ["8,333 units", "10,000 units", "12,000 units", "50,000 units"], answer: 1, explain: "BEQ = Fixed ÷ (Price − Variable) = 100,000 ÷ (12 − 2) = 10,000 units." },
@@ -66,38 +24,8 @@ This chapter introduces what entrepreneurship is, why it matters to a country's 
     ]
   },
   {
-    id: "ch06b",
-    module: "Retail Operations Management 1",
-    number: "6 (Part 2)",
-    title: "The Business Plan",
-    summary: "How to project profit, and what goes inside a proper business plan.",
-    notes: `## Calculating projected net profit
-- **Income > Expenses** → the idea is profitable
-- **Expenses > Income** → not viable; the business runs at a loss
-- **Gross profit** = Revenue − COGS
-- **Operating profit** = Gross profit − Operating expenses
-- **Net profit** = Operating profit − Interest − Tax
-
-## Contents of a business plan
-1. Cover sheet
-2. Table of contents
-3. Executive summary
-4. Management team
-5. Macro and market analysis + positioning
-6. Products and/or services plan
-7. Marketing plan
-8. Production or operational plan
-9. Financial plan
-10. Appendices and references
-
-## The 4 Ps
-**Product** (Functionality, brand) · **Price** (List price, discounts) · **Place** (Channel, logistics) · **Promotion** (Advertising, sales)
-
-## Market segmentation
-1. **Demographic** (Age, gender, income)
-2. **Geographic** (Local, regional, national)
-3. **Psychographic** (Activities, attitudes, personality)
-4. **Behavioral** (Benefits, patterns, usage rates)`,
+    id: "ch06b", module: "Retail Operations Management 1", number: "6 (Part 2)", title: "The Business Plan", summary: "How to project profit, and what goes inside a proper business plan.",
+    notes: `## Calculating projected net profit\n- **Income > Expenses** → the idea is profitable\n- **Expenses > Income** → not viable; the business runs at a loss\n- **Gross profit** = Revenue − COGS\n- **Operating profit** = Gross profit − Operating expenses\n- **Net profit** = Operating profit − Interest − Tax\n\n## Contents of a business plan\n1. Cover sheet\n2. Table of contents\n3. Executive summary\n4. Management team\n5. Macro and market analysis + positioning\n6. Products and/or services plan\n7. Marketing plan\n8. Production or operational plan\n9. Financial plan\n10. Appendices and references\n\n## The 4 Ps\n**Product** (Functionality, brand) · **Price** (List price, discounts) · **Place** (Channel, logistics) · **Promotion** (Advertising, sales)\n\n## Market segmentation\n1. **Demographic** (Age, gender, income)\n2. **Geographic** (Local, regional, national)\n3. **Psychographic** (Activities, attitudes, personality)\n4. **Behavioral** (Benefits, patterns, usage rates)`,
     quiz: [
       { q: "How long should the executive summary be?", options: ["One paragraph", "½ to 1 page", "3–5 pages", "10 pages"], answer: 1, explain: "The executive summary should be between half a page and one page." },
       { q: "Which is NOT one of the 4 Ps?", options: ["Product", "Price", "Profit", "Promotion"], answer: 2, explain: "The 4 Ps are Product, Price, Place and Promotion." },
@@ -115,31 +43,8 @@ This chapter introduces what entrepreneurship is, why it matters to a country's 
     ]
   },
   {
-    id: "ch07",
-    module: "Retail Operations Management 1",
-    number: "7",
-    title: "Control",
-    summary: "The fourth management function — monitoring performance and correcting deviations.",
-    notes: `## What is control?
-> **Definition:** Control is a function of management which helps to identify errors and take corrective action.
-
-## Types of control (based on timing)
-- **Pre-control** (Inputs)
-- **Concurrent control** (Transformation process)
-- **Post control** (Outputs)
-
-## The four-step control process
-1. **Establish standards** — linked to objectives
-2. **Measure actual performance**
-3. **Compare actual performance with standards**
-4. **Take corrective action** — or reinforce good performance
-
-## Types of performance standards
-- Quantity, Cost, Time, Quality, Behaviour.
-
-## Measurement rules
-- **Reliable** = consistent; produces the same result every time.
-- **Valid** = measures what it is supposed to measure.`,
+    id: "ch07", module: "Retail Operations Management 1", number: "7", title: "Control", summary: "The fourth management function — monitoring performance and correcting deviations.",
+    notes: `## What is control?\n> **Definition:** Control is a function of management which helps to identify errors and take corrective action.\n\n## Types of control (based on timing)\n- **Pre-control** (Inputs)\n- **Concurrent control** (Transformation process)\n- **Post control** (Outputs)\n\n## The four-step control process\n1. **Establish standards** — linked to objectives\n2. **Measure actual performance**\n3. **Compare actual performance with standards**\n4. **Take corrective action** — or reinforce good performance\n\n## Types of performance standards\n- Quantity, Cost, Time, Quality, Behaviour.\n\n## Measurement rules\n- **Reliable** = consistent; produces the same result every time.\n- **Valid** = measures what it is supposed to measure.`,
     quiz: [
       { q: "What is the correct order of the control process?", options: ["Measure → Set standards → Compare → Correct", "Set standards → Measure → Compare → Correct", "Compare → Set standards → Measure → Correct", "Set standards → Compare → Measure → Correct"], answer: 1, explain: "Standards → Measurement → Comparison → Corrective action." },
       { q: "Controlling inputs such as HR, technology and materials is:", options: ["Pre-control", "Concurrent control", "Post control", "Financial control"], answer: 0, explain: "Pre-control focuses on inputs before the transformation process." },
@@ -157,31 +62,8 @@ This chapter introduces what entrepreneurship is, why it matters to a country's 
     ]
   },
   {
-    id: "ch08",
-    module: "Retail Operations Management 1",
-    number: "8 (Part 1)",
-    title: "Leadership — Foundations",
-    summary: "What leadership is, how it differs from management, styles and types of power.",
-    notes: `## What is leadership?
-> **Definition:** Leadership is the ability to influence, guide and motivate people to work toward a common goal.
-
-## Leadership vs management
-| **Leadership** | **Management** |
-|---|---|
-| About people and vision | About process and execution |
-| Asks **"what and why?"** | Asks **"how and when?"** |
-
-## The three leadership styles
-1. **Autocratic (authoritarian)** — manager decides **without consulting** employees.
-2. **Participative (democratic)** — managers and employees **work together**.
-3. **Free-rein (laissez-faire)** — management **sets objectives** and allows employees to **work freely**.
-
-## The five types of power
-1. **Coercive** (Fear)
-2. **Reward** (Praise, promotion, pay)
-3. **Legitimate** (Position given by the organisation)
-4. **Referent** (The leader's personality)
-5. **Expert** (Leader's knowledge and skills)`,
+    id: "ch08", module: "Retail Operations Management 1", number: "8 (Part 1)", title: "Leadership — Foundations", summary: "What leadership is, how it differs from management, styles and types of power.",
+    notes: `## What is leadership?\n> **Definition:** Leadership is the ability to influence, guide and motivate people to work toward a common goal.\n\n## Leadership vs management\n| **Leadership** | **Management** |\n|---|---|\n| About people and vision | About process and execution |\n| Asks **"what and why?"** | Asks **"how and when?"** |\n\n## The three leadership styles\n1. **Autocratic (authoritarian)** — manager decides **without consulting** employees.\n2. **Participative (democratic)** — managers and employees **work together**.\n3. **Free-rein (laissez-faire)** — management **sets objectives** and allows employees to **work freely**.\n\n## The five types of power\n1. **Coercive** (Fear)\n2. **Reward** (Praise, promotion, pay)\n3. **Legitimate** (Position given by the organisation)\n4. **Referent** (The leader's personality)\n5. **Expert** (Leader's knowledge and skills)`,
     quiz: [
       { q: "Leadership focuses on ____, while management focuses on ____.", options: ["process and execution; people and vision", "people and vision; process and execution", "authority; influence", "stability; change"], answer: 1, explain: "Leadership = people and vision. Management = process and execution." },
       { q: "A manager makes all decisions without consulting staff. This is:", options: ["Democratic", "Laissez-faire", "Autocratic", "Servant"], answer: 2, explain: "Autocratic (authoritarian) leadership." },
@@ -199,37 +81,8 @@ This chapter introduces what entrepreneurship is, why it matters to a country's 
     ]
   },
   {
-    id: "ch09",
-    module: "Retail Operations Management 1",
-    number: "9 (Part 2)",
-    title: "Leadership — Theories",
-    summary: "The nine theories from trait theory to servant-leadership.",
-    notes: `## 1. Trait theory
-- **Assumption:** **"Good leaders are born, not made."**
-
-## 2. Behavioural theory
-- Studies **how successful leaders behave** differently from unsuccessful leaders.
-
-## 3. Leadership competencies theory
-- The more leadership skills and behaviours a person has, the better the leader.
-
-## 4. Principle-centred perspective
-- A leader's **beliefs** can make them great leaders.
-
-## 5. Ethical-leadership perspective
-- Leaders who promote and model moral conduct.
-
-## 6. Transformational leadership
-- Leaders **encourage, inspire and motivate employees to innovate and create change**.
-
-## 7. Transactional leadership
-- Focuses on **routine, structure and clear tasks**, using **rewards and punishments** to motivate.
-
-## 8. Leader-member exchange (LMX)
-- Focuses on the **relationship between leaders and followers** ("in" vs "out" groups).
-
-## 9. Servant-leadership
-- **Leading by example.** The leader serves the team.`,
+    id: "ch09", module: "Retail Operations Management 1", number: "9 (Part 2)", title: "Leadership — Theories", summary: "The nine theories from trait theory to servant-leadership.",
+    notes: `## 1. Trait theory\n- **Assumption:** **"Good leaders are born, not made."**\n\n## 2. Behavioural theory\n- Studies **how successful leaders behave** differently from unsuccessful leaders.\n\n## 3. Leadership competencies theory\n- The more leadership skills and behaviours a person has, the better the leader.\n\n## 4. Principle-centred perspective\n- A leader's **beliefs** can make them great leaders.\n\n## 5. Ethical-leadership perspective\n- Leaders who promote and model moral conduct.\n\n## 6. Transformational leadership\n- Leaders **encourage, inspire and motivate employees to innovate and create change**.\n\n## 7. Transactional leadership\n- Focuses on **routine, structure and clear tasks**, using **rewards and punishments** to motivate.\n\n## 8. Leader-member exchange (LMX)\n- Focuses on the **relationship between leaders and followers** ("in" vs "out" groups).\n\n## 9. Servant-leadership\n- **Leading by example.** The leader serves the team.`,
     quiz: [
       { q: "Which theory says 'good leaders are born, not made'?", options: ["Behavioural", "Trait", "Contingency", "Transformational"], answer: 1, explain: "Trait theory assumes leaders are born with the right characteristics." },
       { q: "A leader who inspires employees to innovate and create change is:", options: ["Transactional", "Servant", "Transformational", "Autocratic"], answer: 2, explain: "Transformational leadership encourages innovation." },
@@ -247,36 +100,8 @@ This chapter introduces what entrepreneurship is, why it matters to a country's 
     ]
   },
   {
-    id: "ch10",
-    module: "Retail Operations Management 1",
-    number: "10",
-    title: "Motivation",
-    summary: "Why motivation matters, plus the six main motivational theories.",
-    notes: `## What is motivation?
-> **Definition:** The **enthusiasm, energy level, promise and creativity** an employee brings to the organisation daily.
-
-## 1. Maslow's hierarchy of needs
-1. **Physiological** (food, water)
-2. **Safety** (safe and secure)
-3. **Social** (loved, accepted)
-4. **Esteem** (recognition)
-5. **Self-actualisation** (full potential)
-
-## 2. Herzberg's two-factor theory
-- **Motivators** (Sense of achievement, Recognition)
-- **Hygiene factors** (Working conditions, Pay)
-
-## 3. Vroom's theory — "carrot and stick"
-- Motivated by **rewards or consequences**.
-
-## 4. Adams' equity theory (1965)
-- People compare their input/outcome ratio to others.
-
-## 5. Alderfer's ERG theory
-- **E**xistence, **R**elatedness, **G**rowth. Needs can be met in any order.
-
-## 6. McClelland's needs theory
-- Need for achievement, Need for affiliation, Need for power.`,
+    id: "ch10", module: "Retail Operations Management 1", number: "10", title: "Motivation", summary: "Why motivation matters, plus the six main motivational theories.",
+    notes: `## What is motivation?\n> **Definition:** The **enthusiasm, energy level, promise and creativity** an employee brings to the organisation daily.\n\n## 1. Maslow's hierarchy of needs\n1. **Physiological** (food, water)\n2. **Safety** (safe and secure)\n3. **Social** (loved, accepted)\n4. **Esteem** (recognition)\n5. **Self-actualisation** (full potential)\n\n## 2. Herzberg's two-factor theory\n- **Motivators** (Sense of achievement, Recognition)\n- **Hygiene factors** (Working conditions, Pay)\n\n## 3. Vroom's theory — "carrot and stick"\n- Motivated by **rewards or consequences**.\n\n## 4. Adams' equity theory (1965)\n- People compare their input/outcome ratio to others.\n\n## 5. Alderfer's ERG theory\n- **E**xistence, **R**elatedness, **G**rowth. Needs can be met in any order.\n\n## 6. McClelland's needs theory\n- Need for achievement, Need for affiliation, Need for power.`,
     quiz: [
       { q: "In Maslow's hierarchy, which need comes directly above safety?", options: ["Physiological", "Social", "Esteem", "Self-actualisation"], answer: 1, explain: "Order: Physiological → Safety → Social → Esteem → Self-actualisation." },
       { q: "In Herzberg's theory, which is a hygiene factor?", options: ["Recognition", "Responsibility", "Working conditions", "Achievement"], answer: 2, explain: "Working conditions are a hygiene factor." },
@@ -294,21 +119,8 @@ This chapter introduces what entrepreneurship is, why it matters to a country's 
     ]
   },
   {
-    id: "ch11",
-    module: "Retail Operations Management 1",
-    number: "11",
-    title: "Stakeholders",
-    summary: "The six stakeholder categories, their expectations, and their influence.",
-    notes: `## What is a stakeholder?
-> **Definition:** A stakeholder has an interest in a company and can either **affect** or be **affected by** a business's operations.
-
-## The six stakeholder categories
-1. **Owners:** provide capital. Expect profits, ROI.
-2. **Customers:** buy products. Expect good prices, quality. Influence: stop buying, bad word of mouth.
-3. **Employees:** provide labour. Expect fair pay, security. Influence: strike, go-slow, quiet quitting.
-4. **Community:** support business. Expect funding. Influence: good word of mouth, or looting.
-5. **Suppliers:** make goods available. Expect timely payments. Influence: stop supplying (e.g., Nando's chicken shortage).
-6. **Government:** SARS, SAPS, CCMA. Expect taxes. Influence: fines, cancel licences.`,
+    id: "ch11", module: "Retail Operations Management 1", number: "11", title: "Stakeholders", summary: "The six stakeholder categories, their expectations, and their influence.",
+    notes: `## What is a stakeholder?\n> **Definition:** A stakeholder has an interest in a company and can either **affect** or be **affected by** a business's operations.\n\n## The six stakeholder categories\n1. **Owners:** provide capital. Expect profits, ROI.\n2. **Customers:** buy products. Expect good prices, quality. Influence: stop buying, bad word of mouth.\n3. **Employees:** provide labour. Expect fair pay, security. Influence: strike, go-slow, quiet quitting.\n4. **Community:** support business. Expect funding. Influence: good word of mouth, or looting.\n5. **Suppliers:** make goods available. Expect timely payments. Influence: stop supplying (e.g., Nando's chicken shortage).\n6. **Government:** SARS, SAPS, CCMA. Expect taxes. Influence: fines, cancel licences.`,
     quiz: [
       { q: "Which is NOT one of the six stakeholder categories covered?", options: ["Owners", "Competitors", "Suppliers", "Community"], answer: 1, explain: "Competitors are not listed." },
       { q: "Which is an expectation of owners?", options: ["Good working conditions", "Maximum ROI and growing business value", "Fair negotiation", "Tax compliance"], answer: 1, explain: "Owners expect profits, maximum ROI, growth." },
@@ -326,32 +138,8 @@ This chapter introduces what entrepreneurship is, why it matters to a country's 
     ]
   },
   {
-    id: "ch12",
-    module: "Retail Operations Management 1",
-    number: "12",
-    title: "Operational Risks",
-    summary: "Ten types of risk, shrinkage and shoplifting in depth, and the five-step risk management process.",
-    notes: `## The ten operational risks
-1. Shoplifting and theft, 2. Employee theft, 3. Fraud and scams, 4. Inventory shortages, 5. Cybersecurity threats, 6. Supply chain disruptions, 7. Competition, 8. Health and safety incidents, 9. Natural disasters, 10. Sabotage.
-
-## Shrinkage
-> **Definition:** The reduction of inventory value due to employee or customer theft.
-- Types: Customer theft, Employee theft, POS mistakes, Supplier short delivery, Miscounting.
-
-## Shoplifting
-- **Methods:** Working in pairs, hiding products, price switching, grab and run.
-- **Prevention:** Cameras, mirrors, RFID tags, customer service, layout optimization.
-
-## Who cannot be legally prosecuted
-- Children under 12 (presumed no criminal capacity).
-- Children 12–14 (only if State proves they understood wrongfulness).
-
-## Risk management process
-1. Identifying risks
-2. Evaluating techniques
-3. Selecting a technique
-4. Implementing
-5. Monitoring effectiveness`,
+    id: "ch12", module: "Retail Operations Management 1", number: "12", title: "Operational Risks", summary: "Ten types of risk, shrinkage and shoplifting in depth, and the five-step risk management process.",
+    notes: `## The ten operational risks\n1. Shoplifting and theft, 2. Employee theft, 3. Fraud and scams, 4. Inventory shortages, 5. Cybersecurity threats, 6. Supply chain disruptions, 7. Competition, 8. Health and safety incidents, 9. Natural disasters, 10. Sabotage.\n\n## Shrinkage\n> **Definition:** The reduction of inventory value due to employee or customer theft.\n- Types: Customer theft, Employee theft, POS mistakes, Supplier short delivery, Miscounting.\n\n## Shoplifting\n- **Methods:** Working in pairs, hiding products, price switching, grab and run.\n- **Prevention:** Cameras, mirrors, RFID tags, customer service, layout optimization.\n\n## Who cannot be legally prosecuted\n- Children under 12 (presumed no criminal capacity).\n- Children 12–14 (only if State proves they understood wrongfulness).\n\n## Risk management process\n1. Identifying risks\n2. Evaluating techniques\n3. Selecting a technique\n4. Implementing\n5. Monitoring effectiveness`,
     quiz: [
       { q: "Shrinkage is best defined as:", options: ["Theft by customers only", "Reduction of inventory value due to employee or customer theft", "Damage from natural disasters", "Loss from supplier delays"], answer: 1, explain: "Shrinkage = reduction of inventory value." },
       { q: "Swapping price tags on products is called:", options: ["Grab and run", "Price switching", "Hiding products", "Working in pairs"], answer: 1, explain: "Price switching = swapping tags so a more expensive item is charged less." },
@@ -369,32 +157,8 @@ This chapter introduces what entrepreneurship is, why it matters to a country's 
     ]
   },
   {
-    id: "ch13",
-    module: "Retail Operations Management 1",
-    number: "13",
-    title: "Health and Safety at Work",
-    summary: "The OHSA 1993 framework, employer and employee duties, and stress management.",
-    notes: `## The legal framework
-> **The Occupational Health and Safety Act (OHSA), 1993** requires retailers to maintain a work environment that is safe and without risk to health.
-
-## The three key terms
-- **Hazard:** Anything with potential to cause harm.
-- **Risk:** The likelihood the hazard will cause harm.
-- **Control:** Measures to decrease the likelihood or consequences.
-
-## Employer's seven duties
-1. Identify risks, 2. Establish protective methods, 3. Provide info/training, 4. Not permit unsafe work, 5. Ensure obedience, 6. Ensure trained supervision, 7. Appoint reps.
-
-## Health and Safety Representatives
-- Required if >20 employees.
-- Shops/offices: 1 per 100.
-- Other workplaces: 1 per 50.
-
-## Employee duties
-1. Care for own/others' safety, 2. No "playing", 3. Obey rules, 4. Co-operate, 5. Give info to inspectors, 6. Report unsafe conditions.
-
-## Stress management
-- **Physical** (headaches), **Behavioural** (withdrawal), **Cognitive** (poor concentration), **Emotional** (anxiety).`,
+    id: "ch13", module: "Retail Operations Management 1", number: "13", title: "Health and Safety at Work", summary: "The OHSA 1993 framework, employer and employee duties, and stress management.",
+    notes: `## The legal framework\n> **The Occupational Health and Safety Act (OHSA), 1993** requires retailers to maintain a work environment that is safe and without risk to health.\n\n## The three key terms\n- **Hazard:** Anything with potential to cause harm.\n- **Risk:** The likelihood the hazard will cause harm.\n- **Control:** Measures to decrease the likelihood or consequences.\n\n## Employer's seven duties\n1. Identify risks, 2. Establish protective methods, 3. Provide info/training, 4. Not permit unsafe work, 5. Ensure obedience, 6. Ensure trained supervision, 7. Appoint reps.\n\n## Health and Safety Representatives\n- Required if >20 employees.\n- Shops/offices: 1 per 100.\n- Other workplaces: 1 per 50.\n\n## Employee duties\n1. Care for own/others' safety, 2. No "playing", 3. Obey rules, 4. Co-operate, 5. Give info to inspectors, 6. Report unsafe conditions.\n\n## Stress management\n- **Physical** (headaches), **Behavioural** (withdrawal), **Cognitive** (poor concentration), **Emotional** (anxiety).`,
     quiz: [
       { q: "A wet floor is best described as a:", options: ["Risk", "Hazard", "Control", "Standard"], answer: 1, explain: "A hazard is anything with potential to cause harm." },
       { q: "Which Act governs health and safety at work in South Africa?", options: ["OHSA 1993", "BCEA 1997", "LRA 1995", "EEA 1998"], answer: 0, explain: "OHSA = Occupational Health and Safety Act, 1993." },
@@ -416,29 +180,8 @@ This chapter introduces what entrepreneurship is, why it matters to a country's 
      MODULE 2: RETAILING 1
      ========================================= */
   {
-    id: "t01",
-    module: "Retailing 1",
-    number: "Topic 1",
-    title: "Customer Segments & Target Markets",
-    summary: "How markets are divided into groups to better target marketing efforts.",
-    notes: `## The Market & Target Market
-* **Market:** Consists of all the consumers who purchase specific goods and services.
-* **Target Market:** A group of people to whom a firm decides to direct its marketing efforts.
-
-## Customer Segmentation
-* **Definition:** The process of dividing a market into distinct customer groups that share similar characteristics.
-* **Kotler's Definition:** Sub-dividing a market into distinct and homogenous subgroups.
-
-## The Four Main Bases for Segmentation:
-1. **Profile (Demographic/Geographic):** Age, gender, income.
-2. **Behavioural:** Benefits sought, purchase occasion, usage rate.
-3. **Psychographic:** Lifestyle, personality.
-4. **Geographic:** Where the customer lives.
-
-## Benefits of Segmentation:
-* Product development and customized marketing programs.
-* Focus marketing on customers and build loyal relationships.
-* Improve customer service and become more competitive.`,
+    id: "t01", module: "Retailing 1", number: "Topic 1", title: "Customer Segments & Target Markets", summary: "How markets are divided into groups to better target marketing efforts.",
+    notes: `## The Market & Target Market\n* **Market:** Consists of all the consumers who purchase specific goods and services.\n* **Target Market:** A group of people to whom a firm decides to direct its marketing efforts.\n\n## Customer Segmentation\n* **Definition:** The process of dividing a market into distinct customer groups that share similar characteristics.\n* **Kotler's Definition:** Sub-dividing a market into distinct and homogenous subgroups.\n\n## The Four Main Bases for Segmentation:\n1. **Profile (Demographic/Geographic):** Age, gender, income.\n2. **Behavioural:** Benefits sought, purchase occasion, usage rate.\n3. **Psychographic:** Lifestyle, personality.\n4. **Geographic:** Where the customer lives.\n\n## Benefits of Segmentation:\n* Product development and customized marketing programs.\n* Focus marketing on customers and build loyal relationships.\n* Improve customer service and become more competitive.`,
     quiz: [
       { q: "What is a target market?", options: ["A group of people a firm decides to direct its marketing efforts to", "The entire population of a country", "The competitors in a specific area", "A list of all products in a store"], answer: 0, explain: "A target market is the specific group a business aims its marketing at." },
       { q: "Customer segmentation is the process of dividing a market into:", options: ["Random groups", "Distinct groups sharing similar characteristics", "Competitor groups", "Price categories"], answer: 1, explain: "Segmentation divides the market into distinct groups." },
@@ -456,29 +199,8 @@ This chapter introduces what entrepreneurship is, why it matters to a country's 
     ]
   },
   {
-    id: "t02",
-    module: "Retailing 1",
-    number: "Topic 2",
-    title: "Customer Service & Complaints",
-    summary: "The importance of good service and identifying customer emotions during complaints.",
-    notes: `## What is Customer Service?
-* The support and advice provided by a business to those people who buy or use its products.
-* **Importance:** Builds loyalty, encourages repeat purchases, differentiates from competitors.
-* **Types:** In-store assistance, online support, after-sales service.
-* **Customer Expectations:** Fast response, personal attention, product knowledge, respect.
-* **Measuring Service Quality:** Surveys, mystery shoppers, Net Promoter Score (NPS).
-
-## Handling Complaints (Identifying Emotions)
-* *Scenario 1:* Broken toy for a child.
-  * **Emotion:** Upset, Angry, Frustrated.
-* *Scenario 2:* Cream is off while preparing a dessert with guests waiting.
-  * **Emotion:** Panicked, Stressed, Embarrassed.
-* *Scenario 3:* Wrong change, told to wait, supervisor dismisses her.
-  * **Emotion:** Frustrated, Ignored, Angry.
-* *Scenario 4:* Promotional product not available, travelled far.
-  * **Emotion:** Disappointed, Frustrated.
-* *Scenario 5:* Price increased, assistant not interested to assist.
-  * **Emotion:** Angry, Ignored, Confused.`,
+    id: "t02", module: "Retailing 1", number: "Topic 2", title: "Customer Service & Complaints", summary: "The importance of good service and identifying customer emotions during complaints.",
+    notes: `## What is Customer Service?\n* The support and advice provided by a business to those people who buy or use its products.\n* **Importance:** Builds loyalty, encourages repeat purchases, differentiates from competitors.\n* **Types:** In-store assistance, online support, after-sales service.\n* **Customer Expectations:** Fast response, personal attention, product knowledge, respect.\n* **Measuring Service Quality:** Surveys, mystery shoppers, Net Promoter Score (NPS).\n\n## Handling Complaints (Identifying Emotions)\n* *Scenario 1:* Broken toy for a child.\n  * **Emotion:** Upset, Angry, Frustrated.\n* *Scenario 2:* Cream is off while preparing a dessert with guests waiting.\n  * **Emotion:** Panicked, Stressed, Embarrassed.\n* *Scenario 3:* Wrong change, told to wait, supervisor dismisses her.\n  * **Emotion:** Frustrated, Ignored, Angry.\n* *Scenario 4:* Promotional product not available, travelled far.\n  * **Emotion:** Disappointed, Frustrated.\n* *Scenario 5:* Price increased, assistant not interested to assist.\n  * **Emotion:** Angry, Ignored, Confused.`,
     quiz: [
       { q: "What is customer service?", options: ["The process of manufacturing goods", "The support and advice provided by a business to buyers/users", "A type of marketing advertisement", "The financial record of a store"], answer: 1, explain: "Customer service is the support and advice provided to buyers." },
       { q: "Which of the following is a type of customer service?", options: ["In-store assistance", "After-sales service", "Online support", "All of the above"], answer: 3, explain: "All are valid types." },
@@ -496,34 +218,8 @@ This chapter introduces what entrepreneurship is, why it matters to a country's 
     ]
   },
   {
-    id: "t03",
-    module: "Retailing 1",
-    number: "Topic 3",
-    title: "The Selling Process",
-    summary: "The 9 steps of a sale, types of selling, FAB, and closing techniques.",
-    notes: `## Types of Selling Processes:
-1. Self-service, 2. Limited service, 3. Full service.
-
-## The 9-Step Sales Process:
-1. **Preparing:** Equipment, product knowledge.
-2. **Approaching:** Initiate a relationship. "You never get a second chance to make a good first impression."
-3. **Getting information:** Ask questions, listen carefully.
-4. **Giving information:** Use **FAB**:
-   * *Features:* Physical characteristics.
-   * *Advantages:* What makes it unique.
-   * *Benefits:* The satisfaction the customer gains.
-5. **Identifying and overcoming obstacles:** Real, Misinformed, Emotional, Delaying.
-6. **Dealing with offers & terms:** Credit (Hire Purchase).
-7. **Using closing techniques:** Assumptive, either/or, reflexive, summary, ask for it, third party, inducement.
-8. **Completing paperwork:** Cash, card, credit.
-9. **Implementing after-sales follow-up.**
-
-## Bob Phibbs' 5 Steps to Closing Quickly:
-1. **Engage.**
-2. **Establish Trust.**
-3. **Address Concerns.**
-4. **Demonstrate Value:** Focus on what the product provides.
-5. **Closing Organically:** Suggest complimentary items (add-ons).`,
+    id: "t03", module: "Retailing 1", number: "Topic 3", title: "The Selling Process", summary: "The 9 steps of a sale, types of selling, FAB, and closing techniques.",
+    notes: `## Types of Selling Processes:\n1. Self-service, 2. Limited service, 3. Full service.\n\n## The 9-Step Sales Process:\n1. **Preparing:** Equipment, product knowledge.\n2. **Approaching:** Initiate a relationship. "You never get a second chance to make a good first impression."\n3. **Getting information:** Ask questions, listen carefully.\n4. **Giving information:** Use **FAB**:\n   * *Features:* Physical characteristics.\n   * *Advantages:* What makes it unique.\n   * *Benefits:* The satisfaction the customer gains.\n5. **Identifying and overcoming obstacles:** Real, Misinformed, Emotional, Delaying.\n6. **Dealing with offers & terms:** Credit (Hire Purchase).\n7. **Using closing techniques:** Assumptive, either/or, reflexive, summary, ask for it, third party, inducement.\n8. **Completing paperwork:** Cash, card, credit.\n9. **Implementing after-sales follow-up.**\n\n## Bob Phibbs' 5 Steps to Closing Quickly:\n1. **Engage.**\n2. **Establish Trust.**\n3. **Address Concerns.**\n4. **Demonstrate Value:** Focus on what the product provides.\n5. **Closing Organically:** Suggest complimentary items (add-ons).`,
     quiz: [
       { q: "Which of the following is a type of selling process?", options: ["Self-service", "Full service", "Limited service", "All of the above"], answer: 3, explain: "All three are types of selling processes." },
       { q: "What is the first step in the 9-step sales process?", options: ["Approaching the customer", "Preparing for the sale", "Overcoming obstacles", "Completing paperwork"], answer: 1, explain: "Step 1 is preparing for the sale." },
@@ -541,32 +237,8 @@ This chapter introduces what entrepreneurship is, why it matters to a country's 
     ]
   },
   {
-    id: "t04",
-    module: "Retailing 1",
-    number: "Topic 4",
-    title: "Retail Location",
-    summary: "Why location matters and the 5-step process of choosing one.",
-    notes: `## Definition
-Retail location refers to the geographical place where a retail business is established. 
-
-## Importance of Location:
-* Determines customer accessibility.
-* Affects foot traffic and visibility.
-* Influences cost (rent, utilities, taxes).
-
-## Types of Retail Locations:
-1. Central Business District (CBD)
-2. Shopping Centers and Malls
-3. Freestanding Sites
-4. Neighborhood Centers
-5. Online Retail Locations
-
-## The 5-Step Location Process:
-1. Market research and data analysis.
-2. Identification of potential sites.
-3. Site evaluation and feasibility study.
-4. Financial analysis and budgeting.
-5. Final selection and negotiation.`,
+    id: "t04", module: "Retailing 1", number: "Topic 4", title: "Retail Location", summary: "Why location matters and the 5-step process of choosing one.",
+    notes: `## Definition\nRetail location refers to the geographical place where a retail business is established. \n\n## Importance of Location:\n* Determines customer accessibility.\n* Affects foot traffic and visibility.\n* Influences cost (rent, utilities, taxes).\n\n## Types of Retail Locations:\n1. Central Business District (CBD)\n2. Shopping Centers and Malls\n3. Freestanding Sites\n4. Neighborhood Centers\n5. Online Retail Locations\n\n## The 5-Step Location Process:\n1. Market research and data analysis.\n2. Identification of potential sites.\n3. Site evaluation and feasibility study.\n4. Financial analysis and budgeting.\n5. Final selection and negotiation.`,
     quiz: [
       { q: "What does retail location refer to?", options: ["The type of products sold", "The geographical place where a business is established", "The price of the products", "The store's website"], answer: 1, explain: "Retail location refers to the geographical place." },
       { q: "Which of the following is a type of retail location?", options: ["Central Business District (CBD)", "Freestanding Sites", "Online E-commerce", "All of the above"], answer: 3, explain: "All are valid retail location types." },
@@ -584,31 +256,8 @@ Retail location refers to the geographical place where a retail business is esta
     ]
   },
   {
-    id: "t05",
-    module: "Retailing 1",
-    number: "Topic 5",
-    title: "Retail Merchandising",
-    summary: "Planning, buying, and selling products effectively.",
-    notes: `## Definition
-Retail merchandising refers to the planning, buying, and selling of products in a retail setting.
-
-## 5 Key Elements of Merchandising:
-1. Product assortment
-2. Pricing strategy
-3. Visual merchandising
-4. Inventory management
-5. Promotion and advertising
-
-## Visual Merchandising:
-* Display techniques to attract customers (window displays, store layout, signage, lighting).
-* Aims to maximize product visibility and appeal.
-
-## The Merchandising Process:
-1. Understanding customer needs.
-2. Planning merchandise assortment.
-3. Buying and sourcing products.
-4. Pricing and placing merchandise.
-5. Monitoring and adjusting based on performance.`,
+    id: "t05", module: "Retailing 1", number: "Topic 5", title: "Retail Merchandising", summary: "Planning, buying, and selling products effectively.",
+    notes: `## Definition\nRetail merchandising refers to the planning, buying, and selling of products in a retail setting.\n\n## 5 Key Elements of Merchandising:\n1. Product assortment\n2. Pricing strategy\n3. Visual merchandising\n4. Inventory management\n5. Promotion and advertising\n\n## Visual Merchandising:\n* Display techniques to attract customers (window displays, store layout, signage, lighting).\n* Aims to maximize product visibility and appeal.\n\n## The Merchandising Process:\n1. Understanding customer needs.\n2. Planning merchandise assortment.\n3. Buying and sourcing products.\n4. Pricing and placing merchandise.\n5. Monitoring and adjusting based on performance.`,
     quiz: [
       { q: "What is retail merchandising?", options: ["Only the visual display of products", "The planning, buying, and selling of products", "The accounting process of a store", "Hiring and firing staff"], answer: 1, explain: "It involves planning, buying, and selling." },
       { q: "Which of these is a key element of merchandising?", options: ["Product assortment", "Pricing strategy", "Visual merchandising", "All of the above"], answer: 3, explain: "All are key elements." },
@@ -626,43 +275,8 @@ Retail merchandising refers to the planning, buying, and selling of products in 
     ]
   },
   {
-    id: "t06",
-    module: "Retailing 1",
-    number: "Topic 6",
-    title: "Township Retailing",
-    summary: "The unique characteristics, challenges, and opportunities of retail in South African townships.",
-    notes: `## What is Township Retailing?
-* Retail activities in township areas.
-* Focuses on accessibility, affordability, and convenience.
-
-## Characteristics of Townships:
-* High population density.
-* Lower to middle income.
-* Mix of informal and formal trade.
-
-## Types of Retailers:
-* Spaza shops
-* Street vendors
-* Supermarkets (Shoprite, Checkers)
-* Malls
-
-## Consumer Profile & Buying Behaviour:
-* Price-sensitive customers.
-* Frequent, small purchases.
-* Dependence on public transport.
-* Focus on promotions.
-* Preference for smaller pack sizes.
-
-## Retail Challenges:
-* Security issues.
-* Infrastructure limitations.
-* Competition from informal traders.
-
-## Retail Strategies & Marketing:
-* Affordable pricing.
-* Localised products.
-* Community engagement.
-* Use of radio, flyers, word-of-mouth.`,
+    id: "t06", module: "Retailing 1", number: "Topic 6", title: "Township Retailing", summary: "The unique characteristics, challenges, and opportunities of retail in South African townships.",
+    notes: `## What is Township Retailing?\n* Retail activities in township areas.\n* Focuses on accessibility, affordability, and convenience.\n\n## Characteristics of Townships:\n* High population density.\n* Lower to middle income.\n* Mix of informal and formal trade.\n\n## Types of Retailers:\n* Spaza shops\n* Street vendors\n* Supermarkets (Shoprite, Checkers)\n* Malls\n\n## Consumer Profile & Buying Behaviour:\n* Price-sensitive customers.\n* Frequent, small purchases.\n* Dependence on public transport.\n* Focus on promotions.\n* Preference for smaller pack sizes.\n\n## Retail Challenges:\n* Security issues.\n* Infrastructure limitations.\n* Competition from informal traders.\n\n## Retail Strategies & Marketing:\n* Affordable pricing.\n* Localised products.\n* Community engagement.\n* Use of radio, flyers, word-of-mouth.`,
     quiz: [
       { q: "What is township retailing focused on?", options: ["Luxury goods", "Accessibility, affordability, and convenience", "Online shopping only", "International exports"], answer: 1, explain: "It focuses on accessibility, affordability, and convenience." },
       { q: "Which of these is a characteristic of townships?", options: ["Low population density", "High population density", "Very high income", "No informal trade"], answer: 1, explain: "Townships have high population density." },
@@ -680,36 +294,8 @@ Retail merchandising refers to the planning, buying, and selling of products in 
     ]
   },
   {
-    id: "t07",
-    module: "Retailing 1",
-    number: "Topic 7",
-    title: "Consumer Protection Legislation",
-    summary: "The Consumer Protection Act (CPA) and the Electronic Communications Act.",
-    notes: `## The Consumer:
-* Someone who uses goods or services supplied by another party.
-
-## Customer Rights:
-Right to return unwanted goods, right to safety, right to accurate information, right not to be misled, right to be heard, right to redress, right to choose.
-
-## The Retailer's Responsibilities:
-* No misleading trade descriptions.
-* No misleading advertising about availability or price.
-* No displaying of goods without prices.
-* Give customers a record (till slip).
-* Have procedures to return/replace/refund.
-* Train staff on friendly service.
-
-## The Complaint Process:
-1. Company contacted for response.
-2. Reference number given.
-3. Response sent to all parties.
-4. If unresolved, conciliation within 10 days.
-5. Independent mediator resolves it.
-6. Consumer Tribunal (final authority).
-
-## The Electronic Communications Act:
-* Regulates how retailers communicate electronically.
-* Customers may opt-out of direct marketing.`,
+    id: "t07", module: "Retailing 1", number: "Topic 7", title: "Consumer Protection Legislation", summary: "The Consumer Protection Act (CPA) and the Electronic Communications Act.",
+    notes: `## The Consumer:\n* Someone who uses goods or services supplied by another party.\n\n## Customer Rights:\nRight to return unwanted goods, right to safety, right to accurate information, right not to be misled, right to be heard, right to redress, right to choose.\n\n## The Retailer's Responsibilities:\n* No misleading trade descriptions.\n* No misleading advertising about availability or price.\n* No displaying of goods without prices.\n* Give customers a record (till slip).\n* Have procedures to return/replace/refund.\n* Train staff on friendly service.\n\n## The Complaint Process:\n1. Company contacted for response.\n2. Reference number given.\n3. Response sent to all parties.\n4. If unresolved, conciliation within 10 days.\n5. Independent mediator resolves it.\n6. Consumer Tribunal (final authority).\n\n## The Electronic Communications Act:\n* Regulates how retailers communicate electronically.\n* Customers may opt-out of direct marketing.`,
     quiz: [
       { q: "Who is a consumer?", options: ["The person selling the goods", "Someone who uses goods/services supplied by another party", "The manager of the store", "The government"], answer: 1, explain: "A consumer uses goods/services supplied by another party." },
       { q: "What does the CPA say about displayed goods with a price?", options: ["The retailer is making an offer", "The customer is making an offer", "It is just decoration", "It means the item is out of stock"], answer: 0, explain: "Displaying with a price is making an offer." },
@@ -727,32 +313,8 @@ Right to return unwanted goods, right to safety, right to accurate information, 
     ]
   },
   {
-    id: "t08",
-    module: "Retailing 1",
-    number: "Topic 8",
-    title: "Time Management",
-    summary: "Setting SMART goals, prioritizing, and using tools to manage time effectively.",
-    notes: `## Goal Setting (SMART):
-* **S**pecific
-* **M**easurable
-* **A**ttainable
-* **R**elevant
-* **T**ime-bound
-
-## Time Management System:
-1. **Identify:** Find a system that works for you.
-2. **Create:** Create a personal schedule.
-3. **Account:** Account for your job and other commitments.
-4. **Check:** Strive for balance.
-
-## Benefits:
-* Reduces stress and lets you work optimally.
-
-## The Eisenhower Matrix:
-1. **Urgent & Important:** Do first.
-2. **Important, Not Urgent:** Schedule.
-3. **Urgent, Less Important:** Delegate.
-4. **Neither Urgent nor Important:** Don't do at all.`,
+    id: "t08", module: "Retailing 1", number: "Topic 8", title: "Time Management", summary: "Setting SMART goals, prioritizing, and using tools to manage time effectively.",
+    notes: `## Goal Setting (SMART):\n* **S**pecific\n* **M**easurable\n* **A**ttainable\n* **R**elevant\n* **T**ime-bound\n\n## Time Management System:\n1. **Identify:** Find a system that works for you.\n2. **Create:** Create a personal schedule.\n3. **Account:** Account for your job and other commitments.\n4. **Check:** Strive for balance.\n\n## Benefits:\n* Reduces stress and lets you work optimally.\n\n## The Eisenhower Matrix:\n1. **Urgent & Important:** Do first.\n2. **Important, Not Urgent:** Schedule.\n3. **Urgent, Less Important:** Delegate.\n4. **Neither Urgent nor Important:** Don't do at all.`,
     quiz: [
       { q: "What does the 'S' in SMART goals stand for?", options: ["Specific", "Simple", "Standard", "Slow"], answer: 0, explain: "S stands for Specific." },
       { q: "What does the 'T' in SMART goals stand for?", options: ["Tough", "Time-bound", "Target", "Team"], answer: 1, explain: "T stands for Time-bound." },
@@ -768,5 +330,125 @@ Right to return unwanted goods, right to safety, right to accurate information, 
       { q: "What is the Eisenhower Matrix?", a: "A 4-quadrant tool used to prioritize tasks based on urgency and importance." },
       { q: "Why is a time management system important?", a: "It helps you stay accountable and balance your commitments." }
     ]
-  }
-];
+  },
+
+  /* =========================================
+     MODULE 3: COMMUNICATION
+     ========================================= */
+  {
+    id: "c01", module: "Communication", number: "Topic 1", title: "The Communication Process & Models", summary: "The core elements of how messages are sent and received, and the three main types of communication models.",
+    notes: `## What is Communication?\n* The process of creating meaning between two or more people through the expression and interpretation of messages (Cleary, 2003).\n* Comes from the Latin word *communicare*, meaning "to make common".\n\n## The 8 Core Elements of the Communication Process:\n1. **Sender/Source:** The person initiating the message.\n2. **Encoding:** Putting the message into a code (language, symbols).\n3. **Message:** The information being conveyed.\n4. **Channel/Medium:** How the message is transmitted (email, face-to-face, phone).\n5. **Receiver:** The person receiving the message.\n6. **Decoding:** Interpreting and understanding the message.\n7. **Feedback:** The receiver's response to the message.\n8. **Interference/Noise:** Anything that distorts the message.\n\n## Three Main Types of Communication Models:\n1. **Linear Models:** One-way communication (sender to receiver). No feedback loop.\n   * *Example:* Laswell's model (Who says what, in which channel, to whom, with what effect).\n   * *Example:* Shannon-Weaver model (Focuses on reducing "noise").\n2. **Interactive Models:** Two-way communication where the sender and receiver take turns.\n   * *Example:* Schramm's model (Emphasizes shared experiences for meaning to be understood).\n3. **Transactional Models:** Simultaneous, continuous exchange where both parties act as sender and receiver at the same time. Context is highly important.\n   * *Example:* Barnlund's model.\n\n## Why do we communicate? (3 Main Reasons)\n1. To **inform** (e.g., notifying a customer of a price increase).\n2. To **influence** (e.g., advertising to persuade).\n3. To **initiate action** (e.g., getting someone to attend a meeting).`,
+    quiz: [
+      { q: "What is the process of putting a message into a code called?", options: ["Decoding", "Encoding", "Feedback", "Channel"], answer: 1, explain: "Encoding is translating a thought into symbols/words." },
+      { q: "Which model of communication is purely one-way with no feedback loop?", options: ["Transactional model", "Interactive model", "Linear model", "Convergence model"], answer: 2, explain: "Linear models describe one-way communication." },
+      { q: "What is 'noise' in the communication process?", options: ["Loud talking", "The receiver's response", "Any interference that distorts the message", "The channel used"], answer: 2, explain: "Noise is any interference that distorts the message." },
+      { q: "According to Whiting and Davids, which of the following is NOT a main reason we communicate?", options: ["To inform", "To influence", "To initiate action", "To deceive"], answer: 3, explain: "The three reasons are to inform, influence, and initiate action." },
+      { q: "In which communication model do both parties simultaneously act as sender and receiver?", options: ["Linear", "Interactive", "Transactional", "Lasswell's"], answer: 2, explain: "Transactional models view communication as simultaneous and continuous." },
+      { q: "Which model focuses heavily on the concept of shared experiences between the sender and receiver?", options: ["Shannon-Weaver", "Laswell's", "Schramm's", "Berlo's"], answer: 2, explain: "Schramm's model emphasizes shared experience." },
+      { q: "What is the Latin origin of the word 'communication'?", options: ["Communicare (to make common)", "Communis (community)", "Communico (to share)", "Commuto (to change)"], answer: 0, explain: "Communicare means 'to make common'." },
+      { q: "Which element of the communication process involves interpreting the message?", options: ["Encoding", "Decoding", "Feedback", "Channel"], answer: 1, explain: "Decoding is the process of interpreting the message." }
+    ],
+    faq: [
+      { q: "What are the 8 elements of communication?", a: "Sender, Encoding, Message, Channel, Receiver, Decoding, Feedback, and Noise." },
+      { q: "What is the difference between linear and transactional models?", a: "Linear is one-way with no feedback; transactional is simultaneous two-way communication where context matters." },
+      { q: "Why is feedback important?", a: "It shows the sender whether the receiver has understood the message." }
+    ]
+  },
+  {
+    id: "c02", module: "Communication", number: "Topic 2", title: "Organisational Communication & Directional Flows", summary: "How communication flows inside a business (up, down, sideways, diagonal) and formal vs. informal channels.",
+    notes: `## What is Organisational Communication?\n* The process of creating, sharing, and interpreting messages within and outside a workplace to achieve shared goals.\n\n## Internal vs. External Communication:\n1. **Internal:** Communication between members of the organisation (e.g., staff meetings, memos).\n2. **External:** Communication between the organisation and the outside world (e.g., marketing, PR, customer service).\n\n## The 4 Directions of Communication Flow:\n1. **Downward:** Management to employees (e.g., a manager sending an email with new policies, instructions, or feedback).\n2. **Upward:** Employees to management (e.g., submitting a progress report, feedback surveys, or escalating errors).\n3. **Horizontal/Lateral:** Communication between peers at the same hierarchical level (e.g., two department heads coordinating a project).\n4. **Diagonal/Cross-wise:** Communication that cuts across different departments and varying organisational levels (e.g., a marketing specialist speaking directly with a finance manager).\n\n## Formal vs. Informal Channels:\n* **Formal:** Officially sanctioned by the organisation. Highly structured. (e.g., handbooks, official reports, meetings).\n* **Informal:** Spontaneous and unofficial interactions. (e.g., hallway chats, WhatsApp groups). \n* **The Grapevine:** The primary informal network. Rumours and gossip spread here. Management must monitor the grapevine during times of change to prevent panic.`,
+    quiz: [
+      { q: "A manager sending an email with new company policies is an example of:", options: ["Upward communication", "Downward communication", "Horizontal communication", "External communication"], answer: 1, explain: "Downward communication flows from management to staff." },
+      { q: "A till operator escalating a POS error to the floor supervisor is an example of:", options: ["Upward communication", "Downward communication", "Diagonal communication", "Informal communication"], answer: 0, explain: "Upward communication flows from staff to management." },
+      { q: "Communication between two department heads at the same level is called:", options: ["Downward", "Upward", "Horizontal/Lateral", "Diagonal"], answer: 2, explain: "Horizontal communication is peer-to-peer." },
+      { q: "A marketing specialist speaking directly with a finance manager from a different department is:", options: ["Upward", "Diagonal", "Horizontal", "Downward"], answer: 1, explain: "Diagonal communication cuts across departments and levels." },
+      { q: "Which of the following is an informal communication channel?", options: ["A company handbook", "A policy manual", "The grapevine (office gossip)", "An official performance review"], answer: 2, explain: "The grapevine is the informal network." },
+      { q: "What is external communication?", options: ["Communication between departments", "Communication between the organisation and the outside world", "Downward communication", "The grapevine"], answer: 1, explain: "External communication is with outside stakeholders." },
+      { q: "Why is upward communication important?", options: ["It gives employees instructions", "It provides management with feedback and reports", "It spreads rumours", "It advertises products"], answer: 1, explain: "Upward communication provides management with feedback." },
+      { q: "Which communication flow involves managers giving feedback to subordinates?", options: ["Upward", "Downward", "Horizontal", "Diagonal"], answer: 1, explain: "Feedback from manager to employee is downward." }
+    ],
+    faq: [
+      { q: "What are the 4 directions of communication flow?", a: "Downward (management to staff), Upward (staff to management), Horizontal (peer to peer), and Diagonal (across departments and levels)." },
+      { q: "What is the grapevine?", a: "The informal channel of communication where rumours and unofficial information spread." },
+      { q: "What is the difference between internal and external communication?", a: "Internal is within the company; external is with customers, suppliers, and the public." }
+    ]
+  },
+  {
+    id: "c03", module: "Communication", number: "Topic 3", title: "Barriers to Communication", summary: "The five major categories of barriers that prevent a message from being understood, and how to overcome them.",
+    notes: `## The 5 Categories of Barriers:\n1. **Frame of Reference Barriers:**\n   * Aspects include: Attitudes, beliefs, cultural background, education, ego, emotions, IQ, status, and values.\n   * *Example:* A manager with an ego dismisses a good idea from a junior staff member.\n2. **Perceptual Barriers:**\n   * How we view the world based on our education, environment, language, needs, and past experience.\n   * *Example:* Maslow's hierarchy of needs affects perception—a hungry worker cannot focus on a complex task.\n3. **Noise Barriers:**\n   * **Physical Noise:** Actual sounds (e.g., squeaking chair, roadworks).\n   * **Psychological Noise:** Distractions inside the mind (e.g., worrying about a sick child, stress).\n4. **Medium Barriers:**\n   * Choosing the wrong channel for the message.\n   * *Example:* Sending a termination notice via SMS instead of a face-to-face meeting.\n5. **Feedback Barriers:**\n   * Occurs when the sender does not get a response to confirm understanding, or when the feedback is of poor quality.\n\n## Other Common Barriers:\n* Insensitive use of language (jargon).\n* Information overload (messages too packed with data).\n* Filtering (withholding or altering information).\n* An unsupportive or defensive organisational climate.`,
+    quiz: [
+      { q: "Which of the following is a Frame of Reference barrier?", options: ["A noisy fan in the background", "A manager's ego preventing them from listening", "A bad internet connection", "Sending an email instead of a letter"], answer: 1, explain: "Ego is part of one's frame of reference." },
+      { q: "A worker who is very hungry struggles to focus on a meeting. This is an example of:", options: ["Perceptual barrier", "Medium barrier", "Frame of reference barrier", "Feedback barrier"], answer: 0, explain: "Needs (hunger) affect perception." },
+      { q: "Worrying about a personal problem while someone is talking to you is an example of:", options: ["Physical noise", "Psychological noise", "Medium barrier", "Feedback barrier"], answer: 1, explain: "Psychological noise is internal distraction." },
+      { q: "Sending a highly complex technical manual to a non-technical employee is an example of a:", options: ["Noise barrier", "Medium barrier (wrong channel/format)", "Feedback barrier", "Frame of reference barrier"], answer: 1, explain: "Choosing the wrong format is a medium barrier." },
+      { q: "If a sender does not ask the receiver to repeat back the instructions, they might suffer from a:", options: ["Feedback barrier", "Perceptual barrier", "Physical noise barrier", "Medium barrier"], answer: 0, explain: "Lack of confirmation is a feedback barrier." },
+      { q: "Which of these is a major barrier to effective communication?", options: ["Using simple language", "Active listening", "Information overload", "Clear feedback"], answer: 2, explain: "Information overload is a major barrier." },
+      { q: "'Filtering' as a barrier means:", options: ["Cleaning the data", "Manipulating or withholding information so it sounds better to the receiver", "Using a water filter", "Encoding the message in a different language"], answer: 1, explain: "Filtering is altering or withholding information." },
+      { q: "Using highly technical jargon with someone outside your field is a:", options: ["Language/Semantic barrier", "Physical noise barrier", "Medium barrier", "Feedback barrier"], answer: 0, explain: "Jargon is a semantic (language) barrier." }
+    ],
+    faq: [
+      { q: "What are the 5 categories of communication barriers?", a: "Frame of reference, perceptual, noise, medium, and feedback." },
+      { q: "What is the difference between physical and psychological noise?", a: "Physical is external sound/environment; psychological is internal distraction (stress, daydreaming)." },
+      { q: "How can we overcome medium barriers?", a: "By choosing the richest channel appropriate for the message (e.g., face-to-face for sensitive topics, email for routine data)." }
+    ]
+  },
+  {
+    id: "c04", module: "Communication", number: "Topic 4", title: "Intercultural & Virtual Communication", summary: "How culture affects communication styles, and the challenges of working in virtual teams.",
+    notes: `## Intercultural Communication:\n* Communication between people of differing cultures.\n* **High-Context Cultures (e.g., Japan):** Rely heavily on implicit communication, non-verbal cues, and reading between the lines. Harmony and "saving face" are crucial.\n* **Low-Context Cultures (e.g., USA, Germany):** Rely on explicit, direct, and literal communication. The task is prioritized over the relationship.\n* **Direct vs. Indirect Feedback:** Some cultures (USA) prefer blunt, direct feedback. Others (Japan) prefer polite, indirect phrasing to avoid embarrassment.\n\n## Ubuntu in South African Retail:\n* "I am because we are."\n* Promotes participatory, community-centric communication over purely transactional top-down directives.\n\n## Challenges in Virtual Teams:\n1. **Loss of Non-Verbal Cues:** Screens hide body language, leading to misread tones.\n2. **Direct vs. Indirect Styles:** Misunderstandings occur when direct feedback is interpreted as rude by indirect cultures.\n3. **Differing Meeting Etiquette:** Punctuality, small talk, and hierarchy vary.\n4. **Asynchronous Friction:** Time zone delays can cause bottlenecks.\n\n## Best Practices for Virtual Teams:\n1. Establish clear norms (response times, tool usage).\n2. Create informal spaces for relationship building.\n3. Use asynchronous options (shared docs) so everyone can contribute.\n4. Keep feedback private (1-on-1) rather than in group chats.`,
+    quiz: [
+      { q: "A culture that relies on implicit communication and reading between the lines is a:", options: ["Low-context culture", "High-context culture", "Direct culture", "Monochronic culture"], answer: 1, explain: "High-context cultures rely on implicit cues." },
+      { q: "Which country is typically a low-context, direct communication culture?", options: ["Japan", "Brazil", "USA", "Saudi Arabia"], answer: 2, explain: "The USA is a low-context, direct culture." },
+      { q: "Why is 'saving face' so important in high-context cultures?", options: ["It shows you are wealthy", "It maintains group harmony and avoids public embarrassment", "It helps you get a promotion", "It is a legal requirement"], answer: 1, explain: "Saving face maintains harmony." },
+      { q: "What is a major challenge of virtual teams?", options: ["Too much body language", "Loss of non-verbal cues leading to misread tones", "It is too easy to communicate", "People talk too much"], answer: 1, explain: "Loss of non-verbal cues is a major challenge." },
+      { q: "How can a manager prevent intercultural misunderstandings in a virtual team?", options: ["Use aggressive language", "Give all feedback in a public group chat", "Give constructive feedback privately via one-on-one messages", "Demand immediate responses 24/7"], answer: 2, explain: "Private feedback prevents loss of face." },
+      { q: "The African philosophy of 'Ubuntu' in communication emphasizes:", options: ["Individual success", "Top-down autocratic rules", "Participatory, community-centric communication", "Strict adherence to jargon"], answer: 2, explain: "Ubuntu emphasizes community-centric communication." },
+      { q: "If a manager from a low-context culture criticizes a developer from a high-context culture in a group chat, the developer might feel:", options: ["Motivated", "Deeply embarrassed and publicly humiliated (loss of face)", "Confused by the language", "Happy about the feedback"], answer: 1, explain: "Public critique causes loss of face in high-context cultures." },
+      { q: "Asynchronous friction in virtual teams happens because:", options: ["Everyone speaks the same language", "Team members span multiple time zones and work schedules", "The internet is too fast", "There is too much face-to-face contact"], answer: 1, explain: "Time zone differences cause asynchronous friction." }
+    ],
+    faq: [
+      { q: "What is the difference between high-context and low-context cultures?", a: "High-context relies on implicit, non-verbal cues and relationships (e.g., Japan). Low-context relies on explicit, direct language and tasks (e.g., USA)." },
+      { q: "What is asynchronous friction?", a: "Delays and communication breakdowns caused by team members working in different time zones or schedules." },
+      { q: "How does Ubuntu apply to retail communication?", a: "It encourages collective problem-solving, face-to-face indabas (meetings), and treating staff with institutional equity rather than cold, top-down rules." }
+    ]
+  },
+  {
+    id: "c05", module: "Communication", number: "Topic 5", title: "Small Group Dynamics & Team Development", summary: "How groups form, the roles people play, and the dangers of groupthink.",
+    notes: `## What is a Small Group?\n* A collection of between 3–12 individuals involved in face-to-face interaction to achieve a common goal (Zeuscher, 1992).\n* Groups have: Goals, Norms, Positions (e.g., chair, treasurer), and Roles.\n\n## Tuckman's Stages of Group Development:\n1. **Forming:** Team acquires ground rules. Members feel like strangers.\n2. **Storming:** Members communicate feelings but resist control. Conflict and hostility arise over roles and tasks.\n3. **Norming:** Members feel part of the team and accept viewpoints. Cohesion builds.\n4. **Performing:** Team works in an open, trusting atmosphere. High synergy.\n5. **Adjourning:** The team conducts an assessment and transitions out.\n\n## Group Conformity & Groupthink:\n* **Conformity:** We naturally bend our opinions to match group standards.\n* **Groupthink:** A dangerous phenomenon where the desire for harmony overrides critical thinking. Conflict is actively discouraged, leading to poor decisions.\n\n## Group Networks:\n1. **Centralised Networks:** Communication flows through one central person. Good for simple tasks, but can bottleneck.\n2. **Decentralised Networks:** Communication flows freely. Better for complex, creative tasks.`,
+    quiz: [
+      { q: "According to Tuckman, which stage is characterized by conflict, power struggles, and resistance?", options: ["Forming", "Storming", "Norming", "Performing"], answer: 1, explain: "The Storming stage is characterized by conflict." },
+      { q: "In which stage do members finally feel part of the team and accept viewpoints?", options: ["Forming", "Storming", "Norming", "Performing"], answer: 2, explain: "The Norming stage is when cohesion builds." },
+      { q: "What is 'Groupthink'?", options: ["Thinking creatively as a team", "The desire for harmony overriding critical thinking and good decisions", "A method of brainstorming", "When the leader thinks for the group"], answer: 1, explain: "Groupthink is prioritizing harmony over critical evaluation." },
+      { q: "Why is groupthink dangerous?", options: ["It encourages conflict", "It ensures everyone is happy", "It leads to poor decisions because alternatives are not considered", "It takes too long"], answer: 2, explain: "Groupthink leads to poor decisions." },
+      { q: "What is a norm in a small group?", options: ["A mathematical average", "The acceptable behaviour and ground rules the group operates under", "The leader's formal title", "A type of network"], answer: 1, explain: "Norms are the group's ground rules." },
+      { q: "Which group network is best for complex, creative tasks?", options: ["Centralised network", "Decentralised network", "Y-pattern network", "Wheel network"], answer: 1, explain: "Decentralised networks are better for complex tasks." },
+      { q: "The 'Forming' stage of Tuckman's model is characterized by:", options: ["High conflict", "High anxiety and polite orientation", "High productivity", "The team disbanding"], answer: 1, explain: "Forming involves polite orientation and anxiety." },
+      { q: "A centralised network (like a wheel) often leads to:", options: ["Free-flowing communication", "Gatekeeping and high reliance on one person", "Too many ideas", "The leader being ignored"], answer: 1, explain: "Centralised networks can cause gatekeeping." }
+    ],
+    faq: [
+      { q: "What are Tuckman's 5 stages of group development?", a: "Forming, Storming, Norming, Performing, and Adjourning." },
+      { q: "What is groupthink?", a: "When a group prioritizes harmony over critical evaluation, leading to poor decisions." },
+      { q: "What is the difference between a centralised and decentralised network?", a: "Centralised funnels communication through one person (good for simple tasks); decentralised allows free flow among all members (good for complex tasks)." }
+    ]
+  },
+  {
+    id: "c06", module: "Communication", number: "Topic 6", title: "Conflict & Conflict Resolution Strategies", summary: "The types of conflict, negotiation, and the Thomas-Kilmann model.",
+    notes: `## What is Conflict?\n* "...expressed struggle between at least two individuals who perceive incompatible goals..." (Frost & Wilmot, 1978).\n* **Negative Conflict:** Decreases energy, prevents meaningful communication.\n* **Positive Conflict:** Brings problems out into the open, clarifies goals, prevents future arguments.\n\n## Types of Conflict:\n1. **Personal Conflict:** Within a person.\n2. **Interpersonal Conflict:** Between individuals.\n3. **Organisational/Functional Conflict:** Between different roles/departments.\n\n## The Thomas-Kilmann Conflict Mode Instrument (TKI):\n1. **Competing (Forcing):** Highly assertive, uncooperative. Win-lose. Good for emergencies.\n2. **Avoiding:** Unassertive, uncooperative. Withdrawing. Good when the issue is trivial.\n3. **Accommodating:** Unassertive, cooperative. Giving in to appease. Good for preserving harmony.\n4. **Compromising:** Moderate assertiveness and cooperation. Each side gives something up (lose-lose). Good for quick temporary fixes.\n5. **Collaborating:** Highly assertive, highly cooperative. Win-win. Takes time but addresses the root cause and builds trust.`,
+    quiz: [
+      { q: "Which conflict type occurs between two departments, like Marketing and Logistics?", options: ["Interpersonal", "Organisational/Functional", "Personal", "Value"], answer: 1, explain: "Organisational conflict occurs between departments." },
+      { q: "In the Thomas-Kilmann model, which style is a 'win-win' approach?", options: ["Competing", "Accommodating", "Collaborating", "Avoiding"], answer: 2, explain: "Collaborating aims for a win-win solution." },
+      { q: "Which conflict resolution style involves giving in to the other party to keep the peace?", options: ["Accommodating", "Competing", "Collaborating", "Compromising"], answer: 0, explain: "Accommodating is giving in to appease." },
+      { q: "A manager who uses their positional power to force a decision is using which style?", options: ["Avoiding", "Competing (Forcing)", "Accommodating", "Mediation"], answer: 1, explain: "Competing uses power to force a decision." },
+      { q: "Which style is characterized by a moderate level of assertiveness and cooperation where both parties give up something?", options: ["Collaborating", "Competing", "Compromising", "Avoiding"], answer: 2, explain: "Compromising is a lose-lose, give-and-take style." },
+      { q: "Why can 'Positive Conflict' be helpful in a group?", options: ["It makes people angry", "It brings problems out into the open to be dealt with", "It wastes time", "It destroys team morale"], answer: 1, explain: "Positive conflict brings issues to the surface." },
+      { q: "What is a key step in the negotiation process *before* the negotiation begins?", options: ["Making an opening offer", "Anticipating the objectives of all parties", "Re-establishing the working relationship", "Walking away"], answer: 1, explain: "Anticipating objectives is a crucial pre-negotiation step." },
+      { q: "If a manager steps in as a neutral third party to help two employees resolve their dispute, this is called:", options: ["Competing", "Mediation", "Avoiding", "Groupthink"], answer: 1, explain: "Mediation involves a neutral third party." }
+    ],
+    faq: [
+      { q: "What are the 5 conflict modes in Thomas-Kilmann?", a: "Competing, Collaborating, Compromising, Avoiding, and Accommodating." },
+      { q: "What is the difference between negative and positive conflict?", a: "Negative drains energy and destroys morale; positive brings issues to the surface and improves future processes." },
+      { q: "What is mediation?", a: "When a neutral third party (like a manager) facilitates a conversation to help two employees resolve their own dispute." }
+    ]
+  },
+  {
+    id: "c07", module: "Communication", number: "Topic 7", title: "Case Study: Group Dynamics & Conflict", summary: "Applying Tuckman, communication barriers, and conflict styles to real-world retail scenarios (VIBE, NOWVA, URBAN) + Full Essay Example.",
+    notes: `## Case 1: VIBE Retail (The Visual Display Group)\n* **Context:** Leader (Chaloe) used emails for a tight-deadline creative project. Newcomer (Sakina) made a mistake. Creative (Mihlali) publicly humiliated Sakina on the sales floor. Chaloe ignored it.\n* **Analysis:** Stuck in **Storming**. Chaloe's use of low-richness medium (email) prevented trust-building. Mihlali used an aggressive style; Sakina withdrew (Avoiding).\n* **Resolution:** Manager must facilitate face-to-face mediation, establish ground rules, and implement short daily check-ins.\n\n## Case 2: NOWVA (Project Nexus App)\n* **Context:** Cross-functional team. Developer/Designer wanted quality; Marketing wanted speed. PM (Seema) forced the timeline ("make it work"). Dev
