@@ -184,12 +184,14 @@ button { font: inherit; cursor: pointer; }
 .content table {
   width: 100%; border-collapse: collapse;
   margin: 16px 0; font-size: 15px;
+  display: block; overflow-x: auto; /* Allows horizontal scroll on mobile */
 }
 .content th, .content td {
   border: 1px solid var(--border);
   padding: 10px 14px;
   text-align: left;
   vertical-align: top;
+  white-space: nowrap; /* Keeps table columns neat */
 }
 .content th { background: var(--bg-soft); font-weight: 600; }
 
