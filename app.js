@@ -60,12 +60,12 @@ function resetProgress() {
 }
 
 function applyTheme() {
-  const theme = localStorage.getItem(THEME_KEY) || "dark"; // default to dark blue
-  document.documentElement.classList.toggle("light", theme === "light");
+  const theme = localStorage.getItem(THEME_KEY) || "light";
+  document.documentElement.classList.toggle("dark", theme === "dark");
 }
 $("#themeBtn").addEventListener("click", () => {
-  const isLight = document.documentElement.classList.toggle("light");
-  localStorage.setItem(THEME_KEY, isLight ? "light" : "dark");
+  const isDark = document.documentElement.classList.toggle("dark");
+  localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
 });
 
 function mdToHtml(md) {
