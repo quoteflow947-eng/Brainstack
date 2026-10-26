@@ -1,5 +1,4 @@
-/* BrainStack — course content.
-   Format: markdown-ish. Rendered by app.js. */
+/* BrainStack — course content. */
 
 const CHAPTERS = [
 {
@@ -154,7 +153,19 @@ Six low-cost ways to test demand:
     { q: "Which of these is a fixed cost?",
       options: ["Raw materials", "Direct wages", "Rent", "Packaging per unit"],
       answer: 2,
-      explain: "Rent does not change with output. Materials and direct wages are variable." }
+      explain: "Rent does not change with output. Materials and direct wages are variable." },
+    { q: "What are the two main ways to measure market size?",
+      options: ["By revenue and by volume", "By profit and by loss", "By feasibility and by viability", "By competitors and by customers"],
+      answer: 0,
+      explain: "Market size can be measured by total revenue (money spent) or by volume (number of units/customers)." },
+    { q: "Which of the following is NOT one of the four feasibility checks?",
+      options: ["Technical feasibility", "Financial feasibility", "Emotional feasibility", "Operational feasibility"],
+      answer: 2,
+      explain: "The four checks are technical, financial, legal, and operational." },
+    { q: "If an entrepreneur is a 'risk-taker', they are willing to take:",
+      options: ["No risks at all", "Unlimited risks", "Calculated risks", "Only financial risks"],
+      answer: 2,
+      explain: "Successful entrepreneurs take *calculated* risks, not blind gambles." }
   ],
   faq: [
     { q: "difference between feasibility and viability", a: "Feasibility asks *can it be done?* — technical, financial, legal and operational checks. Viability asks *will it make money long-term?* — demand, competitive advantage and profit. An idea can be feasible but not viable." },
@@ -361,7 +372,19 @@ Proof of documentation and sources of assistance: attorneys, marketing specialis
     { q: "Which comes FIRST in a business plan?",
       options: ["Financial plan", "Executive summary", "Marketing plan", "Appendices"],
       answer: 1,
-      explain: "The executive summary comes early (after cover page and table of contents)." }
+      explain: "The executive summary comes early (after cover page and table of contents)." },
+    { q: "In the financial plan, how long is the operating cost provision for a retailer?",
+      options: ["1 month", "3 months", "6 months", "12 months"],
+      answer: 1,
+      explain: "The slides state: 6 months for factories and 3 months for retailers." },
+    { q: "A company sells small cans of Coke for singles and 2L bottles for families. This is:",
+      options: ["Demographic segmentation", "Geographic segmentation", "Psychographic segmentation", "Behavioral segmentation"],
+      answer: 3,
+      explain: "It is based on usage rate or occasion (singles vs families) — behavioral segmentation." },
+    { q: "Where should the short CVs of the management team go?",
+      options: ["In the executive summary", "In the main body of the plan", "In the appendices", "On the cover page"],
+      answer: 2,
+      explain: "The main body describes their qualifications; the actual CVs go in the appendix." }
   ],
   faq: [
     { q: "how to calculate gross profit", a: "Gross profit = Revenue − Cost of Goods Sold (COGS). Example: 200,000 − 80,000 = 120,000." },
@@ -520,7 +543,19 @@ The process is cyclical. After corrective action, loop back to measuring perform
     { q: "Standard is 50 cars/month; actual is 40. The gap is:",
       options: ["5", "10", "40", "50"],
       answer: 1,
-      explain: "Gap = Standard − Actual = 50 − 40 = 10." }
+      explain: "Gap = Standard − Actual = 50 − 40 = 10." },
+    { q: "Which level of control asks 'is the organisation performing according to its financial and social goals?'",
+      options: ["Individual level", "Group level", "Organisational level", "Pre-control level"],
+      answer: 2,
+      explain: "The organisational level focuses on overall company goals — financial, operational, social, environmental." },
+    { q: "A standard stating '80% of staff must complete training' is a:",
+      options: ["Quantity standard", "Cost standard", "Behaviour standard", "Quality standard"],
+      answer: 2,
+      explain: "It focuses on staff behaviour/actions, making it a behaviour standard." },
+    { q: "If actual performance EXCEEDS the standard, what should management do?",
+      options: ["Punish the staff for showing off", "Ignore it", "Reinforce and encourage the good performance", "Lower the standard"],
+      answer: 2,
+      explain: "Step 4 of the control process says to reinforce (encourage) performance that matches or exceeds standards." }
   ],
   faq: [
     { q: "what is the control process", a: "Four steps: (1) establish standards, (2) measure actual performance, (3) compare actual with standards, (4) take corrective action (or reinforce good performance)." },
@@ -630,7 +665,19 @@ Ten theories across Parts 1 and 2:
     { q: "Which is NOT one of the five types of power?",
       options: ["Coercive", "Reward", "Charismatic", "Legitimate"],
       answer: 2,
-      explain: "The five are coercive, reward, legitimate, referent and expert." }
+      explain: "The five are coercive, reward, legitimate, referent and expert." },
+    { q: "What is 'situational leadership'?",
+      options: ["Only leading in emergencies", "Using a style that matches the situation, employees, and goals", "Only using the autocratic style", "Leading from home"],
+      answer: 1,
+      explain: "Situational leadership means the leader adapts their style based on the specific situation and people involved." },
+    { q: "A manager using their job title to give orders is using which type of power?",
+      options: ["Coercive", "Reward", "Legitimate", "Referent"],
+      answer: 2,
+      explain: "Legitimate power comes from the position or job title given by the organisation." },
+    { q: "Management asks 'how and when?', while leadership asks:",
+      options: ["Who and where?", "What and why?", "Which and how much?", "When and where?"],
+      answer: 1,
+      explain: "Leadership deals with vision and direction, asking 'what and why?'. Management asks 'how and when?'." }
   ],
   faq: [
     { q: "difference between leadership and management", a: "Leadership is about people and vision — asks 'what and why?', inspires change. Management is about process and execution — asks 'how and when?', plans and controls. Best leaders have some of both." },
@@ -738,7 +785,19 @@ Develops the theories themselves. For each, learn three things: **what it says**
     { q: "A manager who does the same work they ask of their team is demonstrating:",
       options: ["Transactional leadership", "Servant-leadership", "Trait theory", "Autocratic leadership"],
       answer: 1,
-      explain: "Servant-leadership = leading by example and helping." }
+      explain: "Servant-leadership = leading by example and helping." },
+    { q: "Which theory focuses on the skills and behaviours a leader can learn?",
+      options: ["Trait theory", "Leadership competencies theory", "Principle-centred perspective", "Transactional leadership"],
+      answer: 1,
+      explain: "Competency theory says great leaders are made, not born, by developing skills like vision, empathy, and communication." },
+    { q: "Nelson Mandela's leadership style, focused on moral conduct, is an example of:",
+      options: ["Transactional leadership", "Ethical-leadership perspective", "LMX theory", "Behavioural theory"],
+      answer: 1,
+      explain: "Ethical leaders promote and model suitable, moral conduct in their actions." },
+    { q: "Bill Gates rewarding overtime with a good performance review is an example of:",
+      options: ["Transformational leadership", "Transactional leadership", "Trait theory", "Servant-leadership"],
+      answer: 1,
+      explain: "Transactional leadership is based on an exchange — work for pay, or compliance for rewards." }
   ],
   faq: [
     { q: "difference between trait and behavioural theory", a: "Trait theory: leaders are born with certain characteristics. Behavioural theory: leadership is a set of learnable behaviours — study what successful leaders DO." },
@@ -880,7 +939,19 @@ Every person has **one of three main drivers**:
     { q: "Which theory allows needs to be satisfied in any order (unlike Maslow)?",
       options: ["Alderfer's ERG", "Herzberg's two-factor", "Vroom's expectancy", "McClelland's needs"],
       answer: 0,
-      explain: "ERG theory allows different levels of need to be met at any time." }
+      explain: "ERG theory allows different levels of need to be met at any time." },
+    { q: "What is the definition of employee motivation?",
+      options: ["The money employees earn", "The enthusiasm, energy, promise, and creativity an employee brings daily", "The number of hours worked", "The level of supervision required"],
+      answer: 1,
+      explain: "Motivation is the desire and willingness of employees to reach the goals of the business." },
+    { q: "According to Herzberg, if hygiene factors are missing, what happens?",
+      options: ["Employees are still motivated", "Motivators cannot work", "Employees ask for a raise", "Productivity increases"],
+      answer: 1,
+      explain: "Herzberg's rule: if hygiene factors (like fair pay and safe conditions) are missing, the motivators cannot work." },
+    { q: "A person driven by a 'need for affiliation' according to McClelland:",
+      options: ["Likes to control others", "Likes to solve complex problems", "Values relationships above all and avoids risk", "Wants to be the boss"],
+      answer: 2,
+      explain: "Those with a strong need for affiliation value relationships and don't like to stand out or take risks." }
   ],
   faq: [
     { q: "difference between maslow and erg theory", a: "Maslow: needs must be satisfied in strict sequence bottom to top. ERG (Alderfer): needs can be satisfied in any order at any time. E=Existence, R=Relatedness, G=Growth." },
@@ -1038,7 +1109,19 @@ A business doesn't operate in isolation — it affects and is affected by many g
     { q: "Which government body helps dissatisfied employees against employers?",
       options: ["SARS", "SAPS", "CCMA", "Municipality"],
       answer: 2,
-      explain: "CCMA = Commission for Conciliation, Mediation and Arbitration." }
+      explain: "CCMA = Commission for Conciliation, Mediation and Arbitration." },
+    { q: "What is a stakeholder profile used for?",
+      options: ["To track employee salaries", "To understand a group's role, expectations, and influence", "To calculate market share", "To design a website"],
+      answer: 1,
+      explain: "Managers compile a profile to understand a stakeholder's role, expectations, influence, and priority." },
+    { q: "Which of these is a result of GOOD relations with suppliers?",
+      options: ["They stop supplying", "They extend credit payment terms during cash flow problems", "They demand immediate payment", "They sue the business"],
+      answer: 1,
+      explain: "One of the benefits of good relations is that suppliers may extend credit terms if the business has cash flow issues." },
+    { q: "Xenophobia riots and looting are examples of negative relations with which stakeholder?",
+      options: ["Customers", "Employees", "Community", "Government"],
+      answer: 2,
+      explain: "Negative relations with the community can lead to riots, attacks, and looting." }
   ],
   faq: [
     { q: "who are the six stakeholder categories", a: "Owners, customers, employees, community, suppliers, government." },
@@ -1219,7 +1302,19 @@ Five-step cycle:
     { q: "A bomb threat forcing a store to close is an example of:",
       options: ["Shrinkage", "Data breach", "Forced closure", "Sabotage"],
       answer: 2,
-      explain: "Forced closure = business required to shut down due to circumstances beyond its control." }
+      explain: "Forced closure = business required to shut down due to circumstances beyond its control." },
+    { q: "Which of the following is NOT one of the ten operational risks?",
+      options: ["Customer injuries", "Employee theft", "Employee motivation", "Supply chain disruptions"],
+      answer: 2,
+      explain: "Employee motivation is not an operational risk. The ten risks include theft, fraud, disasters, cybersecurity, etc." },
+    { q: "How should staff approach a suspected shoplifter?",
+      options: ["Run at them and shout", "Calmly and discreetly", "Use unnecessary force", "Ignore them"],
+      answer: 1,
+      explain: "Step 2 of the response procedure: approach calmly and discreetly." },
+    { q: "What is a key prevention measure for shoplifting involving technology?",
+      options: ["Using RFID tags", "Hiring more security guards", "Closing the store earlier", "Increasing prices"],
+      answer: 0,
+      explain: "The slides mention using retail inventory management tools like RFID tags to ensure products are not stolen." }
   ],
   faq: [
     { q: "what is shrinkage", a: "Reduction of inventory value due to employee or customer theft. Five types: customer theft, employee theft, POS mistakes, supplier short delivery, miscounting." },
@@ -1447,7 +1542,19 @@ At **any time**, an inspector may:
     { q: "An inspector from the Department of Labour may:",
       options: ["Only enter with a warrant", "Enter any workplace without prior notice", "Only inspect offices", "Only issue warnings, not fines"],
       answer: 1,
-      explain: "Inspectors may enter without notice, request documents, inspect, take samples, question/summon, and issue warnings or fines." }
+      explain: "Inspectors may enter without notice, request documents, inspect, take samples, question/summon, and issue warnings or fines." },
+    { q: "How many H&S representatives are required if a factory has 120 employees?",
+      options: ["1", "2", "3", "4"],
+      answer: 2,
+      explain: "Factories (other workplaces) require 1 per 50. 120 ÷ 50 = 2.4, so round up 'or part thereof' to 3." },
+    { q: "Which of these is a cognitive symptom of stress?",
+      options: ["Headaches", "Nail biting", "Difficulty making decisions", "Anger and irritability"],
+      answer: 2,
+      explain: "Cognitive (mental) symptoms include confusion, poor judgement, and difficulty making decisions." },
+    { q: "What does the OHSA require regarding work tasks?",
+      options: ["Employees must figure out safety themselves", "Employers must not permit employees to carry on with any task unless protective methods are in place", "Only managers need training", "Safety is entirely the employee's responsibility"],
+      answer: 1,
+      explain: "Employer duty #4: Not to permit employees to carry on with any task unless the necessary protective methods have been taken." }
   ],
   faq: [
     { q: "difference between hazard and risk", a: "Hazard = anything with potential to cause harm (wet floor, exposed wiring). Risk = likelihood the hazard causes harm plus severity (slipping, electrocution). Control = what you do about it (signs, shut-off valves)." },
