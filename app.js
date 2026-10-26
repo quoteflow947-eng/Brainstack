@@ -1,17 +1,14 @@
 /* BrainStack — application logic.
    All state lives in localStorage. Works fully offline. */
 
-// ---------- Config ----------
-const TUTOR_ENDPOINT = ""; // Optional: set to your Cloudflare Worker URL to enable AI.
+const TUTOR_ENDPOINT = ""; 
 const STORAGE_KEY = "brainstack:progress";
 const THEME_KEY = "brainstack:theme";
 
-// ---------- State ----------
 let currentChapter = null;
 let currentTab = "notes";
-let quizState = null; // { index, answers: [], shuffled: [] }
+let quizState = null; 
 
-// ---------- Utilities ----------
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
 
@@ -36,7 +33,6 @@ function showToast(msg, ms = 2000) {
   showToast._t = setTimeout(() => { t.hidden = true; }, ms);
 }
 
-// ---------- Progress storage ----------
 function getProgress() {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
   catch { return {}; }
@@ -63,7 +59,6 @@ function resetProgress() {
   showToast("Progress reset");
 }
 
-// ---------- Theme ----------
 function applyTheme() {
   const theme = localStorage.getItem(THEME_KEY) || "light";
   document.documentElement.classList.toggle("dark", theme === "dark");
@@ -73,7 +68,6 @@ $("#themeBtn").addEventListener("click", () => {
   localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
 });
 
-// ---------- Markdown mini-renderer ----------
 function mdToHtml(md) {
   const lines = md.trim().split("\n");
   const out = [];
@@ -125,7 +119,6 @@ function mdToHtml(md) {
   return out.join("\n");
 }
 
-// ---------- Sidebar rendering ----------
 function renderSidebar() {
   const list = $("#chapterList");
   const progress = getProgress();
@@ -140,7 +133,6 @@ function renderSidebar() {
   }).join("");
 }
 
-// ---------- Home view ----------
 function renderHome() {
   const progress = getProgress();
   currentChapter = null;
@@ -170,7 +162,6 @@ function renderHome() {
   }));
 }
 
-// ---------- Chapter view ----------
 function renderChapter(id) {
   const ch = CHAPTERS.find(c => c.id === id);
   if (!ch) { location.hash = "#home"; return; }
@@ -217,52 +208,91 @@ function renderTab() {
   }
 }
 
-// ---------- Quiz ----------
+// ---------- QUIZ LOGIC (Answers hidden until the end) ----------
 function renderQuiz(ch) {
   if (!quizState) {
-    quizState = { index: 0, answers: [], questions: shuffle(ch.quiz), done: false };
+    quizState = { 
+      index: 0, 
+      answers: new Array(ch.quiz.length).fill(undefined), 
+      questions: shuffle(ch.quiz), 
+      done: false,
+      reviewing: false
+    };
   }
+  
   const body = $("#chapterBody");
   const total = quizState.questions.length;
 
+  // --- REVIEW MODE ---
+  if (quizState.reviewing) {
+    let reviewHtml = `<h2>Review Answers</h2>`;
+    quizState.questions.forEach((q, i) => {
+      const userAns = quizState.answers[i];
+      const isCorrect = userAns === q.answer;
+      
+      reviewHtml += `<div class="review-item">
+        <div class="q-text">${i+1}. ${escapeHtml(q.q)}</div>
+        <div class="a-row ${isCorrect ? 'correct' : 'wrong'}">
+          Your answer: ${String.fromCharCode(65 + userAns)}. ${escapeHtml(q.options[userAns])} 
+          ${isCorrect ? '✓' : '✗'}
+        </div>
+        ${!isCorrect ? `<div class="a-row correct">
+          Correct answer: ${String.fromCharCode(65 + q.answer)}. ${escapeHtml(q.options[q.answer])}
+        </div>` : ''}
+        <div class="quiz-explain" style="margin-top:12px">
+          <strong>Why:</strong> ${escapeHtml(q.explain)}
+        </div>
+      </div>`;
+    });
+    
+    body.innerHTML = reviewHtml + `
+      <div class="quiz-actions" style="justify-content:center; margin-top:32px">
+        <button class="btn btn-primary" id="retryBtn">Retake Quiz</button>
+        <button class="btn" id="backToScoreBtn">Back to Score</button>
+      </div>
+    `;
+    
+    $("#retryBtn").addEventListener("click", () => { quizState = null; renderQuiz(ch); });
+    $("#backToScoreBtn").addEventListener("click", () => { quizState.reviewing = false; renderQuiz(ch); });
+    return;
+  }
+
+  // --- FINISHED MODE ---
   if (quizState.done) {
     const score = quizState.answers.filter((a, i) => a === quizState.questions[i].answer).length;
     const pct = Math.round((score / total) * 100);
     const msg = pct >= 80 ? "Excellent work!" : pct >= 50 ? "Good — review the wrong answers." : "Re-read the notes and try again.";
+    
     body.innerHTML = `
       <div class="score-card">
         <div class="score-big">${score}/${total}</div>
         <div class="score-label">${pct}% correct</div>
         <div class="score-msg">${msg}</div>
-        <div class="quiz-actions" style="justify-content:center; margin-top:24px">
-          <button class="btn btn-primary" id="retryBtn">Retry quiz</button>
-          <button class="btn" id="reviewBtn">Review answers</button>
+        <div class="quiz-actions" style="justify-content:center; margin-top:32px">
+          <button class="btn btn-primary" id="reviewBtn">Review Answers</button>
+          <button class="btn" id="retryBtn">Retake Quiz</button>
         </div>
       </div>
     `;
+    
+    $("#reviewBtn").addEventListener("click", () => {
+      quizState.reviewing = true;
+      renderQuiz(ch);
+    });
     $("#retryBtn").addEventListener("click", () => {
       quizState = null; renderQuiz(ch);
-    });
-    $("#reviewBtn").addEventListener("click", () => {
-      quizState.done = false;
-      quizState.reviewMode = true;
-      renderQuiz(ch);
     });
     return;
   }
 
+  // --- ACTIVE QUIZ MODE ---
   const q = quizState.questions[quizState.index];
   const selected = quizState.answers[quizState.index];
-  const showResult = selected !== undefined;
   const pct = Math.round((quizState.index / total) * 100);
 
   const optionsHtml = q.options.map((opt, i) => {
-    let cls = "quiz-option";
-    if (showResult) {
-      if (i === q.answer) cls += " correct";
-      else if (i === selected) cls += " wrong";
-    }
-    return `<button class="${cls}" data-idx="${i}" ${showResult ? "disabled" : ""}>
+    const isSelected = selected === i;
+    return `<button class="quiz-option ${isSelected ? 'selected' : ''}" data-idx="${i}">
       <span class="letter">${String.fromCharCode(65 + i)}</span>
       <span>${escapeHtml(opt)}</span>
     </button>`;
@@ -274,39 +304,39 @@ function renderQuiz(ch) {
       <div class="q-num">Question ${quizState.index + 1} of ${total}</div>
       <div class="q-text">${escapeHtml(q.q)}</div>
       <div class="quiz-options">${optionsHtml}</div>
-      ${showResult ? `<div class="quiz-explain"><strong>Why:</strong> ${escapeHtml(q.explain)}</div>` : ""}
     </div>
     <div class="quiz-actions">
-      ${showResult ? `<button class="btn btn-primary" id="nextBtn">${quizState.index === total - 1 ? "See results" : "Next question"}</button>` : ""}
+      <button class="btn btn-primary" id="nextBtn" ${selected === undefined ? 'disabled' : ''}>
+        ${quizState.index === total - 1 ? "Finish Quiz" : "Next Question"}
+      </button>
     </div>
   `;
 
-  if (!showResult) {
-    $$(".quiz-option").forEach(btn => btn.addEventListener("click", () => {
-      quizState.answers[quizState.index] = Number(btn.dataset.idx);
-      renderQuiz(ch);
-    }));
-  } else {
-    $("#nextBtn").addEventListener("click", () => {
-      if (quizState.index === total - 1) {
-        quizState.done = true;
-        const score = quizState.answers.filter((a, i) => a === quizState.questions[i].answer).length;
-        setChapterScore(ch.id, score, total);
-      } else {
-        quizState.index++;
-      }
-      renderQuiz(ch);
-    });
-  }
+  // Handle option click
+  $$(".quiz-option").forEach(btn => btn.addEventListener("click", () => {
+    quizState.answers[quizState.index] = Number(btn.dataset.idx);
+    renderQuiz(ch);
+  }));
+
+  // Handle next click
+  $("#nextBtn").addEventListener("click", () => {
+    if (quizState.index === total - 1) {
+      quizState.done = true;
+      const score = quizState.answers.filter((a, i) => a === quizState.questions[i].answer).length;
+      setChapterScore(ch.id, score, total);
+    } else {
+      quizState.index++;
+    }
+    renderQuiz(ch);
+  });
 }
 
-// ---------- Ask a question ----------
 function renderAsk(ch) {
   $("#chapterBody").innerHTML = `
     <div class="ask-box">
-      <textarea id="askInput" placeholder="Ask anything about ${escapeHtml(ch.title)}… e.g. 'what is the difference between hazard and risk?'"></textarea>
+      <textarea id="askInput" placeholder="Ask anything about ${escapeHtml(ch.title)}…"></textarea>
       <div class="ask-actions">
-        <span class="ask-hint">${TUTOR_ENDPOINT ? "AI tutor — online" : "Offline tutor — searches course content"}</span>
+        <span class="ask-hint">Offline tutor — searches course content</span>
         <button class="btn btn-primary" id="askBtn">Ask</button>
       </div>
     </div>
@@ -325,34 +355,13 @@ async function handleAsk(ch) {
   const area = $("#answerArea");
   area.innerHTML = `<div class="answer"><div class="a-text">Thinking…</div></div>`;
 
-  let answer = null, source = "local";
-
-  // 1. Try AI endpoint (if configured and online)
-  if (TUTOR_ENDPOINT && navigator.onLine) {
-    try {
-      const res = await fetch(TUTOR_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: input, chapter: ch.title })
-      });
-      if (res.ok) {
-        const data = await res.json();
-        answer = data.answer || data.text || null;
-        source = "ai";
-      }
-    } catch { /* fall through to local */ }
-  }
-
-  // 2. Local knowledge base
-  if (!answer) {
-    answer = localAnswer(input, ch);
-  }
+  let answer = localAnswer(input, ch);
 
   area.innerHTML = `
     <div class="answer">
       <h4>Answer</h4>
       <div class="a-text">${mdToHtml(answer.text)}</div>
-      <div class="a-meta">${source === "ai" ? "From AI tutor" : "From course content"}</div>
+      <div class="a-meta">From course content</div>
       ${answer.suggestions && answer.suggestions.length ? `
         <div style="margin-top:12px">
           <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px">Related questions</div>
@@ -368,23 +377,15 @@ async function handleAsk(ch) {
 
 function localAnswer(question, ch) {
   const q = question.toLowerCase();
-
-  // 1. Search this chapter's FAQ by keyword overlap
   const faq = ch.faq || [];
   let best = null, bestScore = 0;
   for (const item of faq) {
     const score = keywordScore(q, item.q.toLowerCase());
     if (score > bestScore) { bestScore = score; best = item; }
   }
-
   if (best && bestScore >= 2) {
-    return {
-      text: best.a,
-      suggestions: faq.filter(f => f !== best).slice(0, 3).map(f => f.q)
-    };
+    return { text: best.a, suggestions: faq.filter(f => f !== best).slice(0, 3).map(f => f.q) };
   }
-
-  // 2. Search ALL chapters' FAQs
   let globalBest = null, globalScore = 0;
   for (const c of CHAPTERS) {
     for (const item of (c.faq || [])) {
@@ -393,20 +394,14 @@ function localAnswer(question, ch) {
     }
   }
   if (globalBest && globalScore >= 2) {
-    return {
-      text: globalBest.item.a + `\n\n> Found in Chapter ${globalBest.c.number}: ${globalBest.c.title}`,
-      suggestions: []
-    };
+    return { text: globalBest.item.a + `\n\n> Found in Chapter ${globalBest.c.number}: ${globalBest.c.title}`, suggestions: [] };
   }
-
-  // 3. Search the notes for the question text
   const notesMatch = findInNotes(q, ch);
   if (notesMatch) {
     return { text: notesMatch, suggestions: ch.faq.slice(0, 3).map(f => f.q) };
   }
-
   return {
-    text: "I couldn't find an answer in this chapter's content. Try rephrasing, or browse the **Notes** tab. You can also check the FAQ in the sidebar — every chapter has one.",
+    text: "I couldn't find an answer in this chapter's content. Try rephrasing, or browse the **Notes** tab.",
     suggestions: ch.faq.slice(0, 3).map(f => f.q)
   };
 }
@@ -436,7 +431,6 @@ function findInNotes(q, ch) {
   return null;
 }
 
-// ---------- Search ----------
 $("#searchInput").addEventListener("input", (e) => {
   const q = e.target.value.trim().toLowerCase();
   if (!q) { renderHome(); return; }
@@ -459,7 +453,6 @@ $("#searchInput").addEventListener("input", (e) => {
   }));
 });
 
-// ---------- Router ----------
 function route() {
   const hash = location.hash || "#home";
   if (hash.startsWith("#chapter/")) {
@@ -492,12 +485,9 @@ function renderAskGlobal() {
 }
 
 window.addEventListener("hashchange", route);
-
-// ---------- Sidebar toggle ----------
 $("#menuBtn").addEventListener("click", () => $("#sidebar").classList.toggle("open"));
 $("#resetBtn").addEventListener("click", resetProgress);
 
-// Home/Ask links in sidebar
 $$('[data-nav="home"]').forEach(el => el.addEventListener("click", (e) => {
   if (el.tagName === "A") { e.preventDefault(); location.hash = "#home"; }
 }));
@@ -505,21 +495,16 @@ $$('[data-nav="ask"]').forEach(el => el.addEventListener("click", (e) => {
   if (el.tagName === "A") { e.preventDefault(); location.hash = "#ask"; }
 }));
 
-// ---------- Offline indicator ----------
-function updateOffline() {
-  $("#offlinePill").hidden = navigator.onLine;
-}
+function updateOffline() { $("#offlinePill").hidden = navigator.onLine; }
 window.addEventListener("online", updateOffline);
 window.addEventListener("offline", updateOffline);
 
-// ---------- Service worker ----------
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("sw.js").catch(() => {});
   });
 }
 
-// ---------- Boot ----------
 applyTheme();
 renderSidebar();
 updateOffline();
