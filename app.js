@@ -123,7 +123,6 @@ function renderSidebar() {
   const list = $("#chapterList");
   const progress = getProgress();
   
-  // Get unique module names in order
   const modules = [...new Set(CHAPTERS.map(c => c.module))];
 
   let html = "";
@@ -332,13 +331,11 @@ function renderQuiz(ch) {
     </div>
   `;
 
-  // Handle option click
   $$(".quiz-option").forEach(btn => btn.addEventListener("click", () => {
     quizState.answers[quizState.index] = Number(btn.dataset.idx);
     renderQuiz(ch);
   }));
 
-  // Handle next click
   $("#nextBtn").addEventListener("click", () => {
     if (quizState.index === total - 1) {
       quizState.done = true;
