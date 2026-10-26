@@ -1,27 +1,26 @@
-/* BrainStack — course content. */
+/* BrainStack — Combined Course Content (Module 1 & Module 2) */
 
 const CHAPTERS = [
-{
-  id: "ch06a",
-  number: "6 (Part 1)",
-  title: "Entrepreneurship & the Business Plan",
-  summary: "What entrepreneurship is, why it matters, SA's challenges, and the tools you need before writing a plan.",
-  notes: `
-## Overview
+  /* =========================================
+     MODULE 1: RETAIL OPERATIONS MANAGEMENT 1
+     ========================================= */
+  {
+    id: "ch06a",
+    module: "Retail Operations Management 1",
+    number: "6 (Part 1)",
+    title: "Entrepreneurship & Business Plan",
+    summary: "What entrepreneurship is, why it matters, SA's challenges, and the tools you need before writing a plan.",
+    notes: `## Overview
 This chapter introduces what entrepreneurship is, why it matters to a country's economy, what makes it difficult in South Africa specifically, and the first analytical tools you need before writing a business plan: feasibility, viability, market size, market share, and break-even analysis.
 
 ## Why entrepreneurship matters
-
 1. **Create jobs** — small and medium businesses are the largest employers in most countries; startups absorb unemployed youth and lower unemployment.
 2. **Drive innovation** — entrepreneurs introduce new products, services and technologies that disrupt markets and improve productivity.
 3. **Grow the economy** — new businesses generate income, pay taxes, and stimulate demand for goods and services.
 4. **Solve social problems** — social entrepreneurs address gaps in healthcare, education, clean energy and more.
 5. **Encourage self-reliance** — entrepreneurship builds a culture of resilience and financial independence.
 
-> **Exam tip:** If asked "why is entrepreneurship important?", give all five with one sentence of explanation each.
-
 ## Challenges entrepreneurs face in South Africa
-
 1. **Limited access to funding** — banks require collateral and credit records that first-time entrepreneurs usually don't have.
 2. **High unemployment and low disposable income** — less money to spend shrinks the market and hurts profitability.
 3. **Bureaucracy and red tape** — lengthy registration, multiple regulations, high formalisation costs.
@@ -31,211 +30,55 @@ This chapter introduces what entrepreneurship is, why it matters to a country's 
 7. **Lack of mentorship** — no experienced guides, so poor early decisions lead to failure.
 
 ## What is an entrepreneur?
-
 > **Definition:** An entrepreneur is a person who sees an opportunity in the market, gathers resources, and creates and grows a business venture to satisfy that need. They take the risk of the venture and are rewarded with profit if it succeeds.
 
-**Four moving parts and one outcome:** Opportunity → Resources → Venture → Risk → **Profit**.
-
 **Twelve traits of successful entrepreneurs:**
-
-1. Innovative — creates new ideas, products or ways of doing business
-2. Risk-taker — willing to take *calculated* risks
-3. Self-confident — believes in their abilities and decisions
-4. Hardworking — dedicated and willing to put in the effort
-5. Goal-oriented — focuses on specific objectives
-6. Leadership skills — can motivate and guide others
-7. Decision-making ability — makes timely, effective decisions
-8. Persistent — continues despite challenges and setbacks
-9. Adaptable — adjusts to market changes
-10. Good problem-solver — identifies problems and finds solutions
-11. Creative — thinks of unique improvements
-12. Organised — plans and manages resources efficiently
+1. Innovative, 2. Risk-taker, 3. Self-confident, 4. Hardworking, 5. Goal-oriented, 6. Leadership skills, 7. Decision-making ability, 8. Persistent, 9. Adaptable, 10. Good problem-solver, 11. Creative, 12. Organised.
 
 ## Feasibility vs viability
-
 | | **Feasibility** | **Viability** |
 |---|---|---|
 | **Question** | *Can it be done?* | *Will it make money?* |
 | **Focus** | Short-term: can we build this? | Long-term: can this survive and grow? |
 | **Key considerations** | Technical, financial, legal, operational | Demand, competitive advantage, profit |
 
-**Feasibility — four checks:**
-
-1. Technical — do we have the skills and technology?
-2. Financial — do we have the budget?
-3. Legal — is it allowed?
-4. Operational — can it work in practice?
-
-**Viability — three checks:**
-
-1. Is there demand for the product or service?
-2. Do we have a competitive advantage?
-3. Is the profit sufficient?
-
-> **Exam tip:** Not all ideas can become businesses. Many are creative — but they still have to pass both tests.
-
-## Market size
-
-> **Definition:** Market size is the total potential sales or revenue opportunity available for a product or service in a specific market over a given period.
-
-**Two ways to measure:**
-
-1. **By revenue** — total money customers spend (e.g. SA fast-food market is worth R5 billion per year)
-2. **By volume** — total number of potential customers or units sold (e.g. 10 million smartphone users in a region)
-
-**Worked example:** A town has 10,000 residents. About 2,000 buy coffee every day. Each spends R30 per day.
-
-- Market size in customers = **2,000 potential buyers**
-- Market size in revenue = 2,000 × R30 = **R60,000 per day**
-
-## Market share
-
-> **Definition:** Market share is the percentage of total sales in a market that is earned by a particular company, product or brand during a specific time.
-
-**Formula:** Market share = (Company sales ÷ Total market sales) × 100
-
-**Worked example from 2025 car sales (total = 37,455):**
-
-1. Toyota: 11,690 ÷ 37,455 × 100 = **31%**
-2. Suzuki: 5,221 ÷ 37,455 × 100 = **14%**
-3. VW: 4,973 ÷ 37,455 × 100 = **13%**
-
-**Observation from the slides:** Suzuki moved from a smaller share in 2022 to second place in 2025 — value for money and reliability appeal to cash-strapped consumers.
-
-## Simple research techniques
-
-Six low-cost ways to test demand:
-
-1. **Surveys and questionnaires** — Google Forms or printed; ask about needs, pricing, preferences.
-2. **Interviews** — face-to-face or phone; open-ended questions about pain points.
-3. **Social media polls** — track likes, comments, shares.
-4. **Pre-sell or test the product** — count actual commitments, not opinions.
-5. **Pop-up stalls, markets or food trucks** — face-to-face feedback plus real sales data.
-6. **Observe the competition** — if competitors are busy, demand likely exists.
+## Market size & Market share
+- **Market size:** Total potential sales/revenue for a product in a market over a period.
+- **Market share:** (Company sales ÷ Total market sales) × 100
 
 ## Break-even analysis
-
-**The cost split:**
-
-- **Fixed costs** (overheads, indirect) — do not change with output: rent, insurance, advertising, water/electricity, owner and non-production salaries.
-- **Variable costs** — change directly with units produced: raw materials, direct wages of production staff.
-
-**Formulas:**
-
 - **Break-even quantity** = Fixed costs ÷ (Selling price per unit − Variable cost per unit)
-- **Break-even rand value** = Break-even quantity × Selling price
-
-**Worked example:** Company A sells water bottles. Fixed costs = R100,000. Variable cost = R2 per bottle. Selling price = R12 per bottle.
-
-1. Contribution per unit = R12 − R2 = **R10**
-2. Break-even quantity = R100,000 ÷ R10 = **10,000 units**
-3. Break-even rand value = 10,000 × R12 = **R120,000 in sales**
-
-> **Exam tip:** Show the formula, substitution, unit answer, and rand answer. That's four marks even if the arithmetic is slightly off.
-`,
-  quiz: [
-    { q: "What is the main difference between feasibility and viability?",
-      options: ["Feasibility = can it be done; Viability = will it make money long-term", "Feasibility = will it make money; Viability = can it be done", "They mean the same thing", "Feasibility is for products; Viability is for services"],
-      answer: 0,
-      explain: "Feasibility checks technical/financial/legal/operational ability. Viability checks demand, competitive advantage and profit." },
-    { q: "Fixed costs are R100,000, selling price is R12, variable cost is R2. What is the break-even quantity?",
-      options: ["8,333 units", "10,000 units", "12,000 units", "50,000 units"],
-      answer: 1,
-      explain: "BEQ = Fixed ÷ (Price − Variable) = 100,000 ÷ (12 − 2) = 10,000 units." },
-    { q: "A company sells 12,000 cars in a market of 60,000 total cars. What is its market share?",
-      options: ["12%", "20%", "25%", "60%"],
-      answer: 1,
-      explain: "12,000 ÷ 60,000 × 100 = 20%." },
-    { q: "Which is NOT listed as a challenge for SA entrepreneurs?",
-      options: ["Limited access to funding", "Bureaucracy and red tape", "Too much mentorship", "Crime and safety concerns"],
-      answer: 2,
-      explain: "Lack of mentorship is the challenge — not too much of it." },
-    { q: "Which of these is a fixed cost?",
-      options: ["Raw materials", "Direct wages", "Rent", "Packaging per unit"],
-      answer: 2,
-      explain: "Rent does not change with output. Materials and direct wages are variable." },
-    { q: "What are the two main ways to measure market size?",
-      options: ["By revenue and by volume", "By profit and by loss", "By feasibility and by viability", "By competitors and by customers"],
-      answer: 0,
-      explain: "Market size can be measured by total revenue (money spent) or by volume (number of units/customers)." },
-    { q: "Which of the following is NOT one of the four feasibility checks?",
-      options: ["Technical feasibility", "Financial feasibility", "Emotional feasibility", "Operational feasibility"],
-      answer: 2,
-      explain: "The four checks are technical, financial, legal, and operational." },
-    { q: "If an entrepreneur is a 'risk-taker', they are willing to take:",
-      options: ["No risks at all", "Unlimited risks", "Calculated risks", "Only financial risks"],
-      answer: 2,
-      explain: "Successful entrepreneurs take *calculated* risks, not blind gambles." }
-  ],
-  faq: [
-    { q: "difference between feasibility and viability", a: "Feasibility asks *can it be done?* — technical, financial, legal and operational checks. Viability asks *will it make money long-term?* — demand, competitive advantage and profit. An idea can be feasible but not viable." },
-    { q: "how to calculate break-even", a: "Break-even quantity = Fixed costs ÷ (Selling price − Variable cost per unit). Then multiply by selling price for the rand value. Example: R100,000 ÷ (R12 − R2) = 10,000 units × R12 = R120,000 in sales." },
-    { q: "how to calculate market share", a: "Market share = (Company sales ÷ Total market sales) × 100. Example: 11,690 ÷ 37,455 × 100 = 31%." },
-    { q: "what are the challenges for entrepreneurs in SA", a: "Seven: limited access to funding, high unemployment/low disposable income, bureaucracy and red tape, crime and safety concerns, skills gap, market access and competition, and lack of mentorship." }
-  ]
-},
-{
-  id: "ch06b",
-  number: "6 (Part 2)",
-  title: "The Business Plan",
-  summary: "How to project profit, and what goes inside a proper business plan.",
-  notes: `
-## Overview
-Two things: how to calculate whether a business idea will be profitable (pro forma income statement), and what goes into a proper business plan.
-
-## Calculating projected net profit
-
-**Core logic:**
-
+- **Break-even rand value** = Break-even quantity × Selling price`,
+    quiz: [
+      { q: "What is the main difference between feasibility and viability?", options: ["Feasibility = can it be done; Viability = will it make money long-term", "Feasibility = will it make money; Viability = can it be done", "They mean the same thing", "Feasibility is for products; Viability is for services"], answer: 0, explain: "Feasibility checks technical/financial/legal/operational ability. Viability checks demand, competitive advantage and profit." },
+      { q: "Fixed costs are R100,000, selling price is R12, variable cost is R2. What is the break-even quantity?", options: ["8,333 units", "10,000 units", "12,000 units", "50,000 units"], answer: 1, explain: "BEQ = Fixed ÷ (Price − Variable) = 100,000 ÷ (12 − 2) = 10,000 units." },
+      { q: "A company sells 12,000 cars in a market of 60,000 total cars. What is its market share?", options: ["12%", "20%", "25%", "60%"], answer: 1, explain: "12,000 ÷ 60,000 × 100 = 20%." },
+      { q: "Which is NOT listed as a challenge for SA entrepreneurs?", options: ["Limited access to funding", "Bureaucracy and red tape", "Too much mentorship", "Crime and safety concerns"], answer: 2, explain: "Lack of mentorship is the challenge — not too much of it." },
+      { q: "Which of these is a fixed cost?", options: ["Raw materials", "Direct wages", "Rent", "Packaging per unit"], answer: 2, explain: "Rent does not change with output. Materials and direct wages are variable." },
+      { q: "What are the two main ways to measure market size?", options: ["By revenue and by volume", "By profit and by loss", "By feasibility and by viability", "By competitors and by customers"], answer: 0, explain: "Market size can be measured by total revenue or by volume." },
+      { q: "Which of the following is NOT one of the four feasibility checks?", options: ["Technical feasibility", "Financial feasibility", "Emotional feasibility", "Operational feasibility"], answer: 2, explain: "The four checks are technical, financial, legal, and operational." },
+      { q: "If an entrepreneur is a 'risk-taker', they are willing to take:", options: ["No risks at all", "Unlimited risks", "Calculated risks", "Only financial risks"], answer: 2, explain: "Successful entrepreneurs take *calculated* risks." }
+    ],
+    faq: [
+      { q: "difference between feasibility and viability", a: "Feasibility asks *can it be done?* — technical, financial, legal and operational checks. Viability asks *will it make money long-term?* — demand, competitive advantage and profit." },
+      { q: "how to calculate break-even", a: "Break-even quantity = Fixed costs ÷ (Selling price − Variable cost per unit). Then multiply by selling price for the rand value." },
+      { q: "how to calculate market share", a: "Market share = (Company sales ÷ Total market sales) × 100." }
+    ]
+  },
+  {
+    id: "ch06b",
+    module: "Retail Operations Management 1",
+    number: "6 (Part 2)",
+    title: "The Business Plan",
+    summary: "How to project profit, and what goes inside a proper business plan.",
+    notes: `## Calculating projected net profit
 - **Income > Expenses** → the idea is profitable
 - **Expenses > Income** → not viable; the business runs at a loss
-
-Because you're estimating future figures, you draw up a **pro forma income statement** — a projected income statement.
-
-**Worked example — Coffee Shop (year ended 31 Dec 2024):**
-
-| Item | Amount (ZAR) |
-|---|---|
-| Revenue | 200,000 |
-| Cost of Goods Sold | (80,000) |
-| **Gross Profit** | **120,000** |
-| Rent | 20,000 |
-| Salaries | 35,000 |
-| Utilities | 5,000 |
-| Marketing | 5,000 |
-| Equipment Maintenance | 3,000 |
-| Supplies | 2,000 |
-| Insurance | 2,500 |
-| **Total Operating Expenses** | **72,500** |
-| **Operating Profit** | **47,500** |
-| Loan Interest | (2,500) |
-| **Net Profit Before Tax** | **45,000** |
-| Income Tax (28%) | (12,600) |
-| **Net Profit** | **32,400** |
-
-**How to read it in three steps:**
-
-1. **Gross profit** = Revenue − COGS = 200,000 − 80,000 = **120,000** (before running costs)
-2. **Operating profit** = Gross profit − Operating expenses = 120,000 − 72,500 = **47,500** (core business profit)
-3. **Net profit** = Operating profit − Interest − Tax = 47,500 − 2,500 − 12,600 = **32,400** (what the owner keeps)
-
-> **Exam tip:** Write the formula first, then substitute. If tax is missing, calculate 28% of Net Profit Before Tax.
-
-## Why a business plan matters
-
-Eight purposes:
-
-1. **Provides direction** — sets goals and plans how to achieve them
-2. **Assists decision-making** — guides decisions based on objectives and strategies
-3. **Secures funding** — banks and investors usually require one
-4. **Identifies risks and opportunities** — helps anticipate challenges
-5. **Improves resource management** — money, people, equipment
-6. **Measures performance** — benchmarks actual vs planned
-7. **Attracts investors and partners** — shows potential
-8. **Enhances communication** — explains vision and strategy to stakeholders
+- **Gross profit** = Revenue − COGS
+- **Operating profit** = Gross profit − Operating expenses
+- **Net profit** = Operating profit − Interest − Tax
 
 ## Contents of a business plan
-
 1. Cover sheet
 2. Table of contents
 3. Executive summary
@@ -247,1321 +90,683 @@ Eight purposes:
 9. Financial plan
 10. Appendices and references
 
-> **Note from the slides:** The plan can be adapted to the type and size of the business. It is a **living document** — reviewed and updated regularly.
-
-## Section-by-section detail
-
-### Cover page must include
-
-1. Full name of the business
-2. Ownership status (sole proprietor, partnership, company, etc.)
-3. Street address
-4. Telephone, email, website
-5. A contact name and title
-6. Date of the plan
-
-### Executive summary
-
-- **Length:** ½ page to 1 page
-- **Contents:** brief introduction; describes the business, the problem it solves, the target market, financial highlights
-- **Purpose:** grab attention; investors may make an initial decision based on this alone
-
-### Management team
-
-1. Qualifications and experience of directors, managers, significant owners
-2. The entrepreneur's special experience and abilities
-3. Background and achievements of the team and technical experts
-4. **Short CVs go in the appendix**, not the main body
-5. Roles of consultants, board of directors and other advisors
-6. Contribution of key personnel
-7. Ownership information
-
-### Products and/or services plan
-
-1. Explain the products
-2. Include photographs, drawings or specifications
-3. Outline unique qualities and importance
-4. Explain superiority over existing products
-5. List limitations and flaws
-6. Clarify potential expansion
-
-### Marketing plan
-
-1. Target market — size, growth rate, segments, targeted area
-2. Product, pricing, distribution and promotion strategies with explanations
-3. Estimated monthly sales for year 1 and quarterly for years 2–3
-4. Anticipated market share and how it will be achieved
-
 ## The 4 Ps
+**Product** (Functionality, brand) · **Price** (List price, discounts) · **Place** (Channel, logistics) · **Promotion** (Advertising, sales)
 
-| **P** | **Covers** |
-|---|---|
-| **Product** | Functionality, brand, packaging, service |
-| **Price** | List price, discounts, bundling, credit terms |
-| **Place** | Channel, inventory, logistics, distribution |
-| **Promotion** | Advertising, sales force, publicity, sales promotion |
-
-## Market segmentation — four types
-
-| Type | Based on | Example |
-|---|---|---|
-| **Demographic** | Age, gender, income, marital status, ethnic background | Colgate: cartoon packaging for kids vs whitening for adults |
-| **Geographic** | Local, regional, national, international | McDonald's: McSpicy Paneer in India, Teriyaki Burger in Japan |
-| **Psychographic** | Activities, attitudes, personality, values | Nike: "Just Do It" for ambitious, active lifestyles |
-| **Behavioral** | Benefits, patterns, usage rates | Coca-Cola: small cans for singles, 2L bottles for families |
-
-> **Exam tip:** Ask yourself — *is this about who they are (demographic), where they are (geographic), how they live (psychographic), or how they buy (behavioral)?*
-
-## Manufacturing / operational plan
-
-- **Manufacturing business:** details on manufacturing and outsourcing; plant size and layout; equipment; raw materials and source; manufacturing costs; future requirements.
-- **Service business:** nature of processes, equipment, controls, experience required.
-
-## Financial plan — establishment costs
-
-1. Product development
-2. Legal costs
-3. Product testing
-4. Market research
-5. Cost of purchasing premises (if not rented)
-6. Machinery and equipment
-7. Installation
-8. Office equipment and modifications
-9. Operating costs provision (6 months factories / 3 months retailers)
-10. Unforeseen expenses
-11. Current assets such as stock
-
-## Financial plan — operating costs
-
-1. **People:** salaries, wages, medical fund contributions
-2. **Facilities:** equipment, rent, water and electricity, insurance
-3. **Promotion:** ads, pamphlets, samples, demonstrations, outdoor advertising, sponsorships, competitions
-4. **Admin:** postage, telephone, stationery, printing, local taxes, trade licences, legal expenses, collection costs
-
-## Pro forma financial statements
-
-For a **three-year period**:
-
-1. Pro forma **cash-flow statement**
-2. Pro forma **income statement**
-3. Pro forma **balance sheet**
-
-Plus a **break-even analysis**.
-
-## Appendices and references
-
-Proof of documentation and sources of assistance: attorneys, marketing specialists, engineering and production experts, accounting firms, local municipalities, government, business partners, consultants, the Internet, business chambers, the Department of Trade and Industry, journals, Statistics SA, and competitors.
-`,
-  quiz: [
-    { q: "How long should the executive summary be?",
-      options: ["One paragraph", "½ to 1 page", "3–5 pages", "10 pages"],
-      answer: 1,
-      explain: "The executive summary should be between half a page and one page." },
-    { q: "Which is NOT one of the 4 Ps?",
-      options: ["Product", "Price", "Profit", "Promotion"],
-      answer: 2,
-      explain: "The 4 Ps are Product, Price, Place and Promotion." },
-    { q: "McDonald's selling a McSpicy Paneer burger in India is an example of:",
-      options: ["Demographic segmentation", "Geographic segmentation", "Psychographic segmentation", "Behavioral segmentation"],
-      answer: 1,
-      explain: "It segments by location/country — geographic segmentation." },
-    { q: "Revenue 200,000, COGS 80,000, operating expenses 72,500. What is gross profit?",
-      options: ["80,000", "120,000", "47,500", "32,400"],
-      answer: 1,
-      explain: "Gross profit = Revenue − COGS = 200,000 − 80,000 = 120,000." },
-    { q: "Which comes FIRST in a business plan?",
-      options: ["Financial plan", "Executive summary", "Marketing plan", "Appendices"],
-      answer: 1,
-      explain: "The executive summary comes early (after cover page and table of contents)." },
-    { q: "In the financial plan, how long is the operating cost provision for a retailer?",
-      options: ["1 month", "3 months", "6 months", "12 months"],
-      answer: 1,
-      explain: "The slides state: 6 months for factories and 3 months for retailers." },
-    { q: "A company sells small cans of Coke for singles and 2L bottles for families. This is:",
-      options: ["Demographic segmentation", "Geographic segmentation", "Psychographic segmentation", "Behavioral segmentation"],
-      answer: 3,
-      explain: "It is based on usage rate or occasion (singles vs families) — behavioral segmentation." },
-    { q: "Where should the short CVs of the management team go?",
-      options: ["In the executive summary", "In the main body of the plan", "In the appendices", "On the cover page"],
-      answer: 2,
-      explain: "The main body describes their qualifications; the actual CVs go in the appendix." }
-  ],
-  faq: [
-    { q: "how to calculate gross profit", a: "Gross profit = Revenue − Cost of Goods Sold (COGS). Example: 200,000 − 80,000 = 120,000." },
-    { q: "how to calculate net profit", a: "Net profit = Operating profit − Interest − Tax. From the coffee shop example: 47,500 − 2,500 − 12,600 = 32,400." },
-    { q: "what goes in a business plan", a: "Ten sections: cover sheet, table of contents, executive summary, management team, macro/market analysis, products/services, marketing plan, operational plan, financial plan, appendices." },
-    { q: "what are the 4 Ps", a: "Product, Price, Place, Promotion." }
-  ]
-},
-{
-  id: "ch07",
-  number: "7",
-  title: "Control",
-  summary: "The fourth management function — monitoring performance and correcting deviations.",
-  notes: `
-## Overview
-Control is the fourth management function, after planning, organising and leading. It's the mechanism that tells the manager whether the other three are actually working.
-
-## What is control?
-
+## Market segmentation
+1. **Demographic** (Age, gender, income)
+2. **Geographic** (Local, regional, national)
+3. **Psychographic** (Activities, attitudes, personality)
+4. **Behavioral** (Benefits, patterns, usage rates)`,
+    quiz: [
+      { q: "How long should the executive summary be?", options: ["One paragraph", "½ to 1 page", "3–5 pages", "10 pages"], answer: 1, explain: "The executive summary should be between half a page and one page." },
+      { q: "Which is NOT one of the 4 Ps?", options: ["Product", "Price", "Profit", "Promotion"], answer: 2, explain: "The 4 Ps are Product, Price, Place and Promotion." },
+      { q: "McDonald's selling a McSpicy Paneer burger in India is an example of:", options: ["Demographic segmentation", "Geographic segmentation", "Psychographic segmentation", "Behavioral segmentation"], answer: 1, explain: "It segments by location/country — geographic segmentation." },
+      { q: "Revenue 200,000, COGS 80,000, operating expenses 72,500. What is gross profit?", options: ["80,000", "120,000", "47,500", "32,400"], answer: 1, explain: "Gross profit = Revenue − COGS = 200,000 − 80,000 = 120,000." },
+      { q: "Which comes FIRST in a business plan?", options: ["Financial plan", "Executive summary", "Marketing plan", "Appendices"], answer: 1, explain: "The executive summary comes early." },
+      { q: "In the financial plan, how long is the operating cost provision for a retailer?", options: ["1 month", "3 months", "6 months", "12 months"], answer: 1, explain: "The slides state: 6 months for factories and 3 months for retailers." },
+      { q: "A company sells small cans of Coke for singles and 2L bottles for families. This is:", options: ["Demographic segmentation", "Geographic segmentation", "Psychographic segmentation", "Behavioral segmentation"], answer: 3, explain: "It is based on usage rate or occasion — behavioral segmentation." },
+      { q: "Where should the short CVs of the management team go?", options: ["In the executive summary", "In the main body of the plan", "In the appendices", "On the cover page"], answer: 2, explain: "The actual CVs go in the appendix." }
+    ],
+    faq: [
+      { q: "how to calculate gross profit", a: "Gross profit = Revenue − Cost of Goods Sold (COGS)." },
+      { q: "what goes in a business plan", a: "Ten sections: cover sheet, table of contents, executive summary, management team, macro/market analysis, products/services, marketing plan, operational plan, financial plan, appendices." },
+      { q: "what are the 4 Ps", a: "Product, Price, Place, Promotion." }
+    ]
+  },
+  {
+    id: "ch07",
+    module: "Retail Operations Management 1",
+    number: "7",
+    title: "Control",
+    summary: "The fourth management function — monitoring performance and correcting deviations.",
+    notes: `## What is control?
 > **Definition:** Control is a function of management which helps to identify errors and take corrective action.
 
-## Why control matters
-
-1. Helps managers **monitor the effectiveness** of planning, organising and leading.
-2. Determines **what is being accomplished** — evaluating performance and taking corrective measures so performance follows plans.
-3. **Without control, the rest of the management functions are unusable.** Planning without control is just a wish.
-
-## Levels of control
-
-1. **Individual/employee** — are individuals performing vs their prescribed standards?
-2. **Group/team** — are teams performing vs their prescribed standards?
-3. **Organisational** — is the organisation performing vs its financial, operational, social and environmental goals?
-
 ## Types of control (based on timing)
-
-| Type | Focus | Examples |
-|---|---|---|
-| **Pre-control** | Inputs (resources) | HR, technology, materials, capital, information |
-| **Concurrent control** | Transformation process | Production, retail, services |
-| **Post control** | Outputs | Final goods and services |
-
-> **Memory aid:** Pre = before (inputs), Concurrent = during (process), Post = after (outputs).
+- **Pre-control** (Inputs)
+- **Concurrent control** (Transformation process)
+- **Post control** (Outputs)
 
 ## The four-step control process
-
 1. **Establish standards** — linked to objectives
 2. **Measure actual performance**
 3. **Compare actual performance with standards**
 4. **Take corrective action** — or reinforce good performance
 
-The process is cyclical. After corrective action, loop back to measuring performance.
+## Types of performance standards
+- Quantity, Cost, Time, Quality, Behaviour.
 
-## Step 1 — Types of performance standards
-
-| Type | Example |
-|---|---|
-| **Quantity** | Sales goals for a sales team |
-| **Cost** | Reduce expenses by 10% |
-| **Time** | Launch a new store by 1 Jan 2026 |
-| **Quality** | Less than 5% errors |
-| **Behaviour** | 80% of staff trained |
-
-**Key point:** All standards must be **linked to the objectives** of the organisation, department, group or individual.
-
-## Step 2 — Measuring actual performance
-
-**Rules of good measurement:**
-
-1. Decide **what** to measure and **how often**.
-2. Measure **objectively** — subjective measurement produces incorrect or unfair information.
-3. Measurement must be **reliable**.
-4. Focus on the **important performance areas** of the job.
-
-**Two technical terms:**
-
+## Measurement rules
 - **Reliable** = consistent; produces the same result every time.
-- **Valid** = measures what it is supposed to measure.
-
-> A measure can be reliable but not valid (consistently measuring the wrong thing). To be useful, it must be **both**.
-
-## Step 3 — Comparing actual performance with standards
-
-- Is performance up to standard or not?
-- If yes, ask *why is it so good?* — so it can be reinforced.
-- If no, ask *why not?* — so the cause can be corrected.
-- The difference is called the **gap** or **deviation**.
-
-## Step 4 — Reinforcing or correcting
-
-1. If performance **matches or exceeds** the standard → **reinforce (encourage)**.
-2. If performance **does not meet** the standard → **corrective action**.
-3. Corrective action must **focus on defining the actual problem**, not blaming people.
-
-## Worked example — the car manufacturer
-
-1. **Standard set:** Produce 50 quality cars per month.
-2. **Actual performance measured:** Only 40 cars produced.
-3. **Comparison:** 10 cars short — this is the gap/deviation. Why?
-4. **Reason found:** Machine breakdown and parts delay from Japan.
-5. **Corrective action:** Replace the machine, service regularly, or buy a backup machine.
-
-## Class-task formula
-
-- Uses a **5-day week** and **4-week month**.
-- **Standard per month = (per day × 5) × 4**
-
-**Memo from the slides:**
-
-| Product | Standard | Actual | Result |
-|---|---|---|---|
-| A | 2/day × 5 = 10/week × 4 = 40/month | 90 | **Exceeded by 50** |
-| B | 3/day × 5 = 15/week × 4 = 60/month | 95 | **Exceeded by 35** |
-| C | 4/week × 4 = 16/month | 15 | **Short by 1** |
-
-**Second class task (no memo on slides):**
-
-| Product | Standard required | Actual | Worked result |
-|---|---|---|---|
-| A | 3/day (5-day week) | 95 | 3×5×4 = 60 → **exceeded by 35** |
-| B | 4/day (5-day week) | 100 | 4×5×4 = 80 → **exceeded by 20** |
-| C | 5/week | 20 | 5×4 = 20 → **achieved exactly** |
-
-## Generic types of control
-
-1. **Financial controls** — financial statements, ratios, budgets
-2. **Quality controls** — benchmarking, quality circles
-3. **Balanced scorecard** — converts strategic goals into measurable performance objectives
-4. **Stock control**
-5. Others as appropriate to the business
-
-## Benefits of controlling
-
-1. **Achieves organisational goals** — directs activities toward objectives
-2. **Improves efficiency** — reduces waste, better use of resources
-3. **Identifies problems early** — detects errors before they become serious
-4. **Measures performance** — compares actual vs planned targets
-5. **Improves decision-making** — provides accurate information
-`,
-  quiz: [
-    { q: "What is the correct order of the control process?",
-      options: ["Measure → Set standards → Compare → Correct", "Set standards → Measure → Compare → Correct", "Compare → Set standards → Measure → Correct", "Set standards → Compare → Measure → Correct"],
-      answer: 1,
-      explain: "Standards → Measurement → Comparison → Corrective action." },
-    { q: "Controlling inputs such as HR, technology and materials is:",
-      options: ["Pre-control", "Concurrent control", "Post control", "Financial control"],
-      answer: 0,
-      explain: "Pre-control focuses on inputs before the transformation process." },
-    { q: "A standard of '<5% errors' is a:",
-      options: ["Quantity standard", "Cost standard", "Time standard", "Quality standard"],
-      answer: 3,
-      explain: "Error rate is a quality standard." },
-    { q: "A measurement that produces the same result every time is:",
-      options: ["Valid", "Reliable", "Subjective", "Balanced"],
-      answer: 1,
-      explain: "Reliable = consistent. Valid = measures what it should." },
-    { q: "Standard is 50 cars/month; actual is 40. The gap is:",
-      options: ["5", "10", "40", "50"],
-      answer: 1,
-      explain: "Gap = Standard − Actual = 50 − 40 = 10." },
-    { q: "Which level of control asks 'is the organisation performing according to its financial and social goals?'",
-      options: ["Individual level", "Group level", "Organisational level", "Pre-control level"],
-      answer: 2,
-      explain: "The organisational level focuses on overall company goals — financial, operational, social, environmental." },
-    { q: "A standard stating '80% of staff must complete training' is a:",
-      options: ["Quantity standard", "Cost standard", "Behaviour standard", "Quality standard"],
-      answer: 2,
-      explain: "It focuses on staff behaviour/actions, making it a behaviour standard." },
-    { q: "If actual performance EXCEEDS the standard, what should management do?",
-      options: ["Punish the staff for showing off", "Ignore it", "Reinforce and encourage the good performance", "Lower the standard"],
-      answer: 2,
-      explain: "Step 4 of the control process says to reinforce (encourage) performance that matches or exceeds standards." }
-  ],
-  faq: [
-    { q: "what is the control process", a: "Four steps: (1) establish standards, (2) measure actual performance, (3) compare actual with standards, (4) take corrective action (or reinforce good performance)." },
-    { q: "difference between reliability and validity", a: "Reliable = consistent, produces the same result every time. Valid = measures what it is supposed to measure. A measure can be reliable but not valid. Useful measurement requires both." },
-    { q: "types of control based on timing", a: "Pre-control (inputs), Concurrent control (process), Post control (outputs)." },
-    { q: "how to work out a control class task", a: "Standard per month = (per day × 5) × 4. Compare with actual; state 'exceeded by X' or 'short by X'." }
-  ]
-},
-{
-  id: "ch08",
-  number: "8 (Part 1)",
-  title: "Leadership — Foundations",
-  summary: "What leadership is, how it differs from management, styles and types of power.",
-  notes: `
-## Overview
-Introduces leadership as a concept: definition, differences from management, three main styles, five types of power, and a first look at leadership theories (detailed in Part 2).
-
-## What is leadership?
-
+- **Valid** = measures what it is supposed to measure.`,
+    quiz: [
+      { q: "What is the correct order of the control process?", options: ["Measure → Set standards → Compare → Correct", "Set standards → Measure → Compare → Correct", "Compare → Set standards → Measure → Correct", "Set standards → Compare → Measure → Correct"], answer: 1, explain: "Standards → Measurement → Comparison → Corrective action." },
+      { q: "Controlling inputs such as HR, technology and materials is:", options: ["Pre-control", "Concurrent control", "Post control", "Financial control"], answer: 0, explain: "Pre-control focuses on inputs before the transformation process." },
+      { q: "A standard of '<5% errors' is a:", options: ["Quantity standard", "Cost standard", "Time standard", "Quality standard"], answer: 3, explain: "Error rate is a quality standard." },
+      { q: "A measurement that produces the same result every time is:", options: ["Valid", "Reliable", "Subjective", "Balanced"], answer: 1, explain: "Reliable = consistent. Valid = measures what it should." },
+      { q: "Standard is 50 cars/month; actual is 40. The gap is:", options: ["5", "10", "40", "50"], answer: 1, explain: "Gap = Standard − Actual = 50 − 40 = 10." },
+      { q: "Which level of control asks 'is the organisation performing according to its financial and social goals?'", options: ["Individual level", "Group level", "Organisational level", "Pre-control level"], answer: 2, explain: "The organisational level focuses on overall company goals." },
+      { q: "A standard stating '80% of staff must complete training' is a:", options: ["Quantity standard", "Cost standard", "Behaviour standard", "Quality standard"], answer: 2, explain: "It focuses on staff behaviour/actions." },
+      { q: "If actual performance EXCEEDS the standard, what should management do?", options: ["Punish the staff for showing off", "Ignore it", "Reinforce and encourage the good performance", "Lower the standard"], answer: 2, explain: "Step 4 of the control process says to reinforce good performance." }
+    ],
+    faq: [
+      { q: "what is the control process", a: "Four steps: (1) establish standards, (2) measure actual performance, (3) compare actual with standards, (4) take corrective action." },
+      { q: "difference between reliability and validity", a: "Reliable = consistent, produces the same result every time. Valid = measures what it is supposed to measure." },
+      { q: "types of control based on timing", a: "Pre-control (inputs), Concurrent control (process), Post control (outputs)." }
+    ]
+  },
+  {
+    id: "ch08",
+    module: "Retail Operations Management 1",
+    number: "8 (Part 1)",
+    title: "Leadership — Foundations",
+    summary: "What leadership is, how it differs from management, styles and types of power.",
+    notes: `## What is leadership?
 > **Definition:** Leadership is the ability to influence, guide and motivate people to work toward a common goal.
 
-**Three things follow from the definition:**
-
-1. A leader must **communicate ideas**.
-2. A leader must **inspire workers** to support ideas through change.
-3. **Coercing or forcing** workers via threats is **not** leading. That's managing by fear.
-
 ## Leadership vs management
-
 | **Leadership** | **Management** |
 |---|---|
 | About people and vision | About process and execution |
-| Inspires and guides toward a vision | Plans, organises and controls resources |
-| Deals with change, innovation, direction | Deals with stability, structure, processes |
-| Relies on influence, motivation, trust | Relies on authority, systems, policies |
 | Asks **"what and why?"** | Asks **"how and when?"** |
 
-> **Exam tip:** The "what and why" vs "how and when" contrast is a classic short-answer question.
-
 ## The three leadership styles
-
-1. **Autocratic (authoritarian)** — manager decides **without consulting** employees. The "do or die" approach.
-2. **Participative (democratic)** — managers and employees **work together** to make decisions.
+1. **Autocratic (authoritarian)** — manager decides **without consulting** employees.
+2. **Participative (democratic)** — managers and employees **work together**.
 3. **Free-rein (laissez-faire)** — management **sets objectives** and allows employees to **work freely**.
 
-## Is there a best style?
-
-**No.** Depends on the situation, employees, goals and values of the organisation.
-
-1. **Autocratic** works **in an emergency** or with **new/inexperienced workers**.
-2. **Participative** — not necessarily the most effective, but **increases job satisfaction**.
-3. **Free-rein** works with **experts or highly skilled workers** — doctors, engineers, researchers.
-
-**The nuance:**
-
-- A single leader can use **all three** styles with different employees and situations.
-- This is called **situational leadership**, described as the "overall best tool."
-- A **combination of democratic style with Theory Y** is most effective.
-- Effectiveness depends on demonstrating an **adequate level of skill**.
-
 ## The five types of power
-
-| Type | Source | Example |
-|---|---|---|
-| **Coercive** | Fear — threats or punishment | "Do this or you're fired" |
-| **Reward** | What the manager can give/withhold | Praise, promotion, pay |
-| **Legitimate** | Position given by the organisation | A job title |
-| **Referent** | The leader's personality | A charismatic manager |
-| **Expert** | Leader's knowledge and skills | The most skilled manager in the room |
-
-> Leaders who command **all five** types are **strong leaders**.
-
-## Leadership theories (overview)
-
-Ten theories across Parts 1 and 2:
-
-1. Trait
-2. Behavioural
-3. Contingency
-4. Leadership competency
-5. Principle-centred
-6. Ethical
-7. Transformational
-8. Transactional
-9. Leader-member exchange (LMX)
-10. Servant-leadership
-
-> Contingency theory appears in the list but isn't developed in the slides. Standard answer: **no single best style; the right style depends on the situation.**
-`,
-  quiz: [
-    { q: "Leadership focuses on ____, while management focuses on ____.",
-      options: ["process and execution; people and vision", "people and vision; process and execution", "authority; influence", "stability; change"],
-      answer: 1,
-      explain: "Leadership = people and vision. Management = process and execution." },
-    { q: "A manager makes all decisions without consulting staff. This is:",
-      options: ["Democratic", "Laissez-faire", "Autocratic", "Servant"],
-      answer: 2,
-      explain: "Autocratic (authoritarian) leadership — the 'do or die' approach." },
-    { q: "Which power is based on the leader's personality and likeability?",
-      options: ["Coercive", "Legitimate", "Referent", "Expert"],
-      answer: 2,
-      explain: "Referent power comes from admiration and respect for the leader." },
-    { q: "Free-rein leadership works best with:",
-      options: ["New, inexperienced workers", "Highly skilled experts", "Emergency situations", "Unionised staff"],
-      answer: 1,
-      explain: "Laissez-faire suits experts like doctors, engineers and researchers." },
-    { q: "Which is NOT one of the five types of power?",
-      options: ["Coercive", "Reward", "Charismatic", "Legitimate"],
-      answer: 2,
-      explain: "The five are coercive, reward, legitimate, referent and expert." },
-    { q: "What is 'situational leadership'?",
-      options: ["Only leading in emergencies", "Using a style that matches the situation, employees, and goals", "Only using the autocratic style", "Leading from home"],
-      answer: 1,
-      explain: "Situational leadership means the leader adapts their style based on the specific situation and people involved." },
-    { q: "A manager using their job title to give orders is using which type of power?",
-      options: ["Coercive", "Reward", "Legitimate", "Referent"],
-      answer: 2,
-      explain: "Legitimate power comes from the position or job title given by the organisation." },
-    { q: "Management asks 'how and when?', while leadership asks:",
-      options: ["Who and where?", "What and why?", "Which and how much?", "When and where?"],
-      answer: 1,
-      explain: "Leadership deals with vision and direction, asking 'what and why?'. Management asks 'how and when?'." }
-  ],
-  faq: [
-    { q: "difference between leadership and management", a: "Leadership is about people and vision — asks 'what and why?', inspires change. Management is about process and execution — asks 'how and when?', plans and controls. Best leaders have some of both." },
-    { q: "three leadership styles", a: "Autocratic (manager decides alone), Participative/Democratic (decide together), Free-rein/Laissez-faire (manager sets objectives, employees work freely)." },
-    { q: "five types of power", a: "Coercive (fear), Reward (praise/pay), Legitimate (position), Referent (personality), Expert (knowledge/skills). Leaders with all five are strongest." }
-  ]
-},
-{
-  id: "ch09",
-  number: "9 (Part 2)",
-  title: "Leadership — Theories",
-  summary: "The nine theories from trait theory to servant-leadership.",
-  notes: `
-## Overview
-Develops the theories themselves. For each, learn three things: **what it says**, **what it assumes**, and **the example the slides give**.
-
-## 1. Trait theory
-
-1. **What it says:** Studies the personal characteristics that make good leaders.
-2. **Assumption:** **"Good leaders are born, not made."** Leadership is innate.
-3. **Traits:** Honesty, kindness, patience, dependability, respectfulness, empathy, optimism, confidence, humility, adaptability, creativity.
-
-> If Elon Musk says "don't listen to the little man" — is this trait or behavioural? **Trait theory**, because it describes a personal characteristic, not a learnable action.
+1. **Coercive** (Fear)
+2. **Reward** (Praise, promotion, pay)
+3. **Legitimate** (Position given by the organisation)
+4. **Referent** (The leader's personality)
+5. **Expert** (Leader's knowledge and skills)`,
+    quiz: [
+      { q: "Leadership focuses on ____, while management focuses on ____.", options: ["process and execution; people and vision", "people and vision; process and execution", "authority; influence", "stability; change"], answer: 1, explain: "Leadership = people and vision. Management = process and execution." },
+      { q: "A manager makes all decisions without consulting staff. This is:", options: ["Democratic", "Laissez-faire", "Autocratic", "Servant"], answer: 2, explain: "Autocratic (authoritarian) leadership." },
+      { q: "Which power is based on the leader's personality and likeability?", options: ["Coercive", "Legitimate", "Referent", "Expert"], answer: 2, explain: "Referent power comes from admiration and respect." },
+      { q: "Free-rein leadership works best with:", options: ["New, inexperienced workers", "Highly skilled experts", "Emergency situations", "Unionised staff"], answer: 1, explain: "Laissez-faire suits experts like doctors, engineers and researchers." },
+      { q: "Which is NOT one of the five types of power?", options: ["Coercive", "Reward", "Charismatic", "Legitimate"], answer: 2, explain: "The five are coercive, reward, legitimate, referent and expert." },
+      { q: "What is 'situational leadership'?", options: ["Only leading in emergencies", "Using a style that matches the situation, employees, and goals", "Only using the autocratic style", "Leading from home"], answer: 1, explain: "Situational leadership means adapting your style." },
+      { q: "A manager using their job title to give orders is using which type of power?", options: ["Coercive", "Reward", "Legitimate", "Referent"], answer: 2, explain: "Legitimate power comes from the position or job title." },
+      { q: "Management asks 'how and when?', while leadership asks:", options: ["Who and where?", "What and why?", "Which and how much?", "When and where?"], answer: 1, explain: "Leadership deals with vision and direction." }
+    ],
+    faq: [
+      { q: "difference between leadership and management", a: "Leadership is about people and vision — asks 'what and why?'. Management is about process and execution — asks 'how and when?'." },
+      { q: "three leadership styles", a: "Autocratic (manager decides alone), Participative/Democratic (decide together), Free-rein/Laissez-faire (employees work freely)." },
+      { q: "five types of power", a: "Coercive (fear), Reward (praise/pay), Legitimate (position), Referent (personality), Expert (knowledge/skills)." }
+    ]
+  },
+  {
+    id: "ch09",
+    module: "Retail Operations Management 1",
+    number: "9 (Part 2)",
+    title: "Leadership — Theories",
+    summary: "The nine theories from trait theory to servant-leadership.",
+    notes: `## 1. Trait theory
+- **Assumption:** **"Good leaders are born, not made."**
 
 ## 2. Behavioural theory
-
-1. **What it says:** Studies **how successful leaders behave** differently from unsuccessful leaders.
-2. **Key question:** What actions create business success?
-3. **Contrast with trait theory:** Trait = innate; Behavioural = **learnable**.
+- Studies **how successful leaders behave** differently from unsuccessful leaders.
 
 ## 3. Leadership competencies theory
-
-1. **What it says:** The more leadership skills and behaviours a person has, the better the leader.
-2. **Nine key competencies:**
-   1. **Vision** — sets direction, inspires a shared vision
-   2. **Communication** — communicates clearly, listens actively
-   3. **Empathy** — understands and cares, builds trust
-   4. **Problem-solving** — analyses challenges, finds solutions
-   5. **Integrity** — honesty and moral principles
-   6. **Team-building** — collaboration, values diversity
-   7. **Decision-making** — confident, timely, based on facts
-   8. **Motivation** — empowers others
-   9. **Driving results**
-3. **Tagline from the slide:** *"Great leaders are not born, they are made. Continuously develop your skills and lead by example."*
+- The more leadership skills and behaviours a person has, the better the leader.
 
 ## 4. Principle-centred perspective
-
-1. **What it says:** A leader's **beliefs** can make them great leaders.
-2. **Definition of belief:** Something you believe or accept as true.
-3. **Example:** Jeff Bezos — *"If you want to be inventive, you have to be willing to fail."*
+- A leader's **beliefs** can make them great leaders.
 
 ## 5. Ethical-leadership perspective
-
-1. **What it says:** Ethical leaders put people into management positions who will **promote and model moral conduct** in their actions and relationships at work.
-2. **Example:** Nelson Mandela — *"Real leaders must be ready to sacrifice all for the freedom of their people."*
+- Leaders who promote and model moral conduct.
 
 ## 6. Transformational leadership
-
-1. **What it says:** Leaders **encourage, inspire and motivate employees to innovate and create change** for future success.
-2. **Example:** Steve Jobs.
-3. **Key word:** *change*.
+- Leaders **encourage, inspire and motivate employees to innovate and create change**.
 
 ## 7. Transactional leadership
-
-1. **What it says:** Focuses on **routine, structure and clear tasks**, using **rewards and punishments** to motivate.
-2. **Relationship is an exchange:** work for pay, compliance for rewards.
-3. **Example:** Bill Gates — overtime rewarded with a good performance review.
-4. **Management by exception:** leaders **interfere only when goals are not met**.
-
-**Transformational vs transactional:**
-
-- Transformational leaders inspire change and innovation.
-- Transactional leaders manage through routine, reward and punishment.
+- Focuses on **routine, structure and clear tasks**, using **rewards and punishments** to motivate.
 
 ## 8. Leader-member exchange (LMX)
-
-1. **What it says:** Focuses on the **relationship between leaders and followers**.
-2. **Core observation:** In every team there are workers who are **"in"** (work well with the leader) and workers who are **"out"** (do not).
-3. **Central question:** How can the leader get the **"outs" to become "ins"?**
+- Focuses on the **relationship between leaders and followers** ("in" vs "out" groups).
 
 ## 9. Servant-leadership
+- **Leading by example.** The leader serves the team.`,
+    quiz: [
+      { q: "Which theory says 'good leaders are born, not made'?", options: ["Behavioural", "Trait", "Contingency", "Transformational"], answer: 1, explain: "Trait theory assumes leaders are born with the right characteristics." },
+      { q: "A leader who inspires employees to innovate and create change is:", options: ["Transactional", "Servant", "Transformational", "Autocratic"], answer: 2, explain: "Transformational leadership encourages innovation." },
+      { q: "A leader who only steps in when goals are not met is using:", options: ["Management by exception", "Servant-leadership", "LMX", "Trait theory"], answer: 0, explain: "Management by exception is a transactional style." },
+      { q: "LMX theory focuses on:", options: ["The leader's personality traits", "The relationship between leader and followers ('in' vs 'out' groups)", "Rewards and punishments", "The leader's beliefs"], answer: 1, explain: "Leader-member exchange examines in-group vs out-group relationships." },
+      { q: "A manager who does the same work they ask of their team is demonstrating:", options: ["Transactional leadership", "Servant-leadership", "Trait theory", "Autocratic leadership"], answer: 1, explain: "Servant-leadership = leading by example." },
+      { q: "Which theory focuses on the skills and behaviours a leader can learn?", options: ["Trait theory", "Leadership competencies theory", "Principle-centred perspective", "Transactional leadership"], answer: 1, explain: "Competency theory says great leaders are made." },
+      { q: "Nelson Mandela's leadership style, focused on moral conduct, is an example of:", options: ["Transactional leadership", "Ethical-leadership perspective", "LMX theory", "Behavioural theory"], answer: 1, explain: "Ethical leaders promote and model suitable, moral conduct." },
+      { q: "Bill Gates rewarding overtime with a good performance review is an example of:", options: ["Transformational leadership", "Transactional leadership", "Trait theory", "Servant-leadership"], answer: 1, explain: "Transactional leadership is based on an exchange." }
+    ],
+    faq: [
+      { q: "difference between trait and behavioural theory", a: "Trait theory: leaders are born with certain characteristics. Behavioural theory: leadership is a set of learnable behaviours." },
+      { q: "difference between transformational and transactional leadership", a: "Transformational leaders inspire innovation and change. Transactional leaders manage through routine, reward and punishment." },
+      { q: "what is servant leadership", a: "Leading by example — the leader is willing to do the same work they ask of their team." }
+    ]
+  },
+  {
+    id: "ch10",
+    module: "Retail Operations Management 1",
+    number: "10",
+    title: "Motivation",
+    summary: "Why motivation matters, plus the six main motivational theories.",
+    notes: `## What is motivation?
+> **Definition:** The **enthusiasm, energy level, promise and creativity** an employee brings to the organisation daily.
 
-1. **What it says:** **Leading by example.** A leader shows they are a helping leader by being **willing to do the same work they ask of their team**.
-2. **Example:** A sales team manager willing to do the same work they ask their team members to do.
+## 1. Maslow's hierarchy of needs
+1. **Physiological** (food, water)
+2. **Safety** (safe and secure)
+3. **Social** (loved, accepted)
+4. **Esteem** (recognition)
+5. **Self-actualisation** (full potential)
 
-> Servant-leadership is one of the most commonly examined theories. The distinguishing feature is **humility and service** — the leader serves the team.
-`,
-  quiz: [
-    { q: "Which theory says 'good leaders are born, not made'?",
-      options: ["Behavioural", "Trait", "Contingency", "Transformational"],
-      answer: 1,
-      explain: "Trait theory assumes leaders are born with the right characteristics." },
-    { q: "A leader who inspires employees to innovate and create change is:",
-      options: ["Transactional", "Servant", "Transformational", "Autocratic"],
-      answer: 2,
-      explain: "Transformational leadership encourages innovation and change (e.g. Steve Jobs)." },
-    { q: "A leader who only steps in when goals are not met is using:",
-      options: ["Management by exception", "Servant-leadership", "LMX", "Trait theory"],
-      answer: 0,
-      explain: "Management by exception is a transactional style — interfere only when targets are missed." },
-    { q: "LMX theory focuses on:",
-      options: ["The leader's personality traits", "The relationship between leader and followers ('in' vs 'out' groups)", "Rewards and punishments", "The leader's beliefs"],
-      answer: 1,
-      explain: "Leader-member exchange (LMX) examines in-group vs out-group relationships." },
-    { q: "A manager who does the same work they ask of their team is demonstrating:",
-      options: ["Transactional leadership", "Servant-leadership", "Trait theory", "Autocratic leadership"],
-      answer: 1,
-      explain: "Servant-leadership = leading by example and helping." },
-    { q: "Which theory focuses on the skills and behaviours a leader can learn?",
-      options: ["Trait theory", "Leadership competencies theory", "Principle-centred perspective", "Transactional leadership"],
-      answer: 1,
-      explain: "Competency theory says great leaders are made, not born, by developing skills like vision, empathy, and communication." },
-    { q: "Nelson Mandela's leadership style, focused on moral conduct, is an example of:",
-      options: ["Transactional leadership", "Ethical-leadership perspective", "LMX theory", "Behavioural theory"],
-      answer: 1,
-      explain: "Ethical leaders promote and model suitable, moral conduct in their actions." },
-    { q: "Bill Gates rewarding overtime with a good performance review is an example of:",
-      options: ["Transformational leadership", "Transactional leadership", "Trait theory", "Servant-leadership"],
-      answer: 1,
-      explain: "Transactional leadership is based on an exchange — work for pay, or compliance for rewards." }
-  ],
-  faq: [
-    { q: "difference between trait and behavioural theory", a: "Trait theory: leaders are born with certain characteristics. Behavioural theory: leadership is a set of learnable behaviours — study what successful leaders DO." },
-    { q: "difference between transformational and transactional leadership", a: "Transformational leaders inspire innovation and change. Transactional leaders manage through routine, reward and punishment (an exchange: work for pay)." },
-    { q: "what is servant leadership", a: "Leading by example — the leader is willing to do the same work they ask of their team. Humility and service are the distinguishing features." },
-    { q: "what is LMX theory", a: "Leader-member exchange. Focuses on the relationship between leader and followers — 'in' group works well with the leader, 'out' group does not. The central question: how to move 'outs' to 'ins'." }
-  ]
-},
-{
-  id: "ch10",
-  number: "10",
-  title: "Motivation",
-  summary: "Why motivation matters, plus the six main motivational theories.",
-  notes: `
-## Overview
-Motivation is the willingness of employees to put effort into their work. This chapter covers why motivation matters and the six main theories.
+## 2. Herzberg's two-factor theory
+- **Motivators** (Sense of achievement, Recognition)
+- **Hygiene factors** (Working conditions, Pay)
 
-## What is motivation?
+## 3. Vroom's theory — "carrot and stick"
+- Motivated by **rewards or consequences**.
 
-> **Definition:** Employee motivation is the **enthusiasm, energy level, promise and creativity** an employee brings to the organisation daily. Motivation means the **desire and willingness of employees to reach the goals of the business.**
+## 4. Adams' equity theory (1965)
+- People compare their input/outcome ratio to others.
 
-- Motivated employees are an **asset** — directly related to the organisation's success.
+## 5. Alderfer's ERG theory
+- **E**xistence, **R**elatedness, **G**rowth. Needs can be met in any order.
 
-## Why managers must understand motivation
-
-Managers must understand what motivates employees because **by understanding what motivates them, a manager can influence employee work performance.**
-
-**Five reasons to motivate employees:**
-
-1. **Find the right person for the job** — motivation attracts better candidates.
-2. **Retain employees** — time, money and effort are invested in them.
-3. **Employees come to work regularly** — attendance improves.
-4. **Employees do more than the minimum** — discretionary effort.
-5. **Good group citizenship** — employees accept the culture and values.
-
-## Maslow's hierarchy of needs
-
-Needs are arranged in a **pyramid** and satisfied **in sequence**, from bottom to top.
-
-| Level | Need | Meaning |
-|---|---|---|
-| 5 (top) | **Self-actualisation** | Develop one's full potential |
-| 4 | **Esteem** | Recognition and acknowledgement |
-| 3 | **Social** | Loved, accepted, part of a group |
-| 2 | **Safety** | Safe and secure at work/home |
-| 1 (bottom) | **Physiological** | Food, water, shelter |
-
-**Manager application:**
-
-1. **Physiological** — adequate salary for food, clothing, shelter
-2. **Safety** — job stability and benefits (medical aid, housing, UIF)
-3. **Social** — breaks, team-building activities
-4. **Esteem** — recognition and appreciation
-5. **Self-actualisation** — responsibility, autonomy, challenging assignments
-
-## Herzberg's two-factor theory
-
-| **Motivators (high)** | **Hygiene factors (low)** |
-|---|---|
-| Sense of achievement | Working conditions |
-| Recognition | Pay |
-| Opportunity for growth | Peer and group relations |
-| Work itself | Status |
-| Responsibility | Job security |
-| | Supervisor fairness |
-| | Policy and rules |
-| | Bonus |
-
-**Four rules:**
-
-1. The **true motivators** are the motivators, **not** the hygiene factors.
-2. **Hygiene factors must be present** for satisfaction.
-3. **One can't be motivated and dissatisfied at the same time.**
-4. **If hygiene factors are missing, motivators can't work.**
-
-**Practical implication:** Paying more (a hygiene factor) won't make someone motivated. But if pay is unfair, no amount of recognition (a motivator) will work.
-
-> **Exam tip:** The common mistake is listing "pay" as a motivator — it's a **hygiene factor**.
-
-## Vroom's theory — "carrot and stick"
-
-1. **What it says:** Employees are motivated by **rewards or consequences**.
-2. **Positive:** Bonus for reaching targets.
-3. **Negative:** Warning for coming late.
-
-> Memory aid: Carrot = reward = bonus. Stick = punishment = warning.
-
-## Adams' equity theory (1965)
-
-1. **What it says:** People can be **demotivated by comparing themselves to others** — salary, benefits, recognition.
-2. **Core idea:** Employees need to **perceive** that rewards for their contributions are **fair** and similar to others'.
-3. **Example:** A female manager earning less than a male manager for the same work will be demotivated.
-4. **The image:** A balance scale comparing **Person (input vs outcome)** against **Referent Other**.
-
-## Alderfer's ERG theory
-
-Three groups of core needs, mapped onto Maslow:
-
-| ERG | Maslow levels covered |
-|---|---|
-| **E — Existence** | Physiological (food, water) + Safety (shelter) |
-| **R — Relatedness** | Social (friendship, family) + Esteem from others (respect) |
-| **G — Growth** | Esteem (self-esteem, achievement) + Self-actualisation (creativity, problem-solving) |
-
-**Key difference from Maslow:**
-
-- **Maslow:** needs must be satisfied **in sequence**, one at a time.
-- **ERG:** different levels **can be satisfied at any time** — you can have social needs met while basic needs are unmet.
-
-> **Exam tip:** "How does ERG differ from Maslow?" → **ERG allows needs to be met in any order; Maslow requires a strict sequence.**
-
-## McClelland's needs theory
-
-Every person has **one of three main drivers**:
-
-1. **Need for achievement** — likes to solve problems and achieve goals.
-2. **Need for affiliation** — doesn't like to stand out or take risks; values relationships above all.
-3. **Need for power** — likes to control others and be in charge.
-
-**How managers use this:** identify each team member's dominant driver, then lead, praise and structure roles accordingly.
-`,
-  quiz: [
-    { q: "In Maslow's hierarchy, which need comes directly above safety?",
-      options: ["Physiological", "Social", "Esteem", "Self-actualisation"],
-      answer: 1,
-      explain: "Order: Physiological → Safety → Social → Esteem → Self-actualisation." },
-    { q: "In Herzberg's theory, which is a hygiene factor?",
-      options: ["Recognition", "Responsibility", "Working conditions", "Achievement"],
-      answer: 2,
-      explain: "Working conditions are a hygiene factor. Recognition and responsibility are motivators." },
-    { q: "Vroom's theory is also called the:",
-      options: ["Equity theory", "Carrot-and-stick approach", "ERG theory", "Two-factor theory"],
-      answer: 1,
-      explain: "Vroom = carrot-and-stick: rewards (carrot) and consequences (stick)." },
-    { q: "A female manager earning less than a male manager for the same work is an example of:",
-      options: ["Maslow", "Herzberg", "Adams' equity theory", "McClelland"],
-      answer: 2,
-      explain: "Adams' equity theory — unfair comparison of input/outcome ratios demotivates." },
-    { q: "Which theory allows needs to be satisfied in any order (unlike Maslow)?",
-      options: ["Alderfer's ERG", "Herzberg's two-factor", "Vroom's expectancy", "McClelland's needs"],
-      answer: 0,
-      explain: "ERG theory allows different levels of need to be met at any time." },
-    { q: "What is the definition of employee motivation?",
-      options: ["The money employees earn", "The enthusiasm, energy, promise, and creativity an employee brings daily", "The number of hours worked", "The level of supervision required"],
-      answer: 1,
-      explain: "Motivation is the desire and willingness of employees to reach the goals of the business." },
-    { q: "According to Herzberg, if hygiene factors are missing, what happens?",
-      options: ["Employees are still motivated", "Motivators cannot work", "Employees ask for a raise", "Productivity increases"],
-      answer: 1,
-      explain: "Herzberg's rule: if hygiene factors (like fair pay and safe conditions) are missing, the motivators cannot work." },
-    { q: "A person driven by a 'need for affiliation' according to McClelland:",
-      options: ["Likes to control others", "Likes to solve complex problems", "Values relationships above all and avoids risk", "Wants to be the boss"],
-      answer: 2,
-      explain: "Those with a strong need for affiliation value relationships and don't like to stand out or take risks." }
-  ],
-  faq: [
-    { q: "difference between maslow and erg theory", a: "Maslow: needs must be satisfied in strict sequence bottom to top. ERG (Alderfer): needs can be satisfied in any order at any time. E=Existence, R=Relatedness, G=Growth." },
-    { q: "herzberg motivators vs hygiene factors", a: "Motivators: achievement, recognition, growth, work itself, responsibility. Hygiene: working conditions, pay, peer relations, status, job security, supervisor fairness, policy, bonus. Hygiene must be present for motivators to work." },
-    { q: "what is adams equity theory", a: "Adams (1965): people are demotivated by comparing their input/outcome ratio to others. If rewards feel unfair (e.g. woman paid less than man for same work), motivation drops." },
-    { q: "what is vroom theory", a: "Vroom's 'carrot and stick': employees are motivated by rewards (bonus for targets) or consequences (warning for lateness)." }
-  ]
-},
-{
-  id: "ch11",
-  number: "11",
-  title: "Stakeholders",
-  summary: "The six stakeholder categories, their expectations, and their influence.",
-  notes: `
-## Overview
-A business doesn't operate in isolation — it affects and is affected by many groups. This chapter introduces the six stakeholder categories, the stakeholder profile, and how good and bad relations play out.
-
-## What is a stakeholder?
-
-> **Definition:** A stakeholder has an interest in a company and can either **affect** or be **affected by** a business's operations and performance.
-
-**Two directions of influence:**
-
-1. **Stakeholders can affect the business** — e.g. customers or the media complain about Eskom's service.
-2. **The business can affect stakeholders** — e.g. Eskom advises customers to use less electricity to avoid load shedding.
-
-**Why stakeholders matter beyond profit:**
-
-- Success is usually measured by profitability/ROI.
-- But **more criteria should be used** — businesses need to satisfy stakeholders.
-- A business that exploits its workers can't be seen as successful.
-
-**The goal is to:**
-
-1. **Promote positive actions** from stakeholders
-2. **Prevent negative actions** from stakeholders
-
-## The stakeholder profile — four questions
-
-1. **What is their role?**
-2. **What are their expectations?**
-3. **What is their influence or impact?**
-4. **What is their rating and priority?**
+## 6. McClelland's needs theory
+- Need for achievement, Need for affiliation, Need for power.`,
+    quiz: [
+      { q: "In Maslow's hierarchy, which need comes directly above safety?", options: ["Physiological", "Social", "Esteem", "Self-actualisation"], answer: 1, explain: "Order: Physiological → Safety → Social → Esteem → Self-actualisation." },
+      { q: "In Herzberg's theory, which is a hygiene factor?", options: ["Recognition", "Responsibility", "Working conditions", "Achievement"], answer: 2, explain: "Working conditions are a hygiene factor." },
+      { q: "Vroom's theory is also called the:", options: ["Equity theory", "Carrot-and-stick approach", "ERG theory", "Two-factor theory"], answer: 1, explain: "Vroom = carrot-and-stick." },
+      { q: "A female manager earning less than a male manager for the same work is an example of:", options: ["Maslow", "Herzberg", "Adams' equity theory", "McClelland"], answer: 2, explain: "Adams' equity theory — unfair comparison." },
+      { q: "Which theory allows needs to be satisfied in any order (unlike Maslow)?", options: ["Alderfer's ERG", "Herzberg's two-factor", "Vroom's expectancy", "McClelland's needs"], answer: 0, explain: "ERG theory allows different levels of need to be met at any time." },
+      { q: "What is the definition of employee motivation?", options: ["The money employees earn", "The enthusiasm, energy, promise, and creativity an employee brings daily", "The number of hours worked", "The level of supervision required"], answer: 1, explain: "Motivation is the desire and willingness to reach goals." },
+      { q: "According to Herzberg, if hygiene factors are missing, what happens?", options: ["Employees are still motivated", "Motivators cannot work", "Employees ask for a raise", "Productivity increases"], answer: 1, explain: "If hygiene factors are missing, the motivators cannot work." },
+      { q: "A person driven by a 'need for affiliation' according to McClelland:", options: ["Likes to control others", "Likes to solve complex problems", "Values relationships above all and avoids risk", "Wants to be the boss"], answer: 2, explain: "They value relationships and don't like to stand out." }
+    ],
+    faq: [
+      { q: "difference between maslow and erg theory", a: "Maslow: needs must be satisfied in strict sequence bottom to top. ERG: needs can be satisfied in any order." },
+      { q: "herzberg motivators vs hygiene factors", a: "Motivators: achievement, recognition, growth. Hygiene: working conditions, pay, job security. Hygiene must be present for motivators to work." },
+      { q: "what is adams equity theory", a: "People are demotivated by comparing their input/outcome ratio to others." }
+    ]
+  },
+  {
+    id: "ch11",
+    module: "Retail Operations Management 1",
+    number: "11",
+    title: "Stakeholders",
+    summary: "The six stakeholder categories, their expectations, and their influence.",
+    notes: `## What is a stakeholder?
+> **Definition:** A stakeholder has an interest in a company and can either **affect** or be **affected by** a business's operations.
 
 ## The six stakeholder categories
+1. **Owners:** provide capital. Expect profits, ROI.
+2. **Customers:** buy products. Expect good prices, quality. Influence: stop buying, bad word of mouth.
+3. **Employees:** provide labour. Expect fair pay, security. Influence: strike, go-slow, quiet quitting.
+4. **Community:** support business. Expect funding. Influence: good word of mouth, or looting.
+5. **Suppliers:** make goods available. Expect timely payments. Influence: stop supplying (e.g., Nando's chicken shortage).
+6. **Government:** SARS, SAPS, CCMA. Expect taxes. Influence: fines, cancel licences.`,
+    quiz: [
+      { q: "Which is NOT one of the six stakeholder categories covered?", options: ["Owners", "Competitors", "Suppliers", "Community"], answer: 1, explain: "Competitors are not listed." },
+      { q: "Which is an expectation of owners?", options: ["Good working conditions", "Maximum ROI and growing business value", "Fair negotiation", "Tax compliance"], answer: 1, explain: "Owners expect profits, maximum ROI, growth." },
+      { q: "Employees who do the absolute minimum are demonstrating:", options: ["Strike", "Quiet quitting", "Sabotage", "Go-slow"], answer: 1, explain: "Quiet quitting = working but doing the absolute minimum." },
+      { q: "A UK chicken shortage forced Nando's to close branches. This is an example of:", options: ["Government influence", "Community influence", "Supplier influence", "Customer influence"], answer: 2, explain: "Suppliers can stop supplying, disrupting operations." },
+      { q: "Which government body helps dissatisfied employees against employers?", options: ["SARS", "SAPS", "CCMA", "Municipality"], answer: 2, explain: "CCMA = Commission for Conciliation, Mediation and Arbitration." },
+      { q: "What is a stakeholder profile used for?", options: ["To track employee salaries", "To understand a group's role, expectations, and influence", "To calculate market share", "To design a website"], answer: 1, explain: "To understand a stakeholder's role, expectations, influence, and priority." },
+      { q: "Which of these is a result of GOOD relations with suppliers?", options: ["They stop supplying", "They extend credit payment terms during cash flow problems", "They demand immediate payment", "They sue the business"], answer: 1, explain: "Suppliers may extend credit terms if the business has cash flow issues." },
+      { q: "Xenophobia riots and looting are examples of negative relations with which stakeholder?", options: ["Customers", "Employees", "Community", "Government"], answer: 2, explain: "Negative relations with the community can lead to riots, attacks, and looting." }
+    ],
+    faq: [
+      { q: "who are the six stakeholder categories", a: "Owners, customers, employees, community, suppliers, government." },
+      { q: "what is a stakeholder profile", a: "Four questions per group: (1) role, (2) expectations, (3) influence/impact, (4) rating and priority." },
+      { q: "what are employee expectations", a: "Fair pay, job security, good working conditions, work/life balance, promotions and development." }
+    ]
+  },
+  {
+    id: "ch12",
+    module: "Retail Operations Management 1",
+    number: "12",
+    title: "Operational Risks",
+    summary: "Ten types of risk, shrinkage and shoplifting in depth, and the five-step risk management process.",
+    notes: `## The ten operational risks
+1. Shoplifting and theft, 2. Employee theft, 3. Fraud and scams, 4. Inventory shortages, 5. Cybersecurity threats, 6. Supply chain disruptions, 7. Competition, 8. Health and safety incidents, 9. Natural disasters, 10. Sabotage.
 
-### Owners
-
-**Roles:** provide capital, provide security for loans, evaluate success.
-
-**Expectations:** profits, maximum ROI, growing business value, personal goals (legacy).
-
-**Influence:** close the business, sell it, sell shares, dismiss managers, retrench employees.
-
-### Customers
-
-**Roles:** buy products and services, advertise by word of mouth.
-
-**Expectations:** good prices, quality products, service and advice, after-sales service, value for money, convenience.
-
-**Influence (if unmet):** stop buying, loss of sales/profit, bad word of mouth, shrinkage (steal).
-
-> **Real-world example:** Clicks/TRESemme — after a "racist" ad, Unilever removed all TRESemme products from SA retail stores for 10 days. Bad customer relations caused direct commercial harm.
-
-### Employees
-
-**Roles:** provide labour, bring skills and expertise, bring new and creative products/solutions.
-
-**Expectations:** fair pay, job security, good working conditions, work/life balance, promotions, development.
-
-**Influence (if unmet):**
-
-1. Strike
-2. Unproductive (go-slow)
-3. Steal (products and secrets)
-4. Sabotage
-5. Complain (bad-mouth the business)
-6. Demotivate other employees
-7. **Quiet quitting** — working but doing the absolute minimum
-
-> **Example:** Google's work/life balance — free meals, on-site health checks, haircuts, dry cleaning, massages, nap pods, video game stations, foosball and table tennis.
-
-### Community
-
-**Roles:** support the business.
-
-**Expectations:** funding/money, space/venue, transport, management/admin support.
-
-**Influence:**
-
-- **Positive:** good word of mouth, encourage others to support
-- **Negative:** discourage support, pressure suppliers, **looting**
-
-> **Real-world example:** 2021 unrest in Pietermaritzburg — communities engaged in looting.
-
-### Suppliers
-
-> **Definition:** A supplier is a business or person that makes goods available to another business or service. Includes finance (banks) and services (legal).
-
-**Expectations:**
-
-1. **Timely payments** — honour 30/60-day terms
-2. **Clear communication** — accurate purchase orders, forecasts
-3. **Consistent and reliable orders** — steady demand, not erratic
-4. **Fair negotiation** — competitive but not exploitative
-5. **Loyalty and long-term partnership**
-
-**Influence:** stop supplying, change credit arrangements, stop giving credit.
-
-> **Real-world example:** A UK chicken shortage forced **Nando's to close 50 branches** and **KFC to limit its menu** due to lack of meat-processing staff and HGV drivers.
-
-### Government
-
-**Types:**
-
-1. **Municipalities** — road, water, electricity, business licences
-2. **SARS** — tax
-3. **SAPS** — policing
-4. **CCMA** — helps dissatisfied employees against employers
-
-**Expectations:** pay taxes, create employment, behave ethically and lawfully.
-
-**Influence:** cancel operating licences, fines (SARS), stop services (water/electricity), increase rates, load shedding.
-
-## Results of bad stakeholder relations
-
-1. **Bad relations with customers:** boycott, influence others not to buy
-2. **Bad relations with community:** xenophobia riots, attacks, demolition of foreign retailers
-3. **Bad relations with staff:** strikes over bad conditions or low pay
-
-## Results of good stakeholder relations
-
-1. **Support from suppliers:** extended credit terms when cash flow is tight
-2. **Support from local authorities:** help with licences and location
-
-> **Exam tip:** A common exam question asks you to identify a stakeholder in a scenario and explain the impact. Use the four-question profile as structure: role, expectation, influence, priority.
-`,
-  quiz: [
-    { q: "Which is NOT one of the six stakeholder categories covered?",
-      options: ["Owners", "Competitors", "Suppliers", "Community"],
-      answer: 1,
-      explain: "Competitors are not listed. The six are owners, customers, employees, community, suppliers, government." },
-    { q: "Which is an expectation of owners?",
-      options: ["Good working conditions", "Maximum ROI and growing business value", "Fair negotiation", "Tax compliance"],
-      answer: 1,
-      explain: "Owners expect profits, maximum ROI, growth and personal goals." },
-    { q: "Employees who do the absolute minimum are demonstrating:",
-      options: ["Strike", "Quiet quitting", "Sabotage", "Go-slow"],
-      answer: 1,
-      explain: "Quiet quitting = working but doing the absolute minimum." },
-    { q: "A UK chicken shortage forced Nando's to close branches. This is an example of:",
-      options: ["Government influence", "Community influence", "Supplier influence", "Customer influence"],
-      answer: 2,
-      explain: "Suppliers can stop supplying, disrupting operations." },
-    { q: "Which government body helps dissatisfied employees against employers?",
-      options: ["SARS", "SAPS", "CCMA", "Municipality"],
-      answer: 2,
-      explain: "CCMA = Commission for Conciliation, Mediation and Arbitration." },
-    { q: "What is a stakeholder profile used for?",
-      options: ["To track employee salaries", "To understand a group's role, expectations, and influence", "To calculate market share", "To design a website"],
-      answer: 1,
-      explain: "Managers compile a profile to understand a stakeholder's role, expectations, influence, and priority." },
-    { q: "Which of these is a result of GOOD relations with suppliers?",
-      options: ["They stop supplying", "They extend credit payment terms during cash flow problems", "They demand immediate payment", "They sue the business"],
-      answer: 1,
-      explain: "One of the benefits of good relations is that suppliers may extend credit terms if the business has cash flow issues." },
-    { q: "Xenophobia riots and looting are examples of negative relations with which stakeholder?",
-      options: ["Customers", "Employees", "Community", "Government"],
-      answer: 2,
-      explain: "Negative relations with the community can lead to riots, attacks, and looting." }
-  ],
-  faq: [
-    { q: "who are the six stakeholder categories", a: "Owners, customers, employees, community, suppliers, government." },
-    { q: "what is a stakeholder profile", a: "Four questions per stakeholder group: (1) role, (2) expectations, (3) influence/impact, (4) rating and priority." },
-    { q: "what are employee expectations", a: "Fair pay, job security, good working conditions, work/life balance, promotions and development." },
-    { q: "what happens if supplier relations are bad", a: "Suppliers may stop supplying, change credit arrangements, or stop giving credit. Example: UK chicken shortage forced Nando's to close 50 branches." }
-  ]
-},
-{
-  id: "ch12",
-  number: "12",
-  title: "Operational Risks",
-  summary: "Ten types of risk, shrinkage and shoplifting in depth, and the five-step risk management process.",
-  notes: `
-## Overview
-Every business faces risks — from customers, employees, nature, and the digital world. This chapter catalogues the ten main operational risks, drills into shrinkage and shoplifting, and closes with the risk management process.
-
-## The ten operational risks
-
-1. **Shoplifting and theft** — loss of stock from customer theft
-2. **Employee theft** — staff stealing cash, stock, company assets
-3. **Fraud and scams** — false returns, counterfeit money, credit card fraud
-4. **Inventory shortages** — stock losses from theft, damage, errors
-5. **Cybersecurity threats** — data breaches, hacking, ransomware
-6. **Supply chain disruptions** — delays or shortages from suppliers
-7. **Competition** — losing customers to competitors or online retailers
-8. **Health and safety incidents** — injuries to customers or employees
-9. **Natural disasters** — fires, floods, other disruptive events
-10. **Sabotage** — deliberate actions intended to damage operations
-
-> Customer theft, a slipped ankle on a wet floor, phishing attacks, looting — all can have a **significant impact** on a business.
-
-## Risk #1: Shrinkage
-
-> **Definition:** Shrinkage is the **reduction of inventory value** due to **employee or customer theft**.
-
-**Five types of shrinkage:**
-
-1. Theft by customers
-2. Theft by employees
-3. Mistakes by employees at the point of sale
-4. Supplier short delivery the retailer doesn't pick up
-5. Miscounting during physical stock-takes → bookkeeping errors
-
-> **Note:** Shrinkage is broader than theft alone — it includes administrative and supplier errors.
+## Shrinkage
+> **Definition:** The reduction of inventory value due to employee or customer theft.
+- Types: Customer theft, Employee theft, POS mistakes, Supplier short delivery, Miscounting.
 
 ## Shoplifting
+- **Methods:** Working in pairs, hiding products, price switching, grab and run.
+- **Prevention:** Cameras, mirrors, RFID tags, customer service, layout optimization.
 
-> **Definition:** A person taking goods from a store **without paying** for them.
+## Who cannot be legally prosecuted
+- Children under 12 (presumed no criminal capacity).
+- Children 12–14 (only if State proves they understood wrongfulness).
 
-**The legal test:** The store must prove the person **took control of the merchandise away from the retailer**. Just picking something up isn't shoplifting — concealment and movement away from control matters.
-
-**Four common methods:**
-
-1. **Working in pairs** — one distracts staff, the other pockets goods
-2. **Hiding products** — in clothing or purchased items
-3. **Price switching** — swapping tags so expensive items are charged less
-4. **Grab and run** — waiting for busy periods, then dashing in and running off
-
-> Grab and run is more common in stores without guards or anti-theft alarms.
-
-## Ten prevention measures
-
-1. **Know the methods** of customer stealing
-2. **Keep the store organised and tidy** — missing items are hard to spot in a mess
-3. **Optimise layout** — cashiers near the exit to spot shoplifters
-4. **Install security cameras** — deterrent and blind-spot coverage
-5. **Add mirrors** — low-cost alternative to cameras
-6. **Use customer service as prevention** — engage with customers to show you're aware
-7. **Use signage** — e.g. signs showing you use cameras
-8. **Train staff to spot scams** — price switching, false returns
-9. **Use retail inventory tools** — RFID tags
-10. **Identify at-risk items** — e.g. expensive items
-
-## Staff training on shoplifting
-
-1. Identify scams (price switching, false returns)
-2. Respond to suspected shoplifters
-3. Alert colleagues using store codes
-4. Know **when** to approach a suspect
-5. Know **when to call security or police**
-6. Implement a **clear shoplifting policy**
-
-## The eight-step response procedure
-
-1. Be **reasonably certain** a theft has occurred **before acting**
-2. Approach **calmly and discreetly**
-3. Request the person accompany security/management to a **private area**
-4. Notify manager/security **immediately**
-5. Contact police **if required by policy** or if the situation warrants it
-6. Continue observing
-7. **No unnecessary force**; don't put yourself or others at risk
-8. **Document** any recovered merchandise
-
-## When it might NOT be shoplifting
-
-1. Customer **forgot to pay** (retailer's discretion)
-2. Customer takes something **someone threw away**
-3. Merchandise **priced incorrectly by the retailer**
-4. Customer **intentionally damages** merchandise
-
-> If unsure of age or mental state — call the police.
-
-## Who cannot be legally prosecuted (South Africa)
-
-1. **Children under 12** — presumed no criminal capacity
-2. **Children aged 12–14** — only if the **State proves** they understood wrongfulness
-3. **People with severe mental incapacity** at the time of the offence
-
-## Risk #2: Data breaches and digital theft
-
-1. **Phishing scams** deceive people into sharing sensitive info
-2. **Employees and customers** can be targeted
-3. **Credit card details** may be stolen
-4. Results in **fraud and financial losses**
-5. Highlights the importance of **cybersecurity awareness**
-
-## Risk #3: Inventory damage
-
-1. **Natural disasters and severe weather** damage stores and warehouses
-2. **Perishable products** are especially vulnerable
-3. Purchase **business property insurance** tailored to specific risks
-4. General retail insurance may cover storm/weather damage
-
-## Risk #4: Customer injuries
-
-1. Customers may be injured in a store
-2. **Safety signs do not eliminate all risks**
-3. **General liability insurance** protects against customer injury claims
-4. **Employee accident insurance** covers workers
-
-> **Real-world example:** At **Canal Walk** on Boxing Day 2019, a lamp post crashed down on a patron's head after breaking loose from its bolts. Even well-maintained-looking fixtures can become hazards.
-
-## Risk #5: Forced closure
-
-> **Definition:** A business is **required to temporarily or permanently shut down** due to circumstances beyond its control.
-
-**Six examples:**
-
-1. Government orders / legal action (lockdown)
-2. Health and safety violations (COVID-19)
-3. Fire, flooding, natural disaster
-4. Civil unrest, riots, terrorism threats
-5. Security incidents (bomb threat)
-6. Failure to comply with regulations/licensing
-
-> **Examples:** A fire at a Checkers Hyper store; a Woolworths Food cordoned off after a bomb threat.
-
-## The risk management process
-
-Five-step cycle:
-
-1. **Identifying risks**
-2. **Evaluating techniques available to manage risk**
-3. **Selecting a risk management technique**
-4. **Implementing the risk management technique**
-5. **Monitoring effectiveness of the risk management technique**
-
-> The arrows loop back from step 5 to step 1 — risk management is **continuous**.
-`,
-  quiz: [
-    { q: "Shrinkage is best defined as:",
-      options: ["Theft by customers only", "Reduction of inventory value due to employee or customer theft", "Damage from natural disasters", "Loss from supplier delays"],
-      answer: 1,
-      explain: "Shrinkage = reduction of inventory value due to employee or customer theft." },
-    { q: "Swapping price tags on products is called:",
-      options: ["Grab and run", "Price switching", "Hiding products", "Working in pairs"],
-      answer: 1,
-      explain: "Price switching = swapping tags so a more expensive item is charged less." },
-    { q: "Under SA law, children in which age group CANNOT be prosecuted for shoplifting?",
-      options: ["Under 10", "Under 12", "Under 14", "Under 16"],
-      answer: 1,
-      explain: "Children under 12 are presumed to lack criminal capacity." },
-    { q: "Which is the FIRST step of the risk management process?",
-      options: ["Implementing the technique", "Identifying risks", "Selecting a technique", "Monitoring effectiveness"],
-      answer: 1,
-      explain: "Step 1 = identifying risks." },
-    { q: "A bomb threat forcing a store to close is an example of:",
-      options: ["Shrinkage", "Data breach", "Forced closure", "Sabotage"],
-      answer: 2,
-      explain: "Forced closure = business required to shut down due to circumstances beyond its control." },
-    { q: "Which of the following is NOT one of the ten operational risks?",
-      options: ["Customer injuries", "Employee theft", "Employee motivation", "Supply chain disruptions"],
-      answer: 2,
-      explain: "Employee motivation is not an operational risk. The ten risks include theft, fraud, disasters, cybersecurity, etc." },
-    { q: "How should staff approach a suspected shoplifter?",
-      options: ["Run at them and shout", "Calmly and discreetly", "Use unnecessary force", "Ignore them"],
-      answer: 1,
-      explain: "Step 2 of the response procedure: approach calmly and discreetly." },
-    { q: "What is a key prevention measure for shoplifting involving technology?",
-      options: ["Using RFID tags", "Hiring more security guards", "Closing the store earlier", "Increasing prices"],
-      answer: 0,
-      explain: "The slides mention using retail inventory management tools like RFID tags to ensure products are not stolen." }
-  ],
-  faq: [
-    { q: "what is shrinkage", a: "Reduction of inventory value due to employee or customer theft. Five types: customer theft, employee theft, POS mistakes, supplier short delivery, miscounting." },
-    { q: "what are the methods of shoplifting", a: "Four: working in pairs (one distracts), hiding products, price switching (swapping tags), grab and run (during busy periods, no guards/alarms)." },
-    { q: "who cannot be prosecuted for shoplifting in south africa", a: "Children under 12 (presumed no criminal capacity). Children 12–14 only if State proves they understood wrongfulness. People with severe mental incapacity at the time." },
-    { q: "steps of the risk management process", a: "Five: (1) identifying risks, (2) evaluating techniques, (3) selecting a technique, (4) implementing, (5) monitoring effectiveness. Continuous cycle." }
-  ]
-},
-{
-  id: "ch13",
-  number: "13",
-  title: "Health and Safety at Work",
-  summary: "The OHSA 1993 framework, employer and employee duties, and stress management.",
-  notes: `
-## Overview
-The legal framework that protects workers and customers, the practical duties on both employers and employees, and a final section on employee wellness.
-
-## The legal framework
-
-> **The Occupational Health and Safety Act (OHSA), 1993** requires retailers to bring about and maintain, **as far as reasonably practicable**, a work environment that is safe and without risk to the health of workers.
-
-**Three purposes of the OHS Act:**
-
-1. **Ensure the health and safety of employees at work.**
-2. **Protect workers from hazards** arising from work-related activities.
-3. Act as a **proactive measure** to **prevent and avoid** work-related illnesses and injuries.
-
-**Shared-responsibility principle:**
-
-1. It is **not** expected of retailers to take sole responsibility.
-2. **Employees and the employer must share the responsibility.**
-3. **Both parties** must proactively **identify dangers** and **develop control measures**.
+## Risk management process
+1. Identifying risks
+2. Evaluating techniques
+3. Selecting a technique
+4. Implementing
+5. Monitoring effectiveness`,
+    quiz: [
+      { q: "Shrinkage is best defined as:", options: ["Theft by customers only", "Reduction of inventory value due to employee or customer theft", "Damage from natural disasters", "Loss from supplier delays"], answer: 1, explain: "Shrinkage = reduction of inventory value." },
+      { q: "Swapping price tags on products is called:", options: ["Grab and run", "Price switching", "Hiding products", "Working in pairs"], answer: 1, explain: "Price switching = swapping tags so a more expensive item is charged less." },
+      { q: "Under SA law, children in which age group CANNOT be prosecuted for shoplifting?", options: ["Under 10", "Under 12", "Under 14", "Under 16"], answer: 1, explain: "Children under 12 are presumed to lack criminal capacity." },
+      { q: "Which is the FIRST step of the risk management process?", options: ["Implementing the technique", "Identifying risks", "Selecting a technique", "Monitoring effectiveness"], answer: 1, explain: "Step 1 = identifying risks." },
+      { q: "A bomb threat forcing a store to close is an example of:", options: ["Shrinkage", "Data breach", "Forced closure", "Sabotage"], answer: 2, explain: "Forced closure = business required to shut down." },
+      { q: "Which of the following is NOT one of the ten operational risks?", options: ["Customer injuries", "Employee theft", "Employee motivation", "Supply chain disruptions"], answer: 2, explain: "Employee motivation is not an operational risk." },
+      { q: "How should staff approach a suspected shoplifter?", options: ["Run at them and shout", "Calmly and discreetly", "Use unnecessary force", "Ignore them"], answer: 1, explain: "Approach calmly and discreetly." },
+      { q: "What is a key prevention measure for shoplifting involving technology?", options: ["Using RFID tags", "Hiring more security guards", "Closing the store earlier", "Increasing prices"], answer: 0, explain: "Retail inventory management tools like RFID tags." }
+    ],
+    faq: [
+      { q: "what is shrinkage", a: "Reduction of inventory value due to employee or customer theft." },
+      { q: "what are the methods of shoplifting", a: "Working in pairs, hiding products, price switching, grab and run." },
+      { q: "who cannot be prosecuted for shoplifting in south africa", a: "Children under 12, and children 12-14 unless the State proves they understood wrongfulness." }
+    ]
+  },
+  {
+    id: "ch13",
+    module: "Retail Operations Management 1",
+    number: "13",
+    title: "Health and Safety at Work",
+    summary: "The OHSA 1993 framework, employer and employee duties, and stress management.",
+    notes: `## The legal framework
+> **The Occupational Health and Safety Act (OHSA), 1993** requires retailers to maintain a work environment that is safe and without risk to health.
 
 ## The three key terms
+- **Hazard:** Anything with potential to cause harm.
+- **Risk:** The likelihood the hazard will cause harm.
+- **Control:** Measures to decrease the likelihood or consequences.
 
-### Hazard
+## Employer's seven duties
+1. Identify risks, 2. Establish protective methods, 3. Provide info/training, 4. Not permit unsafe work, 5. Ensure obedience, 6. Ensure trained supervision, 7. Appoint reps.
 
-> Anything with the potential to cause harm.
+## Health and Safety Representatives
+- Required if >20 employees.
+- Shops/offices: 1 per 100.
+- Other workplaces: 1 per 50.
 
-**Examples:** a wet floor, exposed wiring, dangerous chemicals, moving machinery.
+## Employee duties
+1. Care for own/others' safety, 2. No "playing", 3. Obey rules, 4. Co-operate, 5. Give info to inspectors, 6. Report unsafe conditions.
 
-### Risk
+## Stress management
+- **Physical** (headaches), **Behavioural** (withdrawal), **Cognitive** (poor concentration), **Emotional** (anxiety).`,
+    quiz: [
+      { q: "A wet floor is best described as a:", options: ["Risk", "Hazard", "Control", "Standard"], answer: 1, explain: "A hazard is anything with potential to cause harm." },
+      { q: "Which Act governs health and safety at work in South Africa?", options: ["OHSA 1993", "BCEA 1997", "LRA 1995", "EEA 1998"], answer: 0, explain: "OHSA = Occupational Health and Safety Act, 1993." },
+      { q: "In shops and offices, the minimum number of H&S reps is:", options: ["1 per 20 employees", "1 per 50 employees", "1 per 100 employees", "1 per 200 employees"], answer: 2, explain: "Shops/offices: 1 per 100. Other workplaces: 1 per 50." },
+      { q: "Which is NOT an employee duty under OHSA?", options: ["Care for own and others' safety", "Obey rules and procedures", "Appoint H&S representatives", "Report unsafe conditions ASAP"], answer: 2, explain: "Appointing H&S reps is an EMPLOYER duty." },
+      { q: "An inspector from the Department of Labour may:", options: ["Only enter with a warrant", "Enter any workplace without prior notice", "Only inspect offices", "Only issue warnings, not fines"], answer: 1, explain: "Inspectors may enter without notice." },
+      { q: "How many H&S representatives are required if a factory has 120 employees?", options: ["1", "2", "3", "4"], answer: 2, explain: "Factories require 1 per 50. 120 ÷ 50 = 2.4, round up to 3." },
+      { q: "Which of these is a cognitive symptom of stress?", options: ["Headaches", "Nail biting", "Difficulty making decisions", "Anger and irritability"], answer: 2, explain: "Cognitive symptoms include difficulty making decisions." },
+      { q: "What does the OHSA require regarding work tasks?", options: ["Employees must figure out safety themselves", "Employers must not permit unsafe work", "Only managers need training", "Safety is entirely the employee's responsibility"], answer: 1, explain: "Employer duty #4: Not to permit unsafe work." }
+    ],
+    faq: [
+      { q: "difference between hazard and risk", a: "Hazard = potential to cause harm. Risk = likelihood it causes harm." },
+      { q: "how many h&s representatives are required", a: "Trigger: >20 employees. Shops/offices: 1 per 100. Other: 1 per 50." },
+      { q: "what are the employer duties under ohsa", a: "Seven: identify hazards, establish protective methods, provide info/training, not permit unsafe work, ensure obedience, ensure trained supervision, appoint H&S reps." }
+    ]
+  },
 
-> The **likelihood (chance)** the hazard will cause harm, plus **how severe** that harm could be.
+  /* =========================================
+     MODULE 2: RETAILING 1
+     ========================================= */
+  {
+    id: "t01",
+    module: "Retailing 1",
+    number: "Topic 1",
+    title: "Customer Segments & Target Markets",
+    summary: "How markets are divided into groups to better target marketing efforts.",
+    notes: `## The Market & Target Market
+* **Market:** Consists of all the consumers who purchase specific goods and services.
+* **Target Market:** A group of people to whom a firm decides to direct its marketing efforts.
 
-**Examples:**
+## Customer Segmentation
+* **Definition:** The process of dividing a market into distinct customer groups that share similar characteristics.
+* **Kotler's Definition:** Sub-dividing a market into distinct and homogenous subgroups.
 
-- Slipping on a wet floor
-- A fire due to exposed wiring
-- An employee being electrocuted
-- Being knocked by moving machinery
+## The Four Main Bases for Segmentation:
+1. **Profile (Demographic/Geographic):** Age, gender, income.
+2. **Behavioural:** Benefits sought, purchase occasion, usage rate.
+3. **Psychographic:** Lifestyle, personality.
+4. **Geographic:** Where the customer lives.
 
-### Control
+## Benefits of Segmentation:
+* Product development and customized marketing programs.
+* Focus marketing on customers and build loyal relationships.
+* Improve customer service and become more competitive.`,
+    quiz: [
+      { q: "What is a target market?", options: ["A group of people a firm decides to direct its marketing efforts to", "The entire population of a country", "The competitors in a specific area", "A list of all products in a store"], answer: 0, explain: "A target market is the specific group a business aims its marketing at." },
+      { q: "Customer segmentation is the process of dividing a market into:", options: ["Random groups", "Distinct groups sharing similar characteristics", "Competitor groups", "Price categories"], answer: 1, explain: "Segmentation divides the market into distinct groups." },
+      { q: "Which of the following is a psychographic segmentation factor?", options: ["Age", "Purchase occasion", "Lifestyle", "Income"], answer: 2, explain: "Psychographic segmentation includes lifestyle and personality." },
+      { q: "According to the slides, what is one reason target markets are important?", options: ["To fire employees", "To forecast market growth", "To increase store size", "To buy more stock"], answer: 1, explain: "Forecasting market growth is one reason." },
+      { q: "Purchase behaviour falls under which segmentation category?", options: ["Psychographic", "Profile", "Behavioural", "Geographic"], answer: 2, explain: "Behavioural segmentation includes purchase behaviour." },
+      { q: "Which of the following is a benefit of customer segmentation?", options: ["Wasting company resources", "Building loyal relationships with customers", "Increasing the number of competitors", "Making products more expensive"], answer: 1, explain: "Building loyal relationships is a benefit." },
+      { q: "Kotler defines marketing segmentation as sub-dividing a market into subgroups that are:", options: ["Random and chaotic", "Distinct and homogenous", "Competitive and expensive", "Large and small"], answer: 1, explain: "Kotler defines it as distinct and homogenous subgroups." },
+      { q: "Which factor is part of 'Profile' segmentation?", options: ["Personality", "Benefits sought", "Socio-economic status", "Usage rate"], answer: 2, explain: "Profile segmentation includes socio-economic status." }
+    ],
+    faq: [
+      { q: "What is the difference between a market and a target market?", a: "A market is *everyone* who buys the product. A target market is the *specific group* the business chooses to focus its marketing on." },
+      { q: "What are the four main bases of segmentation?", a: "Profile (Demographic/Geographic), Behavioural, Psychographic, and Geographic." },
+      { q: "Why segment a market?", a: "To focus marketing efforts, build better relationships, allocate resources efficiently, and increase profit potential." }
+    ]
+  },
+  {
+    id: "t02",
+    module: "Retailing 1",
+    number: "Topic 2",
+    title: "Customer Service & Complaints",
+    summary: "The importance of good service and identifying customer emotions during complaints.",
+    notes: `## What is Customer Service?
+* The support and advice provided by a business to those people who buy or use its products.
+* **Importance:** Builds loyalty, encourages repeat purchases, differentiates from competitors.
+* **Types:** In-store assistance, online support, after-sales service.
+* **Customer Expectations:** Fast response, personal attention, product knowledge, respect.
+* **Measuring Service Quality:** Surveys, mystery shoppers, Net Promoter Score (NPS).
 
-> Measures put in place to **decrease the likelihood or consequences** of an unwanted event.
+## Handling Complaints (Identifying Emotions)
+* *Scenario 1:* Broken toy for a child.
+  * **Emotion:** Upset, Angry, Frustrated.
+* *Scenario 2:* Cream is off while preparing a dessert with guests waiting.
+  * **Emotion:** Panicked, Stressed, Embarrassed.
+* *Scenario 3:* Wrong change, told to wait, supervisor dismisses her.
+  * **Emotion:** Frustrated, Ignored, Angry.
+* *Scenario 4:* Promotional product not available, travelled far.
+  * **Emotion:** Disappointed, Frustrated.
+* *Scenario 5:* Price increased, assistant not interested to assist.
+  * **Emotion:** Angry, Ignored, Confused.`,
+    quiz: [
+      { q: "What is customer service?", options: ["The process of manufacturing goods", "The support and advice provided by a business to buyers/users", "A type of marketing advertisement", "The financial record of a store"], answer: 1, explain: "Customer service is the support and advice provided to buyers." },
+      { q: "Which of the following is a type of customer service?", options: ["In-store assistance", "After-sales service", "Online support", "All of the above"], answer: 3, explain: "All are valid types." },
+      { q: "Which skill involves understanding and sharing the feelings of a customer?", options: ["Patience", "Product knowledge", "Empathy", "Problem-solving"], answer: 2, explain: "Empathy is understanding and sharing feelings." },
+      { q: "A customer who finds a broken product after purchase is most likely feeling:", options: ["Joyful", "Disappointed", "Indifferent", "Relieved"], answer: 1, explain: "A broken product leads to disappointment." },
+      { q: "Which of the following is a method to measure customer service?", options: ["Mystery shoppers", "Stock counts", "Employee wages", "Store layout"], answer: 0, explain: "Mystery shoppers evaluate customer service." },
+      { q: "What is a key expectation of customers regarding service?", options: ["Slow response", "Impersonal interaction", "Fast response and personal attention", "Lack of product knowledge"], answer: 2, explain: "Fast responses and personal attention are expected." },
+      { q: "When a customer is told to wait and the supervisor is dismissive, the customer likely feels:", options: ["Valued", "Ignored", "Excited", "Relaxed"], answer: 1, explain: "Being dismissed makes the customer feel ignored." },
+      { q: "Which of the following is an example of poor customer service?", options: ["Welcoming customers warmly", "Resolving issues quickly", "Being rude and unhelpful", "Assisting with product selection"], answer: 2, explain: "Being rude and unhelpful is poor service." }
+    ],
+    faq: [
+      { q: "What are the 4 types of customer service?", a: "In-store assistance, online support, after-sales service, and call centre/helpdesk." },
+      { q: "How do we measure customer service?", a: "Through satisfaction surveys, mystery shoppers, feedback forms, and Net Promoter Scores (NPS)." },
+      { q: "What skills does a good customer service agent need?", a: "Communication, empathy, patience, product knowledge, and problem-solving." }
+    ]
+  },
+  {
+    id: "t03",
+    module: "Retailing 1",
+    number: "Topic 3",
+    title: "The Selling Process",
+    summary: "The 9 steps of a sale, types of selling, FAB, and closing techniques.",
+    notes: `## Types of Selling Processes:
+1. Self-service, 2. Limited service, 3. Full service.
 
-Controls can **prevent** the event or **reduce the loss of control** of the hazard (e.g. contain energy release).
+## The 9-Step Sales Process:
+1. **Preparing:** Equipment, product knowledge.
+2. **Approaching:** Initiate a relationship. "You never get a second chance to make a good first impression."
+3. **Getting information:** Ask questions, listen carefully.
+4. **Giving information:** Use **FAB**:
+   * *Features:* Physical characteristics.
+   * *Advantages:* What makes it unique.
+   * *Benefits:* The satisfaction the customer gains.
+5. **Identifying and overcoming obstacles:** Real, Misinformed, Emotional, Delaying.
+6. **Dealing with offers & terms:** Credit (Hire Purchase).
+7. **Using closing techniques:** Assumptive, either/or, reflexive, summary, ask for it, third party, inducement.
+8. **Completing paperwork:** Cash, card, credit.
+9. **Implementing after-sales follow-up.**
 
-**Examples:** wet-floor signs, gas shut-off valves, barriers.
+## Bob Phibbs' 5 Steps to Closing Quickly:
+1. **Engage.**
+2. **Establish Trust.**
+3. **Address Concerns.**
+4. **Demonstrate Value:** Focus on what the product provides.
+5. **Closing Organically:** Suggest complimentary items (add-ons).`,
+    quiz: [
+      { q: "Which of the following is a type of selling process?", options: ["Self-service", "Full service", "Limited service", "All of the above"], answer: 3, explain: "All three are types of selling processes." },
+      { q: "What is the first step in the 9-step sales process?", options: ["Approaching the customer", "Preparing for the sale", "Overcoming obstacles", "Completing paperwork"], answer: 1, explain: "Step 1 is preparing for the sale." },
+      { q: "In the FAB acronym, what does the B stand for?", options: ["Buying", "Bargain", "Benefits", "Balance"], answer: 2, explain: "FAB stands for Features, Advantages, Benefits." },
+      { q: "Which of these is NOT a type of obstacle?", options: ["Real obstacle", "Misinformed obstacle", "Financial obstacle", "Emotional obstacle"], answer: 2, explain: "The four are Real, Misinformed, Emotional, and Delaying." },
+      { q: "According to Bob Phibbs, what should you do instead of pushing for a close?", options: ["Walk away", "Offer complimentary items (add-ons)", "Lower the price", "Call the manager"], answer: 1, explain: "Suggesting add-ons closes the sale organically." },
+      { q: "'You never get a second chance to make a good first impression' applies to which step?", options: ["Preparing", "Approaching", "Paperwork", "After-sales"], answer: 1, explain: "This quote is related to the approach." },
+      { q: "Which closing technique is The either/or close?", options: ["A closing technique", "A type of obstacle", "A step in FAB", "A paperwork method"], answer: 0, explain: "It is one of the 7 closing techniques." },
+      { q: "What is a key part of Demonstrating Value?", options: ["Focusing on the price", "Focusing on what the product provides", "Rushing the customer", "Ignoring the customer's needs"], answer: 1, explain: "Focus on what the product provides." }
+    ],
+    faq: [
+      { q: "What are Features, Advantages, and Benefits (FAB)?", a: "Features are physical traits; Advantages are what makes it unique; Benefits are the satisfaction the customer gets." },
+      { q: "What are the 4 types of obstacles?", a: "Real, Misinformed, Emotional, and Delaying." },
+      { q: "How do you close a sale organically?", a: "By suggesting complementary items that add value, rather than pushing them to pay immediately." }
+    ]
+  },
+  {
+    id: "t04",
+    module: "Retailing 1",
+    number: "Topic 4",
+    title: "Retail Location",
+    summary: "Why location matters and the 5-step process of choosing one.",
+    notes: `## Definition
+Retail location refers to the geographical place where a retail business is established. 
 
-> **The chain:** **Hazard** (the thing) → **Risk** (chance it hurts someone) → **Control** (what you do about it).
+## Importance of Location:
+* Determines customer accessibility.
+* Affects foot traffic and visibility.
+* Influences cost (rent, utilities, taxes).
 
-## The employer's seven duties
+## Types of Retail Locations:
+1. Central Business District (CBD)
+2. Shopping Centers and Malls
+3. Freestanding Sites
+4. Neighborhood Centers
+5. Online Retail Locations
 
-1. **Identify potential risks and hazards** — present while work is being done, produced, processed, used, stored or transported.
-2. **Establish protective methods** and provide the means to implement them.
-3. **Provide information, instructions, training and supervision** — keeping workers' capability in mind.
-4. **Not permit employees to carry on with any task** unless protective methods are in place.
-5. **Ensure every worker obeys** OHSA requirements.
-6. **Ensure work and equipment are supervised** by a worker trained to understand the dangers.
-7. **Appoint health and safety representatives.**
+## The 5-Step Location Process:
+1. Market research and data analysis.
+2. Identification of potential sites.
+3. Site evaluation and feasibility study.
+4. Financial analysis and budgeting.
+5. Final selection and negotiation.`,
+    quiz: [
+      { q: "What does retail location refer to?", options: ["The type of products sold", "The geographical place where a business is established", "The price of the products", "The store's website"], answer: 1, explain: "Retail location refers to the geographical place." },
+      { q: "Which of the following is a type of retail location?", options: ["Central Business District (CBD)", "Freestanding Sites", "Online E-commerce", "All of the above"], answer: 3, explain: "All are valid retail location types." },
+      { q: "Why is location important?", options: ["It determines customer accessibility", "It has no effect on costs", "It guarantees success", "It replaces the need for marketing"], answer: 0, explain: "Location determines accessibility." },
+      { q: "Which factor influences location decisions?", options: ["Zoning laws", "The owner's favourite colour", "The number of employees", "The store's logo"], answer: 0, explain: "Zoning laws are a major factor." },
+      { q: "What is the first step in choosing a retail location?", options: ["Final selection", "Market research and data analysis", "Signing the lease", "Buying stock"], answer: 1, explain: "Step 1 is market research." },
+      { q: "A store located in a mall is an example of:", options: ["CBD", "Shopping Center/Mall", "Online retail", "Freestanding site"], answer: 1, explain: "A mall is a Shopping Center." },
+      { q: "Which of these is NOT a factor in location decisions?", options: ["Accessibility and transportation", "Cost of premises", "The owner's age", "Competition"], answer: 2, explain: "The owner's age is not a factor." },
+      { q: "What does a feasibility study fall under?", options: ["Step 1", "Step 2", "Step 3", "Step 5"], answer: 2, explain: "Step 3 is site evaluation and feasibility study." }
+    ],
+    faq: [
+      { q: "What are the 5 types of retail locations?", a: "CBD, Shopping Centers/Malls, Freestanding Sites, Neighborhood Centers, and Online." },
+      { q: "Why does location influence cost?", a: "Rent, utilities, and taxes vary drastically depending on the area." },
+      { q: "What is a feasibility study?", a: "It is step 3 in location selection, where the business evaluates if a site will work." }
+    ]
+  },
+  {
+    id: "t05",
+    module: "Retailing 1",
+    number: "Topic 5",
+    title: "Retail Merchandising",
+    summary: "Planning, buying, and selling products effectively.",
+    notes: `## Definition
+Retail merchandising refers to the planning, buying, and selling of products in a retail setting.
 
-> **Memory aid:** Identify → Establish → Inform → Restrict → Enforce → Supervise → Appoint.
+## 5 Key Elements of Merchandising:
+1. Product assortment
+2. Pricing strategy
+3. Visual merchandising
+4. Inventory management
+5. Promotion and advertising
 
-## Health and Safety Representatives (HSRs)
+## Visual Merchandising:
+* Display techniques to attract customers (window displays, store layout, signage, lighting).
+* Aims to maximize product visibility and appeal.
 
-> **Definition:** Full-time workers **chosen/elected and selected in writing** by the employer, after the employer and workers **consulted and agreed**. They must be **familiar with the work surroundings and conditions** of the workplace.
+## The Merchandising Process:
+1. Understanding customer needs.
+2. Planning merchandise assortment.
+3. Buying and sourcing products.
+4. Pricing and placing merchandise.
+5. Monitoring and adjusting based on performance.`,
+    quiz: [
+      { q: "What is retail merchandising?", options: ["Only the visual display of products", "The planning, buying, and selling of products", "The accounting process of a store", "Hiring and firing staff"], answer: 1, explain: "It involves planning, buying, and selling." },
+      { q: "Which of these is a key element of merchandising?", options: ["Product assortment", "Pricing strategy", "Visual merchandising", "All of the above"], answer: 3, explain: "All are key elements." },
+      { q: "Visual merchandising includes:", options: ["Window displays and lighting", "Store layout and signage", "Both A and B", "Only pricing"], answer: 2, explain: "Both A and B are part of visual merchandising." },
+      { q: "What is the first step in the merchandising process?", options: ["Buying products", "Understanding customer needs", "Pricing products", "Adjusting based on performance"], answer: 1, explain: "Step 1 is understanding customer needs." },
+      { q: "Which of these is a reason merchandising is important?", options: ["It decreases sales", "It helps manage inventory", "It confuses customers", "It lowers brand identity"], answer: 1, explain: "It helps manage inventory effectively." },
+      { q: "Adjusting based on performance is which step?", options: ["Step 1", "Step 3", "Step 5", "Step 2"], answer: 2, explain: "Step 5 is monitoring and adjusting." },
+      { q: "What does visual merchandising aim to do?", options: ["Hide products", "Maximize product visibility and appeal", "Reduce lighting costs", "Slow down customer traffic"], answer: 1, explain: "It maximizes visibility and appeal." },
+      { q: "A grocery store using seasonal displays for summer fruits is an example of:", options: ["Pricing strategy", "Visual merchandising", "Inventory management", "Promotion"], answer: 1, explain: "It's an example of visual merchandising." }
+    ],
+    faq: [
+      { q: "What are the 5 key elements of merchandising?", a: "Product assortment, pricing strategy, visual merchandising, inventory management, and promotion." },
+      { q: "What is the difference between merchandising and visual merchandising?", a: "Merchandising is the overall process of planning and selling, while visual merchandising is how products are displayed." },
+      { q: "What is product assortment?", a: "The variety and range of products a store chooses to stock." }
+    ]
+  },
+  {
+    id: "t06",
+    module: "Retailing 1",
+    number: "Topic 6",
+    title: "Township Retailing",
+    summary: "The unique characteristics, challenges, and opportunities of retail in South African townships.",
+    notes: `## What is Township Retailing?
+* Retail activities in township areas.
+* Focuses on accessibility, affordability, and convenience.
 
-> **Key point:** HSRs are not appointed unilaterally — there must be consultation and agreement with workers.
+## Characteristics of Townships:
+* High population density.
+* Lower to middle income.
+* Mix of informal and formal trade.
 
-## How many HSRs must be appointed?
+## Types of Retailers:
+* Spaza shops
+* Street vendors
+* Supermarkets (Shoprite, Checkers)
+* Malls
 
-**Trigger rule:** The requirement starts when the workplace has **more than 20 employees**. An inspector can require additional representatives if numbers are inadequate.
+## Consumer Profile & Buying Behaviour:
+* Price-sensitive customers.
+* Frequent, small purchases.
+* Dependence on public transport.
+* Focus on promotions.
+* Preference for smaller pack sizes.
 
-**Rate rules:**
+## Retail Challenges:
+* Security issues.
+* Infrastructure limitations.
+* Competition from informal traders.
 
-1. **Shops and offices:** at least **1 per 100 employees** (or part thereof)
-2. **Other workplaces** (factories, warehouses, construction): at least **1 per 50 employees**
+## Retail Strategies & Marketing:
+* Affordable pricing.
+* Localised products.
+* Community engagement.
+* Use of radio, flyers, word-of-mouth.`,
+    quiz: [
+      { q: "What is township retailing focused on?", options: ["Luxury goods", "Accessibility, affordability, and convenience", "Online shopping only", "International exports"], answer: 1, explain: "It focuses on accessibility, affordability, and convenience." },
+      { q: "Which of these is a characteristic of townships?", options: ["Low population density", "High population density", "Very high income", "No informal trade"], answer: 1, explain: "Townships have high population density." },
+      { q: "Which type of retailer is common in townships?", options: ["Spaza shops", "Street vendors", "Supermarkets", "All of the above"], answer: 3, explain: "All of these are common." },
+      { q: "Township consumers often prefer:", options: ["Large pack sizes", "Smaller pack sizes", "Expensive luxury items", "Buying in bulk monthly"], answer: 1, explain: "They prefer smaller pack sizes." },
+      { q: "What is a major challenge for township retailers?", options: ["Too much security", "Security issues", "Too few customers", "No competition"], answer: 1, explain: "Security issues are a major challenge." },
+      { q: "Why is location important in townships?", options: ["It doesn't matter", "Near transport hubs and high foot traffic", "Far away from residential areas", "Inside industrial zones"], answer: 1, explain: "Location near transport hubs is critical." },
+      { q: "Which is a strategy for township retailers?", options: ["High pricing", "Community engagement", "Ignoring local needs", "Using only English advertising"], answer: 1, explain: "Community engagement is a key strategy." },
+      { q: "What is a future trend for township retail?", options: ["No growth", "Digital transformation", "Less competition", "Closing of all formal stores"], answer: 1, explain: "Digital transformation is a future trend." }
+    ],
+    faq: [
+      { q: "What is a spaza shop?", a: "A small, informal convenience store found in South African townships." },
+      { q: "Why are township consumers price-sensitive?", a: "Because the income levels are generally lower to middle income, so they look for value." },
+      { q: "What are the main challenges of township retail?", a: "Security issues, poor infrastructure, and heavy competition." }
+    ]
+  },
+  {
+    id: "t07",
+    module: "Retailing 1",
+    number: "Topic 7",
+    title: "Consumer Protection Legislation",
+    summary: "The Consumer Protection Act (CPA) and the Electronic Communications Act.",
+    notes: `## The Consumer:
+* Someone who uses goods or services supplied by another party.
 
-**Shops and offices:**
+## Customer Rights:
+Right to return unwanted goods, right to safety, right to accurate information, right not to be misled, right to be heard, right to redress, right to choose.
 
-| Employees | Min H&S reps |
-|---|---|
-| 1–20 | None required |
-| 21–100 | 1 |
-| 101–200 | 2 |
-| 201–300 | 3 |
-| 301–400 | 4 |
-| 401–500 | 5 |
+## The Retailer's Responsibilities:
+* No misleading trade descriptions.
+* No misleading advertising about availability or price.
+* No displaying of goods without prices.
+* Give customers a record (till slip).
+* Have procedures to return/replace/refund.
+* Train staff on friendly service.
 
-**Other workplaces:**
+## The Complaint Process:
+1. Company contacted for response.
+2. Reference number given.
+3. Response sent to all parties.
+4. If unresolved, conciliation within 10 days.
+5. Independent mediator resolves it.
+6. Consumer Tribunal (final authority).
 
-| Employees | Min H&S reps |
-|---|---|
-| 1–20 | None required |
-| 21–50 | 1 |
-| 51–100 | 2 |
-| 101–150 | 3 |
-| 151–200 | 4 |
-| 201–250 | 5 |
-| 251–300 | 6 |
+## The Electronic Communications Act:
+* Regulates how retailers communicate electronically.
+* Customers may opt-out of direct marketing.`,
+    quiz: [
+      { q: "Who is a consumer?", options: ["The person selling the goods", "Someone who uses goods/services supplied by another party", "The manager of the store", "The government"], answer: 1, explain: "A consumer uses goods/services supplied by another party." },
+      { q: "What does the CPA say about displayed goods with a price?", options: ["The retailer is making an offer", "The customer is making an offer", "It is just decoration", "It means the item is out of stock"], answer: 0, explain: "Displaying with a price is making an offer." },
+      { q: "Which of the following is a customer right?", options: ["Right to be misled", "Right to safety", "Right to steal", "Right to ignore prices"], answer: 1, explain: "The right to safety is a fundamental customer right." },
+      { q: "Which section prohibits misleading trade descriptions?", options: ["Section 24.2", "Section 61.1", "Section 21.1", "Section 4"], answer: 0, explain: "Section 24.2 prohibits misleading trade descriptions." },
+      { q: "What must a retailer provide for all goods sold?", options: ["A free gift", "A record (till slip)", "A warranty card only", "A discount"], answer: 1, explain: "They must provide a record." },
+      { q: "If a complaint goes to conciliation, it must be done within how many days?", options: ["10 days", "30 days", "7 days", "14 days"], answer: 0, explain: "Conciliation is conducted within 10 days." },
+      { q: "What does the Electronic Communications Act regulate?", options: ["How retailers communicate electronically", "The price of electronics", "How many TVs a store can sell", "The return policy of electronics"], answer: 0, explain: "It regulates electronic communication with customers." },
+      { q: "Which of these is a retailer responsibility?", options: ["Displaying goods without prices", "Making false claims about performance", "Handling queries in a friendly manner", "Selling unsafe goods"], answer: 2, explain: "Handling queries in a friendly manner is a responsibility." }
+    ],
+    faq: [
+      { q: "What is the purpose of the CPA?", a: "To protect consumers from unfair business practices and ensure they receive safe, quality goods." },
+      { q: "What are the retailer's rules regarding pricing?", a: "They must not display goods without prices, and they must not make misleading claims about price." },
+      { q: "How does the complaint process work?", a: "A complaint is made, the retailer responds, and if unresolved, it goes to conciliation and finally the Consumer Tribunal." }
+    ]
+  },
+  {
+    id: "t08",
+    module: "Retailing 1",
+    number: "Topic 8",
+    title: "Time Management",
+    summary: "Setting SMART goals, prioritizing, and using tools to manage time effectively.",
+    notes: `## Goal Setting (SMART):
+* **S**pecific
+* **M**easurable
+* **A**ttainable
+* **R**elevant
+* **T**ime-bound
 
-> **Exam tip:** Check whether the workplace is a shop/office (per 100) or other (per 50), then round up to "or part thereof."
+## Time Management System:
+1. **Identify:** Find a system that works for you.
+2. **Create:** Create a personal schedule.
+3. **Account:** Account for your job and other commitments.
+4. **Check:** Strive for balance.
 
-## Communication duties
+## Benefits:
+* Reduces stress and lets you work optimally.
 
-1. **The employer** must inform HSRs when an inspector notifies of **inspections and investigations**.
-2. **HSRs** must inform the employer of any **incident** in the workplace **as soon as possible**.
-
-## The six employee duties
-
-1. **Care for your own health and safety, and others'.** Care for others affected by your actions or your carelessness to act.
-2. **No "playing" at work.** Playing can lead to serious injuries or death — a **serious violation of the OHSA**.
-3. **Obey rules and procedures** put in place by the employer.
-4. **Co-operate with the employer** on health and safety issues.
-5. **Give information to an inspector** from the Department of Labour if required.
-6. **Report unsafe or unhealthy conditions** to the employer or HSR **as soon as possible**.
-
-## Enforcement — who enforces the OHS Act?
-
-1. The OHSA 1993 is managed by the **Chief Directorate of Occupational Health and Safety** of the **Department of Labour**.
-2. **Provincial offices** exist in all provinces.
-3. **OHSA inspectors** from these offices carry out inspections and investigations.
-
-## What triggers an inspection?
-
-1. **Accident statistics** of retailers/organisations
-2. **Presence of dangerous substances** (e.g. benzene in laundries, dangerous machinery)
-3. **Unplanned inspections** from complaints (treated **confidentially**)
-
-## What can an inspection result in?
-
-- **Warnings**, **fines**, and/or **stopping practices** that cause harm.
-
-## The inspector's powers
-
-At **any time**, an inspector may:
-
-1. **Enter any workplace without prior notice**
-2. **Request any documentation**
-3. **Inspect any condition, process, plant or article**
-4. **Take samples or seize any object**
-5. **Question or summon any person** in the workplace
-
-> **Exam tip:** "Without prior notice" is the key phrase — no warrant or appointment required.
-
-## Employee wellness: stress management
-
-### The four categories of stress symptoms
-
-**Physical:**
-
-1. Dizziness
-2. Increased heart rate
-3. High blood pressure
-4. Rapid breathing
-5. Aches and pains
-6. Frequent colds and flu
-7. Insomnia or sleeplessness
-8. Headaches
-
-**Behavioural:**
-
-1. Behavioural changes
-2. Decreased personal hygiene
-3. Social withdrawal
-4. Inability to finish tasks
-5. Fear of being alone
-6. Eating more, or less
-7. Nervous habits (e.g. nail biting)
-
-**Cognitive (mental):**
-
-1. Confusion and poor judgement
-2. Difficulty making decisions
-3. Inability to concentrate and memory loss
-
-**Emotional:**
-
-1. Anxiety, fear, grief, moodiness
-2. Anger and irritability
-3. Depression
-4. Feeling overwhelmed, dread
-5. Loss of sense of humour
-
-### The seven coping strategies
-
-1. **Determine what caused the stress** — understand the cause and your own response
-2. **Identify what you can control** — what is controllable vs not
-3. **Make time for enjoyable activities** — do things you enjoy, connect with others
-4. **Plan and manage your time** — work to a schedule
-5. **Set priorities** — make a to-do list and prioritise
-6. **Set boundaries** — maintain a healthy work-life balance
-7. **Look after your physical and mental health** — sleep, diet, exercise
-
-> **Exam tip:** "Thabo has headaches, sleeplessness and difficulty concentrating" → headaches and sleeplessness are **physical**; difficulty concentrating is **cognitive**.
-`,
-  quiz: [
-    { q: "A wet floor is best described as a:",
-      options: ["Risk", "Hazard", "Control", "Standard"],
-      answer: 1,
-      explain: "A hazard is anything with potential to cause harm. A wet floor is a hazard; slipping is the risk." },
-    { q: "Which Act governs health and safety at work in South Africa?",
-      options: ["OHSA 1993", "BCEA 1997", "LRA 1995", "EEA 1998"],
-      answer: 0,
-      explain: "OHSA = Occupational Health and Safety Act, 1993." },
-    { q: "In shops and offices, the minimum number of H&S reps is:",
-      options: ["1 per 20 employees", "1 per 50 employees", "1 per 100 employees", "1 per 200 employees"],
-      answer: 2,
-      explain: "Shops/offices: 1 per 100 or part thereof. Other workplaces: 1 per 50." },
-    { q: "Which is NOT an employee duty under OHSA?",
-      options: ["Care for own and others' safety", "Obey rules and procedures", "Appoint H&S representatives", "Report unsafe conditions ASAP"],
-      answer: 2,
-      explain: "Appointing H&S reps is an EMPLOYER duty." },
-    { q: "An inspector from the Department of Labour may:",
-      options: ["Only enter with a warrant", "Enter any workplace without prior notice", "Only inspect offices", "Only issue warnings, not fines"],
-      answer: 1,
-      explain: "Inspectors may enter without notice, request documents, inspect, take samples, question/summon, and issue warnings or fines." },
-    { q: "How many H&S representatives are required if a factory has 120 employees?",
-      options: ["1", "2", "3", "4"],
-      answer: 2,
-      explain: "Factories (other workplaces) require 1 per 50. 120 ÷ 50 = 2.4, so round up 'or part thereof' to 3." },
-    { q: "Which of these is a cognitive symptom of stress?",
-      options: ["Headaches", "Nail biting", "Difficulty making decisions", "Anger and irritability"],
-      answer: 2,
-      explain: "Cognitive (mental) symptoms include confusion, poor judgement, and difficulty making decisions." },
-    { q: "What does the OHSA require regarding work tasks?",
-      options: ["Employees must figure out safety themselves", "Employers must not permit employees to carry on with any task unless protective methods are in place", "Only managers need training", "Safety is entirely the employee's responsibility"],
-      answer: 1,
-      explain: "Employer duty #4: Not to permit employees to carry on with any task unless the necessary protective methods have been taken." }
-  ],
-  faq: [
-    { q: "difference between hazard and risk", a: "Hazard = anything with potential to cause harm (wet floor, exposed wiring). Risk = likelihood the hazard causes harm plus severity (slipping, electrocution). Control = what you do about it (signs, shut-off valves)." },
-    { q: "how many h&s representatives are required", a: "Trigger: >20 employees. Shops/offices: 1 per 100 (or part). Other workplaces: 1 per 50 (or part). An inspector may require more." },
-    { q: "what are the employer duties under ohsa", a: "Seven: identify hazards, establish protective methods, provide info/training, not permit unsafe work, ensure obedience, ensure trained supervision, appoint H&S reps." },
-    { q: "what are stress symptom categories", a: "Four: Physical (headaches, insomnia), Behavioural (withdrawal, nail biting), Cognitive (confusion, poor concentration), Emotional (anxiety, anger, depression)." },
-    { q: "inspector powers under ohsa", a: "Enter any workplace without notice, request documentation, inspect conditions/processes/plant, take samples or seize objects, question or summon any person. May issue warnings, fines, or stop practices." }
-  ]
-}
+## The Eisenhower Matrix:
+1. **Urgent & Important:** Do first.
+2. **Important, Not Urgent:** Schedule.
+3. **Urgent, Less Important:** Delegate.
+4. **Neither Urgent nor Important:** Don't do at all.`,
+    quiz: [
+      { q: "What does the 'S' in SMART goals stand for?", options: ["Specific", "Simple", "Standard", "Slow"], answer: 0, explain: "S stands for Specific." },
+      { q: "What does the 'T' in SMART goals stand for?", options: ["Tough", "Time-bound", "Target", "Team"], answer: 1, explain: "T stands for Time-bound." },
+      { q: "Why is identifying priorities important?", options: ["To waste time", "To plan actions that contribute to goals", "To ignore your goals", "To make you stressed"], answer: 1, explain: "It helps plan actions toward your goals." },
+      { q: "Which is the first step in the Time Management System?", options: ["Create", "Account", "Identify", "Check"], answer: 2, explain: "Step 1 is Identify." },
+      { q: "In the Eisenhower Matrix, tasks that are Urgent and Important should be:", options: ["Delegated", "Done first", "Scheduled", "Not done at all"], answer: 1, explain: "Urgent and Important tasks are done first." },
+      { q: "In the Eisenhower Matrix, Important, but not urgent tasks should be:", options: ["Delegated", "Done first", "Scheduled", "Ignored"], answer: 2, explain: "Important but not urgent tasks are scheduled." },
+      { q: "What is a benefit of good time management?", options: ["Increased stress", "Working optimally", "Missing deadlines", "Confusion"], answer: 1, explain: "It lets you work optimally." },
+      { q: "Tasks that are Neither urgent nor important should be:", options: ["Done first", "Scheduled", "Delegated", "Not done at all"], answer: 3, explain: "These should not be done at all." }
+    ],
+    faq: [
+      { q: "What are SMART goals?", a: "Specific, Measurable, Attainable, Relevant, and Time-bound goals." },
+      { q: "What is the Eisenhower Matrix?", a: "A 4-quadrant tool used to prioritize tasks based on urgency and importance." },
+      { q: "Why is a time management system important?", a: "It helps you stay accountable and balance your commitments." }
+    ]
+  }
 ];
