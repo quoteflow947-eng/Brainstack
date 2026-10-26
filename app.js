@@ -5,6 +5,14 @@ const TUTOR_ENDPOINT = "";
 const STORAGE_KEY = "brainstack:progress";
 const THEME_KEY = "brainstack:theme";
 
+const EXAM_TIMETABLE = [
+  { date: "24 November 2026", module: "Business Computer Applications" },
+  { date: "25 November 2026", module: "Communication" },
+  { date: "26 November 2026", module: "Retail Operations Management 1" },
+  { date: "30 November 2026", module: "Retailing 1" },
+  { date: "07 December 2026", module: "Retail Financial Management 1" }
+];
+
 let currentChapter = null;
 let currentTab = "notes";
 let quizState = null; 
@@ -25,7 +33,7 @@ function shuffle(arr) {
   return a;
 }
 
-function showToast(msg, ms = 2000) {
+function showToast(msg, ms = 3000) {
   const t = $("#toast");
   t.textContent = msg;
   t.hidden = false;
@@ -153,25 +161,74 @@ function renderHome() {
   const modules = [...new Set(CHAPTERS.map(c => c.module))];
 
   let html = `
-    <div class="hero">
-      <h1>BrainStack</h1>
+    <div class="dashboard-header">
+      <h1>Your Study Dashboard</h1>
       <p>Read the notes. Take the quiz. Ask the tutor. All offline-ready.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h4>All-in-One Notes</h4>
+        <p>5 complete modules structured clearly so you can study without flipping through old PDFs.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h4>Offline Ready</h4>
+        <p>Study on the bus or without data. Everything is saved to your device automatically.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <h4>Active Recall Quizzes</h4>
+        <p>8-question quizzes per topic with instant scores and full explanations to test your memory.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h4>Smart Tutor</h4>
+        <p>Ask questions and get answers pulled directly from your course content. No internet required.</p>
+      </div>
+    </div>
+
+    <div class="timetable-widget">
+      <h3>📅 Upcoming Exams</h3>
+      <div class="timetable-list">
+        ${EXAM_TIMETABLE.map(ex => `
+          <div class="timetable-item">
+            <span class="timetable-date">${escapeHtml(ex.date)}</span>
+            <span class="timetable-module">${escapeHtml(ex.module)}</span>
+          </div>
+        `).join("")}
+      </div>
     </div>
   `;
 
   modules.forEach(mod => {
-    html += `<h2 style="margin-top: 40px; margin-bottom: 16px; font-size: 24px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 8px;">${escapeHtml(mod)}</h2>`;
     const modChapters = CHAPTERS.filter(c => c.module === mod);
 
-    html += `<div class="card-grid">` + modChapters.map(ch => {
+    html += `<div class="module-section">`;
+    html += `<div class="module-title">${escapeHtml(mod)}</div>`;
+    html += `<div class="card-grid">`;
+
+    html += modChapters.map(ch => {
       const p = progress[ch.id];
       const pct = p ? Math.round((p.best / p.total) * 100) : 0;
       return `<div class="card" data-chapter="${ch.id}">
-        <h3>${escapeHtml(ch.number)}. ${escapeHtml(ch.title)}</h3>
+        <div class="card-top">
+          <span class="chapter-num">${escapeHtml(ch.number)}</span>
+        </div>
+        <h3>${escapeHtml(ch.title)}</h3>
         <p>${escapeHtml(ch.summary)}</p>
-        <div class="card-progress"><div class="card-progress-fill" style="width:${pct}%"></div></div>
+        <div class="card-progress-wrap">
+          <div class="card-progress-label">
+            <span>Progress</span>
+            <span>${pct}%</span>
+          </div>
+          <div class="card-progress"><div class="card-progress-fill" style="width:${pct}%"></div></div>
+        </div>
       </div>`;
-    }).join("") + `</div>`;
+    }).join("");
+
+    html += `</div></div>`;
   });
 
   $("#main").innerHTML = html;
@@ -227,7 +284,7 @@ function renderTab() {
   }
 }
 
-// ---------- QUIZ LOGIC (Answers hidden until the end) ----------
+// ---------- QUIZ LOGIC ----------
 function renderQuiz(ch) {
   if (!quizState) {
     quizState = { 
@@ -242,7 +299,6 @@ function renderQuiz(ch) {
   const body = $("#chapterBody");
   const total = quizState.questions.length;
 
-  // --- REVIEW MODE ---
   if (quizState.reviewing) {
     let reviewHtml = `<h2>Review Answers</h2>`;
     quizState.questions.forEach((q, i) => {
@@ -276,7 +332,6 @@ function renderQuiz(ch) {
     return;
   }
 
-  // --- FINISHED MODE ---
   if (quizState.done) {
     const score = quizState.answers.filter((a, i) => a === quizState.questions[i].answer).length;
     const pct = Math.round((score / total) * 100);
@@ -304,7 +359,6 @@ function renderQuiz(ch) {
     return;
   }
 
-  // --- ACTIVE QUIZ MODE ---
   const q = quizState.questions[quizState.index];
   const selected = quizState.answers[quizState.index];
   const pct = Math.round((quizState.index / total) * 100);
@@ -318,7 +372,9 @@ function renderQuiz(ch) {
   }).join("");
 
   body.innerHTML = `
-    <div class="quiz-progress"><div class="quiz-progress-fill" style="width:${pct}%"></div></div>
+    <div class="quiz-progress-wrap">
+      <div class="quiz-progress"><div class="quiz-progress-fill" style="width:${pct}%"></div></div>
+    </div>
     <div class="quiz-question">
       <div class="q-num">Question ${quizState.index + 1} of ${total}</div>
       <div class="q-text">${escapeHtml(q.q)}</div>
@@ -380,8 +436,8 @@ async function handleAsk(ch) {
       <div class="a-text">${mdToHtml(answer.text)}</div>
       <div class="a-meta">From course content</div>
       ${answer.suggestions && answer.suggestions.length ? `
-        <div style="margin-top:12px">
-          <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px">Related questions</div>
+        <div style="margin-top:16px">
+          <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px">Related questions</div>
           ${answer.suggestions.map(s => `<button class="suggestion" data-q="${escapeHtml(s)}">${escapeHtml(s)}</button>`).join("")}
         </div>` : ""}
     </div>
@@ -457,10 +513,11 @@ $("#searchInput").addEventListener("input", (e) => {
     ch.notes.toLowerCase().includes(q)
   );
   $("#main").innerHTML = `
-    <div class="hero"><h1>Search results</h1><p>${results.length} topic(s) match "${escapeHtml(q)}"</p></div>
+    <div class="dashboard-header"><h1>Search results</h1><p>${results.length} topic(s) match "${escapeHtml(q)}"</p></div>
     <div class="card-grid">
       ${results.map(ch => `<div class="card" data-chapter="${ch.id}">
-        <h3>${escapeHtml(ch.number)}. ${escapeHtml(ch.title)}</h3>
+        <div class="card-top"><span class="chapter-num">${escapeHtml(ch.number)}</span></div>
+        <h3>${escapeHtml(ch.title)}</h3>
         <p>${escapeHtml(ch.summary)}</p>
       </div>`).join("") || `<div class="empty"><h2>No matches</h2><p>Try a different keyword.</p></div>`}
     </div>
@@ -470,12 +527,37 @@ $("#searchInput").addEventListener("input", (e) => {
   }));
 });
 
+function renderTimetable() {
+  currentChapter = null;
+  $$(".nav-item").forEach(n => n.classList.remove("active"));
+  $('[data-nav="timetable"]').classList.add("active");
+
+  $("#main").innerHTML = `
+    <div class="dashboard-header">
+      <h1>Exam Timetable</h1>
+      <p>Keep track of your upcoming exams and start preparing early.</p>
+    </div>
+    <div class="timetable-widget">
+      <div class="timetable-list">
+        ${EXAM_TIMETABLE.map(ex => `
+          <div class="timetable-item" style="padding: 20px;">
+            <span class="timetable-date" style="font-size: 20px;">${escapeHtml(ex.date)}</span>
+            <span class="timetable-module" style="font-size: 18px; font-weight: 600;">${escapeHtml(ex.module)}</span>
+          </div>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
 function route() {
   const hash = location.hash || "#home";
   if (hash.startsWith("#chapter/")) {
     renderChapter(hash.replace("#chapter/", ""));
   } else if (hash === "#ask") {
     renderAskGlobal();
+  } else if (hash === "#timetable") {
+    renderTimetable();
   } else {
     renderHome();
   }
@@ -487,10 +569,11 @@ function renderAskGlobal() {
   $$(".nav-item").forEach(n => n.classList.remove("active"));
   $('[data-nav="ask"]').classList.add("active");
   $("#main").innerHTML = `
-    <div class="hero"><h1>Ask a question</h1><p>Search across all topics, or pick one below.</p></div>
+    <div class="dashboard-header"><h1>Ask a question</h1><p>Search across all topics, or pick one below.</p></div>
     <div class="card-grid">
       ${CHAPTERS.map(ch => `<div class="card" data-chapter="${ch.id}">
-        <h3>${escapeHtml(ch.number)}. ${escapeHtml(ch.title)}</h3>
+        <div class="card-top"><span class="chapter-num">${escapeHtml(ch.number)}</span></div>
+        <h3>${escapeHtml(ch.title)}</h3>
         <p>Ask about ${escapeHtml(ch.title.toLowerCase())}</p>
       </div>`).join("")}
     </div>
@@ -508,6 +591,9 @@ $("#resetBtn").addEventListener("click", resetProgress);
 $$('[data-nav="home"]').forEach(el => el.addEventListener("click", (e) => {
   if (el.tagName === "A") { e.preventDefault(); location.hash = "#home"; }
 }));
+$$('[data-nav="timetable"]').forEach(el => el.addEventListener("click", (e) => {
+  if (el.tagName === "A") { e.preventDefault(); location.hash = "#timetable"; }
+}));
 $$('[data-nav="ask"]').forEach(el => el.addEventListener("click", (e) => {
   if (el.tagName === "A") { e.preventDefault(); location.hash = "#ask"; }
 }));
@@ -516,9 +602,20 @@ function updateOffline() { $("#offlinePill").hidden = navigator.onLine; }
 window.addEventListener("online", updateOffline);
 window.addEventListener("offline", updateOffline);
 
+// Register Service Worker for Offline Use
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("sw.js").catch(() => {});
+    navigator.serviceWorker.register("sw.js").then(reg => {
+      // Force update if a new service worker is found
+      reg.onupdatefound = () => {
+        const installingWorker = reg.installing;
+        installingWorker.onstatechange = () => {
+          if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            showToast("App updated! Refresh to see changes.");
+          }
+        };
+      };
+    }).catch(() => {});
   });
 }
 
