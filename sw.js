@@ -1,7 +1,7 @@
-/* BrainStack Service Worker — Guaranteed Offline Support */
+/* BrainStack Service Worker — Fault-Tolerant Offline Support */
 
 // CHANGE THIS VERSION NUMBER EVERY TIME YOU UPDATE THE APP
-const CACHE = "brainstack-v16";
+const CACHE = "brainstack-v20";
 
 const ASSETS = [
   "./",
@@ -13,12 +13,20 @@ const ASSETS = [
   "./icon.svg"
 ];
 
-// 1. Install: Open cache and save all assets
+// 1. Install: Open cache and save all assets individually
 self.addEventListener("install", (event) => {
   self.skipWaiting(); // Force the new service worker to take over immediately
   event.waitUntil(
     caches.open(CACHE).then((cache) => {
-      return cache.addAll(ASSETS);
+      // We use Promise.all so if one file fails (e.g. missing icon), 
+      // the rest still get cached.
+      return Promise.all(
+        ASSETS.map((url) => {
+          return cache.add(url).catch((err) => {
+            console.warn("Failed to cache:", url, err);
+          });
+        })
+      );
     })
   );
 });
@@ -30,6 +38,7 @@ self.addEventListener("activate", (event) => {
       return Promise.all(
         keys.map((key) => {
           if (key !== CACHE) {
+            console.log("Deleting old cache:", key);
             return caches.delete(key);
           }
         })
