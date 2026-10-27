@@ -605,17 +605,27 @@ window.addEventListener("offline", updateOffline);
 // Register Service Worker for Offline Use
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("sw.js").then(reg => {
+    navigator.serviceWorker.register("./sw.js").then(reg => {
+      console.log("Service Worker registered successfully. Scope:", reg.scope);
+      
       // Force update if a new service worker is found
       reg.onupdatefound = () => {
         const installingWorker = reg.installing;
         installingWorker.onstatechange = () => {
-          if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
-            showToast("App updated! Refresh to see changes.");
+          if (installingWorker.state === 'installed') {
+            if (navigator.serviceWorker.controller) {
+              showToast("New update available! Refresh to apply.");
+            } else {
+              console.log("App cached and ready for offline use!");
+              showToast("App ready for offline use!");
+            }
           }
         };
       };
-    }).catch(() => {});
+    }).catch((err) => {
+      console.error("Service Worker registration failed:", err);
+      showToast("Offline mode failed to start.");
+    });
   });
 }
 
