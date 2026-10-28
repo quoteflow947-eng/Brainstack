@@ -1,6 +1,6 @@
 /* BrainStack Service Worker — Fault-Tolerant Offline Support */
 
-const CACHE = "brainstack-v22";
+const CACHE = "brainstack-v23";
 
 const ASSETS = [
   "./",
