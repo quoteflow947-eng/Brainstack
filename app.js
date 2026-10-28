@@ -4,7 +4,7 @@
 const TUTOR_ENDPOINT = ""; 
 const STORAGE_KEY = "brainstack:progress";
 const THEME_KEY = "brainstack:theme";
-const TRACKER_KEY = "brainstack:tracker";
+const TRACKER_KEY = "brainstack:tracker_v2";
 
 const EXAM_TIMETABLE = [
   { date: "24 November 2026", module: "Business Computer Applications" },
@@ -17,7 +17,10 @@ const EXAM_TIMETABLE = [
 let currentChapter = null;
 let currentTab = "notes";
 let quizState = null; 
+
+// Tracker State
 let trackerData = [];
+let activeModuleId = null; 
 
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
@@ -62,10 +65,12 @@ function setChapterScore(id, score, total) {
   renderSidebar();
 }
 function resetProgress() {
-  if (!confirm("Reset all quiz progress? This cannot be undone.")) return;
+  if (!confirm("Reset all quiz progress and tracker data? This cannot be undone.")) return;
   localStorage.removeItem(STORAGE_KEY);
+  localStorage.removeItem(TRACKER_KEY);
   renderSidebar();
   if (currentChapter) renderChapter(currentChapter.id);
+  if (location.hash === "#tracker") renderTrackerDashboard();
   showToast("Progress reset");
 }
 
@@ -187,7 +192,7 @@ function renderHome() {
       <div class="feature-card">
         <div class="feature-icon">📊</div>
         <h4>Mark Tracker</h4>
-        <p>A neutral calculator to track your year marks. Enter your own weights and see your projected final mark.</p>
+        <p>A neutral calculator to track your year marks by module. Enter your own weights and see your projected mark.</p>
       </div>
     </div>
 
@@ -529,140 +534,297 @@ $("#searchInput").addEventListener("input", (e) => {
   }));
 });
 
-// ---------- MARK TRACKER LOGIC ----------
-function getTracker() {
-  try { return JSON.parse(localStorage.getItem(TRACKER_KEY)) || []; }
-  catch { return []; }
+// ---------- MARK TRACKER LOGIC (V2 Two-Tier) ----------
+function getTrackerData() {
+  try {
+    const data = JSON.parse(localStorage.getItem(TRACKER_KEY));
+    if (data && data.length > 0) return data;
+  } catch { }
+  
+  // If no data, initialize with the 5 default modules
+  const defaults = [
+    { id: "mod_comm", name: "Communication", code: "CMM157S", assessments: [] },
+    { id: "mod_rom", name: "Retail Operations Management 1", code: "ROM150S", assessments: [] },
+    { id: "mod_ret1", name: "Retailing 1", code: "RET150S", assessments: [] },
+    { id: "mod_rfm", name: "Retail Financial Management 1", code: "RFM150S", assessments: [] },
+    { id: "mod_bca", name: "Business Computer Applications", code: "BCA157S", assessments: [] }
+  ];
+  localStorage.setItem(TRACKER_KEY, JSON.stringify(defaults));
+  return defaults;
 }
 
-function saveTracker(data) {
+function saveTrackerData(data) {
   localStorage.setItem(TRACKER_KEY, JSON.stringify(data));
 }
 
-window.deleteTrackerItem = function(id) {
-  trackerData = trackerData.filter(t => t.id !== id);
-  saveTracker(trackerData);
-  renderTrackerRows();
+window.deleteTrackerAssessment = function(modId, assId) {
+  if (!confirm("Delete this assessment?")) return;
+  const mod = trackerData.find(m => m.id === modId);
+  if (mod) {
+    mod.assessments = mod.assessments.filter(a => a.id !== assId);
+    saveTrackerData(trackerData);
+    renderTrackerModule(modId);
+  }
 };
 
-function renderTracker() {
-  currentChapter = null;
-  $$(".nav-item").forEach(n => n.classList.remove("active"));
-  $('[data-nav="tracker"]').classList.add("active");
-  trackerData = getTracker();
+window.deleteTrackerModule = function(modId) {
+  if (!confirm("Delete this entire module and all its marks?")) return;
+  trackerData = trackerData.filter(m => m.id !== modId);
+  saveTrackerData(trackerData);
+  renderTrackerDashboard();
+};
 
-  $("#main").innerHTML = `
-    <div class="dashboard-header">
-      <h1>Mark Tracker</h1>
-      <p>A neutral, professional calculator to track your year marks. Enter your own weights.</p>
-    </div>
-    <div class="tracker-container">
-      <table class="tracker-table" id="trackerTable">
-        <thead>
-          <tr>
-            <th>Assessment</th>
-            <th>Status</th>
-            <th>Mark (%)</th>
-            <th>Weight (%)</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="trackerBody"></tbody>
-      </table>
-      <button class="btn btn-primary" id="addTrackerBtn" style="width: 100%;">+ Add Assessment</button>
-      <div class="tracker-summary" id="trackerSummary"></div>
-    </div>
-  `;
-
-  renderTrackerRows();
-
-  $("#addTrackerBtn").addEventListener("click", () => {
-    trackerData.push({ id: Date.now(), name: "New Assessment", status: "released", mark: "", weight: "" });
-    saveTracker(trackerData);
-    renderTrackerRows();
-  });
-}
-
-function renderTrackerRows() {
-  const tbody = $("#trackerBody");
-  tbody.innerHTML = trackerData.map((item) => `
-    <tr>
-      <td><input type="text" value="${escapeHtml(item.name)}" data-id="${item.id}" data-field="name" placeholder="e.g. Class A 1"></td>
-      <td>
-        <select data-id="${item.id}" data-field="status">
-          <option value="released" ${item.status === 'released' ? 'selected' : ''}>Released</option>
-          <option value="pending" ${item.status === 'pending' ? 'selected' : ''}>Pending</option>
-          <option value="suppressed" ${item.status === 'suppressed' ? 'selected' : ''}>Suppressed</option>
-        </select>
-      </td>
-      <td><input type="number" value="${item.mark}" data-id="${item.id}" data-field="mark" placeholder="e.g. 75" step="0.1"></td>
-      <td><input type="number" value="${item.weight}" data-id="${item.id}" data-field="weight" placeholder="e.g. 20" step="0.1"></td>
-      <td><button class="btn-danger" data-id="${item.id}" onclick="deleteTrackerItem(${item.id})">✕</button></td>
-    </tr>
-  `).join("");
-
-  $$("#trackerBody input, #trackerBody select").forEach(input => {
-    input.addEventListener("change", (e) => {
-      const id = Number(e.target.dataset.id);
-      const field = e.target.dataset.field;
-      const value = e.target.value;
-      
-      const item = trackerData.find(t => t.id === id);
-      if (item) {
-        item[field] = value;
-        saveTracker(trackerData);
-        updateTrackerSummary();
-      }
-    });
-  });
-
-  updateTrackerSummary();
-}
-
-function updateTrackerSummary() {
+function calculateModuleStats(mod) {
   let currentMark = 0;
   let remainingWeight = 0;
-  let pendingContribution = 0;
+  let projectedMark = 0;
 
-  trackerData.forEach(item => {
-    const mark = parseFloat(item.mark) || 0;
-    const weight = parseFloat(item.weight) || 0;
+  if (!mod.assessments) return { current: 0, remaining: 0, projected: 0 };
 
-    if (item.status === 'released') {
+  mod.assessments.forEach(a => {
+    const mark = parseFloat(a.mark) || 0;
+    const weight = parseFloat(a.weight) || 0;
+
+    if (a.status === 'released') {
       currentMark += (mark * weight) / 100;
-    } else if (item.status === 'pending') {
+    } else if (a.status === 'pending') {
       remainingWeight += weight;
-      // If the student entered a "What-If" mark for a pending assessment
-      if (item.mark !== "" && item.mark !== null) {
-        pendingContribution += (mark * weight) / 100;
+      if (a.mark !== "" && a.mark !== null && !isNaN(mark)) {
+        projectedMark += (mark * weight) / 100;
       }
     }
   });
 
-  const finalProjected = currentMark + pendingContribution;
+  return { 
+    current: currentMark, 
+    remaining: remainingWeight, 
+    projected: currentMark + projectedMark 
+  };
+}
 
-  $("#trackerSummary").innerHTML = `
-    <div class="tracker-summary-item">
-      <span>Current Mark</span>
-      <strong>${currentMark.toFixed(2)}%</strong>
+function renderTracker() {
+  if (activeModuleId) {
+    renderTrackerModule(activeModuleId);
+  } else {
+    renderTrackerDashboard();
+  }
+}
+
+function renderTrackerDashboard() {
+  activeModuleId = null;
+  currentChapter = null;
+  $$(".nav-item").forEach(n => n.classList.remove("active"));
+  $('[data-nav="tracker"]').classList.add("active");
+  
+  trackerData = getTrackerData();
+
+  let cardsHtml = trackerData.map(mod => {
+    const stats = calculateModuleStats(mod);
+    return `<div class="module-card">
+      <div>
+        <h3>${escapeHtml(mod.name)}</h3>
+        <div class="code">${escapeHtml(mod.code)}</div>
+      </div>
+      <div class="module-card-stats">
+        <div><span>Current Mark:</span> <strong>${stats.current.toFixed(2)}%</strong></div>
+        <div><span>Projected:</span> <strong>${stats.projected.toFixed(2)}%</strong></div>
+        <div><span>Remaining Weight:</span> <strong>${stats.remaining.toFixed(2)}%</strong></div>
+      </div>
+      <div class="module-card-actions">
+        <button class="btn btn-primary" onclick="window.openModule('${mod.id}')" style="flex:1;">View Marks</button>
+        <button class="btn btn-text" onclick="window.deleteTrackerModule('${mod.id}')">Delete</button>
+      </div>
+    </div>`;
+  }).join("");
+
+  $("#main").innerHTML = `
+    <div class="tracker-header">
+      <div class="dashboard-header" style="margin:0;">
+        <h1>Mark Tracker</h1>
+        <p>Track your year marks by module.</p>
+      </div>
+      <button class="btn btn-primary" onclick="window.addNewModule()">+ Add Module</button>
     </div>
-    <div class="tracker-summary-item">
-      <span>Remaining Weight</span>
-      <strong>${remainingWeight.toFixed(2)}%</strong>
+    <div class="tracker-grid">
+      ${cardsHtml || '<div class="empty" style="grid-column: 1/-1;"><h2>No modules yet</h2><p>Click "+ Add Module" to start tracking.</p></div>'}
     </div>
-    <div class="tracker-summary-item" style="border-top: 1px solid var(--border); padding-top: 12px; margin-top: 8px;">
-      <span>Projected Final Mark</span>
-      <strong>${finalProjected.toFixed(2)}%</strong>
-    </div>
-    <p style="font-size: 13px; color: var(--text-muted); margin: 8px 0 0 0; text-align: center;">
-      * Projected mark uses your estimated marks entered in Pending rows.
-    </p>
   `;
 }
+
+window.openModule = function(id) {
+  activeModuleId = id;
+  renderTracker();
+};
+
+window.addNewModule = function() {
+  const name = prompt("Enter Module Name (e.g. Communication):");
+  if (!name) return;
+  const code = prompt("Enter Module Code (e.g. CMM157S):") || "";
+  
+  trackerData.push({
+    id: "mod_" + Date.now(),
+    name: name,
+    code: code,
+    assessments: []
+  });
+  saveTrackerData(trackerData);
+  renderTrackerDashboard();
+};
+
+window.addNewAssessment = function(modId) {
+  const mod = trackerData.find(m => m.id === modId);
+  if (!mod) return;
+  
+  mod.assessments.push({
+    id: "ass_" + Date.now(),
+    type: "Test",
+    name: "",
+    status: "released",
+    mark: "",
+    weight: ""
+  });
+  saveTrackerData(trackerData);
+  renderTrackerModule(modId);
+};
+
+function renderTrackerModule(modId) {
+  const mod = trackerData.find(m => m.id === modId);
+  if (!mod) { activeModuleId = null; renderTrackerDashboard(); return; }
+  
+  currentChapter = null;
+  $$(".nav-item").forEach(n => n.classList.remove("active"));
+  $('[data-nav="tracker"]').classList.add("active");
+
+  const stats = calculateModuleStats(mod);
+
+  let rowsHtml = (mod.assessments || []).map(a => `
+    <tr>
+      <td>
+        <select data-mod="${modId}" data-ass="${a.id}" data-field="type" onchange="window.updateAss(this)">
+          <option value="Test" ${a.type === 'Test' ? 'selected' : ''}>Test</option>
+          <option value="Exam" ${a.type === 'Exam' ? 'selected' : ''}>Exam</option>
+          <option value="TUT" ${a.type === 'TUT' ? 'selected' : ''}>TUT</option>
+          <option value="Assignment" ${a.type === 'Assignment' ? 'selected' : ''}>Assignment</option>
+          <option value="Class Task" ${a.type === 'Class Task' ? 'selected' : ''}>Class Task</option>
+          <option value="Project" ${a.type === 'Project' ? 'selected' : ''}>Project</option>
+          <option value="Other" ${a.type === 'Other' ? 'selected' : ''}>Other</option>
+        </select>
+      </td>
+      <td><input type="text" value="${escapeHtml(a.name)}" placeholder="e.g. Class A 1" data-mod="${modId}" data-ass="${a.id}" data-field="name" onchange="window.updateAss(this)"></td>
+      <td>
+        <select data-mod="${modId}" data-ass="${a.id}" data-field="status" onchange="window.updateAss(this)">
+          <option value="released" ${a.status === 'released' ? 'selected' : ''}>Released</option>
+          <option value="pending" ${a.status === 'pending' ? 'selected' : ''}>Pending</option>
+          <option value="suppressed" ${a.status === 'suppressed' ? 'selected' : ''}>Suppressed</option>
+        </select>
+      </td>
+      <td><input type="number" value="${a.mark}" placeholder="0" data-mod="${modId}" data-ass="${a.id}" data-field="mark" onchange="window.updateAss(this)" step="0.1"></td>
+      <td><input type="number" value="${a.weight}" placeholder="0" data-mod="${modId}" data-ass="${a.id}" data-field="weight" onchange="window.updateAss(this)" step="0.1"></td>
+      <td><button class="btn-text" onclick="window.deleteTrackerAssessment('${modId}', '${a.id}')" style="color:var(--danger); font-size:18px;">✕</button></td>
+    </tr>
+  `).join("");
+
+  $("#main").innerHTML = `
+    <div style="margin-bottom: 24px;">
+      <button class="btn" onclick="window.backToTracker()" style="margin-bottom: 16px;">← Back to Modules</button>
+      <div class="dashboard-header" style="margin:0;">
+        <h1>${escapeHtml(mod.name)} <span style="font-size: 18px; color: var(--text-muted); font-weight: 500;">(${escapeHtml(mod.code)})</span></h1>
+        <p>Enter your assessments and their weights below.</p>
+      </div>
+    </div>
+
+    <div class="tracker-table-wrap">
+      <table class="tracker-table">
+        <thead>
+          <tr>
+            <th style="width: 15%;">Type</th>
+            <th style="width: 30%;">Assessment Name</th>
+            <th style="width: 15%;">Status</th>
+            <th style="width: 15%;">Mark (%)</th>
+            <th style="width: 15%;">Weight (%)</th>
+            <th style="width: 10%;"></th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rowsHtml || `<tr><td colspan="6" style="text-align:center; padding: 32px; color: var(--text-muted);">No assessments added yet. Click the button below.</td></tr>`}
+        </tbody>
+      </table>
+    </div>
+
+    <div style="display: flex; gap: 16px; margin-bottom: 32px;">
+      <button class="btn btn-primary" onclick="window.addNewAssessment('${modId}')" style="flex: 1;">+ Add Assessment</button>
+    </div>
+
+    <div class="tracker-summary-box">
+      <h4>Module Summary</h4>
+      <div class="tracker-summary-row">
+        <span>Current Mark (Released)</span>
+        <strong>${stats.current.toFixed(2)}%</strong>
+      </div>
+      <div class="tracker-summary-row">
+        <span>Remaining Weight (Pending)</span>
+        <strong>${stats.remaining.toFixed(2)}%</strong>
+      </div>
+      <div class="tracker-summary-row total">
+        <span>Projected Final Mark</span>
+        <strong>${stats.projected.toFixed(2)}%</strong>
+      </div>
+      <p style="font-size: 13px; color: var(--text-muted); margin: 16px 0 0 0; text-align: center;">
+        * Projected mark uses your estimated marks entered in Pending rows.
+      </p>
+    </div>
+  `;
+}
+
+window.backToTracker = function() {
+  activeModuleId = null;
+  renderTrackerDashboard();
+};
+
+window.updateAss = function(el) {
+  const modId = el.dataset.mod;
+  const assId = el.dataset.ass;
+  const field = el.dataset.field;
+  const val = el.value;
+  
+  const mod = trackerData.find(m => m.id === modId);
+  if (mod) {
+    const ass = mod.assessments.find(a => a.id === assId);
+    if (ass) {
+      ass[field] = val;
+      saveTrackerData(trackerData);
+      
+      // Update summary live without full re-render to prevent losing focus
+      const stats = calculateModuleStats(mod);
+      const summaryBox = $(".tracker-summary-box");
+      if (summaryBox) {
+        summaryBox.innerHTML = `
+          <h4>Module Summary</h4>
+          <div class="tracker-summary-row">
+            <span>Current Mark (Released)</span>
+            <strong>${stats.current.toFixed(2)}%</strong>
+          </div>
+          <div class="tracker-summary-row">
+            <span>Remaining Weight (Pending)</span>
+            <strong>${stats.remaining.toFixed(2)}%</strong>
+          </div>
+          <div class="tracker-summary-row total">
+            <span>Projected Final Mark</span>
+            <strong>${stats.projected.toFixed(2)}%</strong>
+          </div>
+          <p style="font-size: 13px; color: var(--text-muted); margin: 16px 0 0 0; text-align: center;">
+            * Projected mark uses your estimated marks entered in Pending rows.
+          </p>
+        `;
+      }
+    }
+  }
+};
 
 // ---------- ROUTER ----------
 function renderTimetable() {
   currentChapter = null;
+  activeModuleId = null;
   $$(".nav-item").forEach(n => n.classList.remove("active"));
   $('[data-nav="timetable"]').classList.add("active");
 
@@ -687,14 +849,18 @@ function renderTimetable() {
 function route() {
   const hash = location.hash || "#home";
   if (hash.startsWith("#chapter/")) {
+    activeModuleId = null;
     renderChapter(hash.replace("#chapter/", ""));
   } else if (hash === "#ask") {
+    activeModuleId = null;
     renderAskGlobal();
   } else if (hash === "#timetable") {
+    activeModuleId = null;
     renderTimetable();
   } else if (hash === "#tracker") {
     renderTracker();
   } else {
+    activeModuleId = null;
     renderHome();
   }
   if (window.innerWidth <= 800) $("#sidebar").classList.remove("open");
@@ -702,6 +868,7 @@ function route() {
 
 function renderAskGlobal() {
   currentChapter = null;
+  activeModuleId = null;
   $$(".nav-item").forEach(n => n.classList.remove("active"));
   $('[data-nav="ask"]').classList.add("active");
   $("#main").innerHTML = `
