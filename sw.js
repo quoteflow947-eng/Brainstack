@@ -1,7 +1,7 @@
 /* BrainStack Service Worker — Fault-Tolerant Offline Support */
 
 // CHANGE THIS VERSION NUMBER EVERY TIME YOU UPDATE THE APP
-const CACHE = "brainstack-v20";
+const CACHE = "brainstack-v21";
 
 const ASSETS = [
   "./",
