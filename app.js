@@ -4,6 +4,7 @@
 const TUTOR_ENDPOINT = ""; 
 const STORAGE_KEY = "brainstack:progress";
 const THEME_KEY = "brainstack:theme";
+const TRACKER_KEY = "brainstack:tracker";
 
 const EXAM_TIMETABLE = [
   { date: "24 November 2026", module: "Business Computer Applications" },
@@ -16,6 +17,7 @@ const EXAM_TIMETABLE = [
 let currentChapter = null;
 let currentTab = "notes";
 let quizState = null; 
+let trackerData = [];
 
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
@@ -183,9 +185,9 @@ function renderHome() {
         <p>8-question quizzes per topic with instant scores and full explanations to test your memory.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🤖</div>
-        <h4>Smart Tutor</h4>
-        <p>Ask questions and get answers pulled directly from your course content. No internet required.</p>
+        <div class="feature-icon">📊</div>
+        <h4>Mark Tracker</h4>
+        <p>A neutral calculator to track your year marks. Enter your own weights and see your projected final mark.</p>
       </div>
     </div>
 
@@ -527,6 +529,138 @@ $("#searchInput").addEventListener("input", (e) => {
   }));
 });
 
+// ---------- MARK TRACKER LOGIC ----------
+function getTracker() {
+  try { return JSON.parse(localStorage.getItem(TRACKER_KEY)) || []; }
+  catch { return []; }
+}
+
+function saveTracker(data) {
+  localStorage.setItem(TRACKER_KEY, JSON.stringify(data));
+}
+
+window.deleteTrackerItem = function(id) {
+  trackerData = trackerData.filter(t => t.id !== id);
+  saveTracker(trackerData);
+  renderTrackerRows();
+};
+
+function renderTracker() {
+  currentChapter = null;
+  $$(".nav-item").forEach(n => n.classList.remove("active"));
+  $('[data-nav="tracker"]').classList.add("active");
+  trackerData = getTracker();
+
+  $("#main").innerHTML = `
+    <div class="dashboard-header">
+      <h1>Mark Tracker</h1>
+      <p>A neutral, professional calculator to track your year marks. Enter your own weights.</p>
+    </div>
+    <div class="tracker-container">
+      <table class="tracker-table" id="trackerTable">
+        <thead>
+          <tr>
+            <th>Assessment</th>
+            <th>Status</th>
+            <th>Mark (%)</th>
+            <th>Weight (%)</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="trackerBody"></tbody>
+      </table>
+      <button class="btn btn-primary" id="addTrackerBtn" style="width: 100%;">+ Add Assessment</button>
+      <div class="tracker-summary" id="trackerSummary"></div>
+    </div>
+  `;
+
+  renderTrackerRows();
+
+  $("#addTrackerBtn").addEventListener("click", () => {
+    trackerData.push({ id: Date.now(), name: "New Assessment", status: "released", mark: "", weight: "" });
+    saveTracker(trackerData);
+    renderTrackerRows();
+  });
+}
+
+function renderTrackerRows() {
+  const tbody = $("#trackerBody");
+  tbody.innerHTML = trackerData.map((item) => `
+    <tr>
+      <td><input type="text" value="${escapeHtml(item.name)}" data-id="${item.id}" data-field="name" placeholder="e.g. Class A 1"></td>
+      <td>
+        <select data-id="${item.id}" data-field="status">
+          <option value="released" ${item.status === 'released' ? 'selected' : ''}>Released</option>
+          <option value="pending" ${item.status === 'pending' ? 'selected' : ''}>Pending</option>
+          <option value="suppressed" ${item.status === 'suppressed' ? 'selected' : ''}>Suppressed</option>
+        </select>
+      </td>
+      <td><input type="number" value="${item.mark}" data-id="${item.id}" data-field="mark" placeholder="e.g. 75" step="0.1"></td>
+      <td><input type="number" value="${item.weight}" data-id="${item.id}" data-field="weight" placeholder="e.g. 20" step="0.1"></td>
+      <td><button class="btn-danger" data-id="${item.id}" onclick="deleteTrackerItem(${item.id})">✕</button></td>
+    </tr>
+  `).join("");
+
+  $$("#trackerBody input, #trackerBody select").forEach(input => {
+    input.addEventListener("change", (e) => {
+      const id = Number(e.target.dataset.id);
+      const field = e.target.dataset.field;
+      const value = e.target.value;
+      
+      const item = trackerData.find(t => t.id === id);
+      if (item) {
+        item[field] = value;
+        saveTracker(trackerData);
+        updateTrackerSummary();
+      }
+    });
+  });
+
+  updateTrackerSummary();
+}
+
+function updateTrackerSummary() {
+  let currentMark = 0;
+  let remainingWeight = 0;
+  let pendingContribution = 0;
+
+  trackerData.forEach(item => {
+    const mark = parseFloat(item.mark) || 0;
+    const weight = parseFloat(item.weight) || 0;
+
+    if (item.status === 'released') {
+      currentMark += (mark * weight) / 100;
+    } else if (item.status === 'pending') {
+      remainingWeight += weight;
+      // If the student entered a "What-If" mark for a pending assessment
+      if (item.mark !== "" && item.mark !== null) {
+        pendingContribution += (mark * weight) / 100;
+      }
+    }
+  });
+
+  const finalProjected = currentMark + pendingContribution;
+
+  $("#trackerSummary").innerHTML = `
+    <div class="tracker-summary-item">
+      <span>Current Mark</span>
+      <strong>${currentMark.toFixed(2)}%</strong>
+    </div>
+    <div class="tracker-summary-item">
+      <span>Remaining Weight</span>
+      <strong>${remainingWeight.toFixed(2)}%</strong>
+    </div>
+    <div class="tracker-summary-item" style="border-top: 1px solid var(--border); padding-top: 12px; margin-top: 8px;">
+      <span>Projected Final Mark</span>
+      <strong>${finalProjected.toFixed(2)}%</strong>
+    </div>
+    <p style="font-size: 13px; color: var(--text-muted); margin: 8px 0 0 0; text-align: center;">
+      * Projected mark uses your estimated marks entered in Pending rows.
+    </p>
+  `;
+}
+
+// ---------- ROUTER ----------
 function renderTimetable() {
   currentChapter = null;
   $$(".nav-item").forEach(n => n.classList.remove("active"));
@@ -558,6 +692,8 @@ function route() {
     renderAskGlobal();
   } else if (hash === "#timetable") {
     renderTimetable();
+  } else if (hash === "#tracker") {
+    renderTracker();
   } else {
     renderHome();
   }
@@ -594,6 +730,9 @@ $$('[data-nav="home"]').forEach(el => el.addEventListener("click", (e) => {
 $$('[data-nav="timetable"]').forEach(el => el.addEventListener("click", (e) => {
   if (el.tagName === "A") { e.preventDefault(); location.hash = "#timetable"; }
 }));
+$$('[data-nav="tracker"]').forEach(el => el.addEventListener("click", (e) => {
+  if (el.tagName === "A") { e.preventDefault(); location.hash = "#tracker"; }
+}));
 $$('[data-nav="ask"]').forEach(el => el.addEventListener("click", (e) => {
   if (el.tagName === "A") { e.preventDefault(); location.hash = "#ask"; }
 }));
@@ -608,7 +747,6 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("./sw.js").then(reg => {
       console.log("Service Worker registered successfully. Scope:", reg.scope);
       
-      // Force update if a new service worker is found
       reg.onupdatefound = () => {
         const installingWorker = reg.installing;
         installingWorker.onstatechange = () => {
