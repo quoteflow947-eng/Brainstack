@@ -527,6 +527,75 @@ button { font: inherit; cursor: pointer; }
   z-index: 100;
 }
 
+/* ---------- Mark Tracker ---------- */
+.tracker-container {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 32px;
+  overflow-x: auto;
+}
+.tracker-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+.tracker-table th, .tracker-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 12px;
+  text-align: left;
+}
+.tracker-table th {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.tracker-table input, .tracker-table select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
+  color: var(--text);
+  font-size: 15px;
+}
+.tracker-table input:focus, .tracker-table select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.tracker-summary {
+  background: var(--bg-soft);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tracker-summary-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+.tracker-summary-item strong {
+  color: var(--primary);
+  font-size: 18px;
+}
+.btn-danger {
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn-danger:hover {
+  background: var(--bg-soft);
+  color: var(--danger);
+}
+
 /* ---------- Mobile ---------- */
 @media (max-width: 800px) {
   .menu-btn { display: block; }
