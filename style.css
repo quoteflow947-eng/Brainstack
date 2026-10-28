@@ -532,7 +532,7 @@ button { font: inherit; cursor: pointer; }
   z-index: 100;
 }
 
-/* ---------- Mark Tracker v2 ---------- */
+/* ---------- Mark Tracker v3 ---------- */
 .tracker-header {
   display: flex; justify-content: space-between; align-items: center;
   margin-bottom: 24px;
