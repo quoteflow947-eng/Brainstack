@@ -4,7 +4,16 @@
 const TUTOR_ENDPOINT = ""; 
 const STORAGE_KEY = "brainstack:progress";
 const THEME_KEY = "brainstack:theme";
-const TRACKER_KEY = "brainstack:tracker_v4";
+const TRACKER_KEY = "brainstack:tracker_v5";
+
+// The 5 CPUT modules
+const CPUT_MODULES = [
+  { name: "Communication", code: "CMM157S" },
+  { name: "Retailing 1", code: "RET150S" },
+  { name: "Retail Operations Management 1", code: "ROM150S" },
+  { name: "Retail Financial Management 1", code: "RFM150S" },
+  { name: "Business Computer Applications", code: "BCA157S" }
+];
 
 const EXAM_TIMETABLE = [
   { date: "24 November 2026", module: "Business Computer Applications" },
@@ -12,14 +21,6 @@ const EXAM_TIMETABLE = [
   { date: "26 November 2026", module: "Retail Operations Management 1" },
   { date: "30 November 2026", module: "Retailing 1" },
   { date: "07 December 2026", module: "Retail Financial Management 1" }
-];
-
-const AVAILABLE_MODULES = [
-  { id: "mod_comm", name: "Communication", code: "CMM157S" },
-  { id: "mod_rom", name: "Retail Operations Management 1", code: "ROM150S" },
-  { id: "mod_ret1", name: "Retailing 1", code: "RET150S" },
-  { id: "mod_rfm", name: "Retail Financial Management 1", code: "RFM150S" },
-  { id: "mod_bca", name: "Business Computer Applications", code: "BCA157S" }
 ];
 
 let currentChapter = null;
@@ -563,7 +564,7 @@ window.deleteTrackerAssessment = function(modId, assId) {
 };
 
 window.deleteTrackerModule = function(modId) {
-  if (!confirm("Delete this entire module and all its marks?")) return;
+  if (!confirm("Remove this module and all its marks from the tracker?")) return;
   trackerData = trackerData.filter(m => m.id !== modId);
   saveTrackerData(trackerData);
   renderTrackerDashboard();
@@ -613,10 +614,16 @@ function renderTrackerDashboard() {
   
   trackerData = getTrackerData();
 
-  // Filter out modules already added to the dashboard
-  const availableToAdd = AVAILABLE_MODULES.filter(am => !trackerData.some(td => td.id === am.id));
+  // Filter out modules already added
+  const availableToAdd = CPUT_MODULES.filter(cputMod => 
+    !trackerData.some(t => t.name === cputMod.name)
+  );
 
-  let selectOptions = availableToAdd.map(am => `<option value="${am.id}">${am.name} (${am.code})</option>`).join("");
+  let availableHtml = availableToAdd.map(mod => 
+    `<button class="module-pill" onclick="window.addModuleFromList('${escapeHtml(mod.name)}', '${escapeHtml(mod.code)}')">
+      <span class="plus">+</span> ${escapeHtml(mod.name)}
+    </button>`
+  ).join("");
 
   let cardsHtml = trackerData.map(mod => {
     const stats = calculateModuleStats(mod);
@@ -632,7 +639,7 @@ function renderTrackerDashboard() {
       </div>
       <div class="module-card-actions">
         <button class="btn btn-primary" onclick="window.openModule('${mod.id}')" style="flex:1;">View Marks</button>
-        <button class="btn btn-text" onclick="window.deleteTrackerModule('${mod.id}')">Delete</button>
+        <button class="btn btn-text" onclick="window.deleteTrackerModule('${mod.id}')">Remove</button>
       </div>
     </div>`;
   }).join("");
@@ -641,47 +648,28 @@ function renderTrackerDashboard() {
     <div class="tracker-header">
       <div class="dashboard-header" style="margin:0;">
         <h1>Mark Tracker</h1>
-        <p>Track your year marks by module.</p>
+        <p>Click a module below to start tracking your marks.</p>
       </div>
-      ${availableToAdd.length > 0 ? `
-        <div class="add-module-box">
-          <select id="moduleSelect" class="form-select">
-            <option value="" disabled selected>Select a module...</option>
-            ${selectOptions}
-          </select>
-          <button class="btn btn-primary" id="addModuleBtn">Add Module</button>
-        </div>
-      ` : ''}
     </div>
     
+    ${availableHtml ? `<div class="available-modules">${availableHtml}</div>` : ''}
+
     <div class="tracker-grid">
-      ${cardsHtml || `<div class="empty" style="grid-column: 1/-1;"><h2>No modules added yet</h2><p>Select a module from the dropdown above to start tracking your marks.</p></div>`}
+      ${cardsHtml || `<div class="empty" style="grid-column: 1/-1;"><h2>No modules tracked yet</h2><p>Click one of the modules above to begin.</p></div>`}
     </div>
   `;
-
-  if (availableToAdd.length > 0) {
-    $("#addModuleBtn").addEventListener("click", () => {
-      const select = $("#moduleSelect");
-      const modId = select.value;
-      if (!modId) {
-        showToast("Please select a module first.");
-        return;
-      }
-
-      const modInfo = AVAILABLE_MODULES.find(m => m.id === modId);
-      if (modInfo) {
-        trackerData.push({
-          id: modInfo.id,
-          name: modInfo.name,
-          code: modInfo.code,
-          assessments: []
-        });
-        saveTrackerData(trackerData);
-        renderTrackerDashboard();
-      }
-    });
-  }
 }
+
+window.addModuleFromList = function(name, code) {
+  trackerData.push({
+    id: "mod_" + Date.now(),
+    name: name,
+    code: code,
+    assessments: []
+  });
+  saveTrackerData(trackerData);
+  renderTrackerDashboard();
+};
 
 window.openModule = function(id) {
   activeModuleId = id;
@@ -695,7 +683,6 @@ window.addNewAssessment = function(modId) {
   mod.assessments.push({
     id: "ass_" + Date.now(),
     type: "Test",
-    name: "",
     status: "released",
     mark: "",
     weight: ""
@@ -727,7 +714,6 @@ function renderTrackerModule(modId) {
           <option value="Other" ${a.type === 'Other' ? 'selected' : ''}>Other</option>
         </select>
       </td>
-      <td><input type="text" value="${escapeHtml(a.name)}" placeholder="e.g. Class A 1" data-mod="${modId}" data-ass="${a.id}" data-field="name" onchange="window.updateAss(this)"></td>
       <td>
         <select data-mod="${modId}" data-ass="${a.id}" data-field="status" onchange="window.updateAss(this)">
           <option value="released" ${a.status === 'released' ? 'selected' : ''}>Released</option>
@@ -754,16 +740,15 @@ function renderTrackerModule(modId) {
       <table class="tracker-table">
         <thead>
           <tr>
-            <th style="width: 15%;">Type</th>
-            <th style="width: 30%;">Assessment Name</th>
-            <th style="width: 15%;">Status</th>
+            <th style="width: 40%;">Type</th>
+            <th style="width: 20%;">Status</th>
             <th style="width: 15%;">Mark (%)</th>
             <th style="width: 15%;">Weight (%)</th>
             <th style="width: 10%;"></th>
           </tr>
         </thead>
         <tbody>
-          ${rowsHtml || `<tr><td colspan="6" style="text-align:center; padding: 32px; color: var(--text-muted);">No assessments added yet. Click the button below.</td></tr>`}
+          ${rowsHtml || `<tr><td colspan="5" style="text-align:center; padding: 32px; color: var(--text-muted);">No assessments added yet. Click the button below.</td></tr>`}
         </tbody>
       </table>
     </div>
@@ -811,7 +796,6 @@ window.updateAss = function(el) {
       ass[field] = val;
       saveTrackerData(trackerData);
       
-      // Update summary live without full re-render to prevent losing focus
       const stats = calculateModuleStats(mod);
       const summaryBox = $(".tracker-summary-box");
       if (summaryBox) {
