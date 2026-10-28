@@ -532,10 +532,12 @@ button { font: inherit; cursor: pointer; }
   z-index: 100;
 }
 
-/* ---------- Mark Tracker v3 ---------- */
+/* ---------- Mark Tracker v4 ---------- */
 .tracker-header {
   display: flex; justify-content: space-between; align-items: center;
   margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 .tracker-grid {
   display: grid;
@@ -563,6 +565,33 @@ button { font: inherit; cursor: pointer; }
 .module-card-actions {
   display: flex; gap: 8px; margin-top: auto; padding-top: 16px;
   border-top: 1px solid var(--border);
+}
+
+.add-module-box {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: var(--bg-elev);
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.form-select {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+  flex: 1;
+  min-width: 200px;
+}
+.form-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--bg-elev);
 }
 
 .tracker-table-wrap {
@@ -643,4 +672,6 @@ button { font: inherit; cursor: pointer; }
   .topbar { gap: 8px; padding: 12px 16px; }
   .timetable-item { flex-direction: column; align-items: flex-start; gap: 4px; }
   .tracker-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .add-module-box { flex-direction: column; width: 100%; }
+  .form-select { width: 100%; }
 }
