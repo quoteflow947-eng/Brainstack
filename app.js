@@ -4,7 +4,7 @@
 const TUTOR_ENDPOINT = ""; 
 const STORAGE_KEY = "brainstack:progress";
 const THEME_KEY = "brainstack:theme";
-const TRACKER_KEY = "brainstack:tracker_v3";
+const TRACKER_KEY = "brainstack:tracker_v4";
 
 const EXAM_TIMETABLE = [
   { date: "24 November 2026", module: "Business Computer Applications" },
@@ -12,6 +12,14 @@ const EXAM_TIMETABLE = [
   { date: "26 November 2026", module: "Retail Operations Management 1" },
   { date: "30 November 2026", module: "Retailing 1" },
   { date: "07 December 2026", module: "Retail Financial Management 1" }
+];
+
+const AVAILABLE_MODULES = [
+  { id: "mod_comm", name: "Communication", code: "CMM157S" },
+  { id: "mod_rom", name: "Retail Operations Management 1", code: "ROM150S" },
+  { id: "mod_ret1", name: "Retailing 1", code: "RET150S" },
+  { id: "mod_rfm", name: "Retail Financial Management 1", code: "RFM150S" },
+  { id: "mod_bca", name: "Business Computer Applications", code: "BCA157S" }
 ];
 
 let currentChapter = null;
@@ -605,6 +613,11 @@ function renderTrackerDashboard() {
   
   trackerData = getTrackerData();
 
+  // Filter out modules already added to the dashboard
+  const availableToAdd = AVAILABLE_MODULES.filter(am => !trackerData.some(td => td.id === am.id));
+
+  let selectOptions = availableToAdd.map(am => `<option value="${am.id}">${am.name} (${am.code})</option>`).join("");
+
   let cardsHtml = trackerData.map(mod => {
     const stats = calculateModuleStats(mod);
     return `<div class="module-card">
@@ -630,32 +643,49 @@ function renderTrackerDashboard() {
         <h1>Mark Tracker</h1>
         <p>Track your year marks by module.</p>
       </div>
-      <button class="btn btn-primary" onclick="window.addNewModule()">+ Add Module</button>
+      ${availableToAdd.length > 0 ? `
+        <div class="add-module-box">
+          <select id="moduleSelect" class="form-select">
+            <option value="" disabled selected>Select a module...</option>
+            ${selectOptions}
+          </select>
+          <button class="btn btn-primary" id="addModuleBtn">Add Module</button>
+        </div>
+      ` : ''}
     </div>
+    
     <div class="tracker-grid">
-      ${cardsHtml || `<div class="empty" style="grid-column: 1/-1;"><h2>No modules added yet</h2><p>Click "+ Add Module" to start tracking your marks.</p></div>`}
+      ${cardsHtml || `<div class="empty" style="grid-column: 1/-1;"><h2>No modules added yet</h2><p>Select a module from the dropdown above to start tracking your marks.</p></div>`}
     </div>
   `;
+
+  if (availableToAdd.length > 0) {
+    $("#addModuleBtn").addEventListener("click", () => {
+      const select = $("#moduleSelect");
+      const modId = select.value;
+      if (!modId) {
+        showToast("Please select a module first.");
+        return;
+      }
+
+      const modInfo = AVAILABLE_MODULES.find(m => m.id === modId);
+      if (modInfo) {
+        trackerData.push({
+          id: modInfo.id,
+          name: modInfo.name,
+          code: modInfo.code,
+          assessments: []
+        });
+        saveTrackerData(trackerData);
+        renderTrackerDashboard();
+      }
+    });
+  }
 }
 
 window.openModule = function(id) {
   activeModuleId = id;
   renderTracker();
-};
-
-window.addNewModule = function() {
-  const name = prompt("Enter Module Name (e.g. Communication):");
-  if (!name) return;
-  const code = prompt("Enter Module Code (e.g. CMM157S):") || "";
-  
-  trackerData.push({
-    id: "mod_" + Date.now(),
-    name: name,
-    code: code,
-    assessments: []
-  });
-  saveTrackerData(trackerData);
-  renderTrackerDashboard();
 };
 
 window.addNewAssessment = function(modId) {
