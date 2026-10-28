@@ -4,7 +4,7 @@
 const TUTOR_ENDPOINT = ""; 
 const STORAGE_KEY = "brainstack:progress";
 const THEME_KEY = "brainstack:theme";
-const TRACKER_KEY = "brainstack:tracker_v2";
+const TRACKER_KEY = "brainstack:tracker_v3";
 
 const EXAM_TIMETABLE = [
   { date: "24 November 2026", module: "Business Computer Applications" },
@@ -534,23 +534,10 @@ $("#searchInput").addEventListener("input", (e) => {
   }));
 });
 
-// ---------- MARK TRACKER LOGIC (V2 Two-Tier) ----------
+// ---------- MARK TRACKER LOGIC ----------
 function getTrackerData() {
-  try {
-    const data = JSON.parse(localStorage.getItem(TRACKER_KEY));
-    if (data && data.length > 0) return data;
-  } catch { }
-  
-  // If no data, initialize with the 5 default modules
-  const defaults = [
-    { id: "mod_comm", name: "Communication", code: "CMM157S", assessments: [] },
-    { id: "mod_rom", name: "Retail Operations Management 1", code: "ROM150S", assessments: [] },
-    { id: "mod_ret1", name: "Retailing 1", code: "RET150S", assessments: [] },
-    { id: "mod_rfm", name: "Retail Financial Management 1", code: "RFM150S", assessments: [] },
-    { id: "mod_bca", name: "Business Computer Applications", code: "BCA157S", assessments: [] }
-  ];
-  localStorage.setItem(TRACKER_KEY, JSON.stringify(defaults));
-  return defaults;
+  try { return JSON.parse(localStorage.getItem(TRACKER_KEY)) || []; }
+  catch { return []; }
 }
 
 function saveTrackerData(data) {
@@ -646,7 +633,7 @@ function renderTrackerDashboard() {
       <button class="btn btn-primary" onclick="window.addNewModule()">+ Add Module</button>
     </div>
     <div class="tracker-grid">
-      ${cardsHtml || '<div class="empty" style="grid-column: 1/-1;"><h2>No modules yet</h2><p>Click "+ Add Module" to start tracking.</p></div>'}
+      ${cardsHtml || `<div class="empty" style="grid-column: 1/-1;"><h2>No modules added yet</h2><p>Click "+ Add Module" to start tracking your marks.</p></div>`}
     </div>
   `;
 }
